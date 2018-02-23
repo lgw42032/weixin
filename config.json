@@ -1,0 +1,23 @@
+{
+  "config":[    
+    { "appId": "",
+      "appsecret": "",
+      "city":"411400"
+     }
+  ],
+  "dbConfig":{
+    "host" :"120.55.49.72",
+    "user" : "root",
+    "password" : "root",
+    "database" :"wechat",
+    "connectionLimit" : 1000,
+    "timezone" : "local",
+    "multipleStatements": true,
+    "dateStrings" : true,
+    "wait_timeout":5
+  },
+  "host":"http://www.brothergo.xin",
+  "token":"liguowei",
+  "centerHost":"192.168.2.12",
+  "centerPort":"5102"
+}

@@ -1,0 +1,21 @@
+footer {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #ccc;
+}
+footer > ul {
+  width: 100%;
+}
+footer > ul > li {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  padding: .2rem 0;
+}
+footer > ul > li > a > img {
+  height: 1.5em;
+  margin-right: .2em;
+}

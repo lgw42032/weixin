@@ -1,0 +1,50 @@
+.queryArea {
+  text-align: center;
+}
+.queryArea > .reminder {
+  padding: .2rem .5rem;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  color: #ccc;
+  line-height: .5rem;
+  text-align: left;
+}
+.queryArea > .queryContent {
+  text-align: left;
+  padding: .2rem .5rem ;
+}
+.queryArea > .queryContent > form > label {
+  box-sizing: border-box;
+  width: 10%;
+  padding-right: .1rem;
+  display: inline-block;
+}
+.queryArea > .queryContent > form > input:first-of-type {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding-left: .1rem;
+  font-size: 0.328125rem;
+  box-sizing: border-box;
+  line-height: .5rem;
+}
+.queryArea > .queryContent > form > input:nth-of-type(2) {
+  margin: .2rem 0;
+  width: 100%;
+  background-color: #168171;
+  color: #fff;
+  padding: .1rem 0;
+  border-radius: .08rem;
+}
+.queryArea > .queryResult {
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+}
+.queryArea > .queryResult > ul {
+  padding: 2em 0 5em 0;
+}
+.queryArea > .queryResult > ul > li > p {
+  line-height: .5rem;
+  font-size: 0.28125rem;
+  color: #168171;
+}

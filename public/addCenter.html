@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <title></title>
+</head>
+<body>
+<form action="#">
+    <label>中心名称</label><input type="text" name="centerName"/><br/>
+    <label>行政区划</label><input type="text" name="cityCode"/><br/>
+    <label>登录密码</label><input type="text" name="password"/><br/>
+    <div class="btn">
+        <button id="save" type="button" >保存</button>
+    </div>
+</form>
+<script>
+    $(function(){
+        $('#save').click(function(){
+            var data = $('form').serialize() ;
+            console.log(data);
+            $.ajax({
+                url:'/addCenter',
+                type:'post',
+                data: data,
+                success:function(data){
+                    if(data.success){
+                        window.location.href="personalCenter.html";
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

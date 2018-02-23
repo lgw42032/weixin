@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/selfInfo.css"/>
+    <style>
+        .service-list{
+            padding: 1em;
+        }
+        .service-list li{
+            line-height: 1.5em;
+            padding: 1em 0;
+            border-bottom: 1px solid #168171;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-img"></div>
+    <div class="header-content">
+        <h3>服务记录</h3>
+        <p>记录呼救和具体地址详情</p>
+    </div>
+</header>
+<section class="service-record">
+    <ul class="service-list">
+
+    </ul>
+</section>
+<script src="js/libs/pxToRem.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script src="js/libs/template.js"></script>
+<script type="text/html" id="serviceRecord">
+    {{each data  value i}}
+    <li data-lsh="{{value.lsh}}">
+        <lable>时间：</lable><span>{{value.callTime}}</span><br/>
+        <lable>呼救：</lable><span>{{value.helpTypeName}}</span><br/>
+        {{if value.realName}}
+        <lable>姓名：</lable><span>{{value.realName}}</span><br/>
+        {{/if}}
+        <lable>地点：</lable><span>{{value.eventAddress}}</span><br/>
+    </li>
+    {{/each}}
+</script>
+<script>
+    //处理openid
+    $(function(){
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        var callerName = GetQueryString('callerName');
+        var userInfoStr = localStorage.getItem('userInfoStr');
+        var userInfo=JSON.parse(userInfoStr);
+        $('header .header-img').css('background-image','url('+ userInfo.headimgurl+')');
+        $.ajax({
+            url:'/getServiceRecord',
+            type: 'get',
+            data:{callerName:callerName},
+            success:function(data){
+                console.log(data);
+                if(data.data.length==0){
+                    alert('暂时没有服务信息')
+                }else{
+                    var html = template('serviceRecord',data);
+                    $('.service-list').html(html);
+		    $('.service-list li').click(function(){
+                        window.location.href="eventDetail.html?eventCode="+ $(this).attr('data-lsh');
+                    })
+                }
+            }
+        })
+    })
+    //获取用户openid
+
+</script>
+</body>
+</html>

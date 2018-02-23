@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <script src="js/libs/template.js"></script>
+    <link rel="stylesheet" href="css/editCenterRegimenDiet.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/lang/zh-cn/zh-cn.js"> </script>
+    <title>急救常识</title>
+    <style>
+        .item-title label{
+            display: inline-block;
+            margin-top: 10px;
+            width: 20%;
+        }
+        .item-title input{
+            display: inline-block;
+            width: 50%;
+        }
+        body{
+            background: #dee9e3
+        }
+        .item-title{
+            text-align: left;
+            margin: 0 auto;
+        }
+    </style>
+    <script type="text/html" id="dataList">
+        {{each data  value i}}
+        <tr><td>{{value.title}}</td><td><a href="javascript:void(0);" data-id="{{value.id}}" class="edit-data" style="margin-right: 20px">编辑</a><a href="javascript:void(0);" data-id="{{value.id}}" class="del-data">删除</a></td></tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+<div class="show-lists">
+    <table>
+        <thead>
+        <tr>
+            <th>急救视频列表</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="item-list"></tbody>
+    </table>
+</div>
+<div class="add-item" style="margin-top: 30px">
+    <button id="addItem">增加条目</button>
+</div>
+<div class="add-item-form">
+    <h3 class="item-head">增加条目</h3>
+    <div class="item-content">
+        <div class="item-title">
+            <label>标题：</label><input type="text" name="title"/><br/>
+            <label>缩略图：</label><input type="text" id="picture" name="img" /><a href="javascript:void(0);" onclick="upImage();">上传图片</a><br/>
+            <label style="font-size: 12px;color: red;width: 100%">提示：图片最好是长宽分辨率相同的正方形图片，否则可能引起失真</label><br/>
+            <label>视频网址</label><input type="text" name="videoUrl"/><br/>
+            <label style="font-size: 12px;color: red;width: 100%">提示：视频链接必须是腾讯网视频，否则可能会又不安全链接</label><br/>
+            <script type="text/plain" id="upload_ue" ></script>
+        </div>
+        <input type="hidden" name="id"/>
+        <script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
+    </div>
+
+    <div class="btn">
+        <button id="save" type="button" >保存</button>
+        <button id="cancel" type="button" style="margin-left: 10px">取消</button>
+    </div>
+</div>
+<script>
+    function getAidVideoList(city,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidVideoList',
+                type:'get',
+                data:{cityCode:city,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getAidVideoItem(city,id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidVideoItem',
+                type:'get',
+                data:{cityCode:city,id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function addAidVideoItem(city,id,title,img,videoUrl,videoDetail,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/addAidVideoItem',
+                type:'post',
+                data:{cityCode:city,id:id,title:title,img:img,videoUrl:videoUrl,videoDetail:videoDetail,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function delAidVideoItem(id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/delAidVideoItem',
+                type:'post',
+                data:{id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    $(function(){
+        var ue = UE.getEditor('editor');
+        var centerInfo = $.cookie("centerInfo");
+        centerInfo = JSON.parse(centerInfo);
+        var flag=1;
+        if(centerInfo.cityCode=='99999'){
+            flag=0;
+        }
+        getAidVideoList(centerInfo.cityCode,flag).then(function(data){
+            console.log(data);
+
+            var html = template('dataList', data);
+            $('.item-list').html(html);
+            $('.edit-data').click(function(){
+                var id = $(this).attr('data-id');
+                getAidVideoItem(centerInfo.cityCode,id).then(function(data){
+                    console.log(data);
+                    var item =data.data[0];
+                    $('.item-head').html('编辑'+ item.title);
+                    $('.add-item-form').css('display','block');
+                    $("input[name='title']").val(item.title);
+                    $("input[name='videoUrl']").val(item.videoUrl);
+                    $("input[name='img']").val(item.img);
+                    $("input[name='id']").val(item.id);
+                    ue.execCommand('insertHtml', item.videoDetail);
+                })
+            });
+            $('.del-data').click(function(){
+                var id = $(this).attr('data-id');
+                delAidVideoItem(id).then(function(data){
+                    if(data.success){
+                        location.reload();
+                    }
+                })
+            });
+        });
+        $('#addItem').click(function(){
+            $('.item-head').html('增加条目')
+            ue.setContent('');
+            $('.add-item-form').css('display','block');
+        });
+        $('#cancel').click(function(){
+            ue.setContent('');
+            $("input[name='id']").val(null);
+            $("input[name='title']").val(null);
+            $("input[name='img']").val(null);
+            $("input[name='videoUrl']").val(null);
+            $('.add-item-form').css('display','none');
+        });
+        $('#save').click(function(){
+            var videoDetail = UE.getEditor('editor').getContent();
+            var title = $("input[name='title']").val();
+            var id = $("input[name='id']").val();
+            var videoUrl = $("input[name='videoUrl']").val();
+            var img=$("input[name='img']").val();
+            var flag;
+            if(centerInfo.cityCode=='99999'){
+                flag = 0;
+            }else{
+                flag = 1;
+            }
+            addAidVideoItem(centerInfo.cityCode,id,title,img,videoUrl,videoDetail,flag).then(function(data){
+                console.log(data);
+                if(data.success){
+                    ue.setContent('');
+                    $("input[name='id']").val(null);
+                    $("input[name='title']").val(null);
+                    $("input[name='img']").val(null);
+                    $("#categoryList").val(null);
+                    location.reload();
+                }
+            })
+        })
+    })
+</script>
+<script type="text/javascript">
+    //重新实例化一个编辑器，防止在上面的editor编辑器中显示上传的图片或者文件
+    var _editor = UE.getEditor('upload_ue');
+    _editor.ready(function () {
+        //隐藏编辑器，因为不会用到这个编辑器实例，所以要隐藏
+        _editor.hide();
+        //侦听图片上传
+        _editor.addListener('beforeInsertImage', function (t, arg) {
+            //将地址赋值给相应的input,只去第一张图片的路径
+            $("#picture").attr("value", arg[0].src);
+            $("#picture").val(arg[0].src);
+            console.log(arg[0].src);
+            //图片预览
+            $("#preview").attr("src", arg[0].src);
+        });
+        //侦听文件上传，取上传文件列表中第一个上传的文件的路径
+        _editor.addListener('afterUpfile', function (t, arg) {
+            $("#file").attr("value", _editor.options.filePath + arg[0].url);
+        })
+    });
+    //弹出图片上传的对话框
+    function upImage() {
+//        _editor.setShow();
+        var myImage = _editor.getDialog("insertimage");
+        myImage.open();
+    }
+    //弹出文件上传的对话框
+    function upFiles() {
+        var myFiles = _editor.getDialog("attachment");
+        myFiles.open();
+    }
+</script>
+</body>
+</html>

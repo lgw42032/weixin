@@ -1,0 +1,52 @@
+[2018-02-03T09:43:34.279] [INFO] normal - wechatAid{"success":true,"msg":"success","data":{"lng":"113.486804","lat":"34.157184","eventAddress":"河南省许昌市禹州市画圣路","helpType":"0","time":"2018-02-03 09:43:33","lsh":"20180203094333rkRaQcfLf","userInfo":{"realName":"李国伟","sex":"1","age":"27","idNumber":"123456","mobilePhone":"15617878090","address":"河南省郑州市","contactPerson1":"张三","linkTele1":"456789","contactPerson2":"李四","linkTele2":"123456"},"healthInfo":{"height":"180","weight":"90","bloodType":"B","commonDrugs":"板蓝根","chronicDisease":"没有","allergies":"花粉过敏","others":"没有"}}}
+[2018-02-03T11:33:08.653] [ERROR] error - db error : TypeError: self.getApiUrl is not a function
+[2018-02-03T12:01:43.605] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:05:10.430] [ERROR] error - db error : Error: read ECONNRESET
+[2018-02-03T12:18:54.118] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:20:54.122] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:23:25.251] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:25:25.281] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:28:49.970] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:29:52.757] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:31:52.753] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:33:08.748] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:34:43.346] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:35:08.759] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:35:39.135] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:36:18.386] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:36:43.343] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T12:58:54.442] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:00:04.662] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:03:09.396] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:05:37.951] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:05:47.312] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:06:43.614] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:07:21.006] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:08:49.035] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:08:58.939] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:09:21.970] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:09:27.811] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:10:25.661] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:11:41.574] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:12:42.316] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:13:40.320] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:14:39.960] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:14:42.333] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T13:15:40.330] [ERROR] error - db error : Error: socket hang up
+[2018-02-03T13:15:49.628] [ERROR] error - db error : Error: read ECONNRESET
+[2018-02-03T13:16:15.234] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:16:15.251] [ERROR] error - db error : ReferenceError: err is not defined
+[2018-02-03T13:17:05.733] [INFO] normal - sendCenter[object Object]
+[2018-02-03T13:17:05.757] [ERROR] error - db error : ReferenceError: err is not defined
+[2018-02-03T14:15:58.443] [INFO] normal - sendCenter[object Object]
+[2018-02-03T14:15:58.469] [ERROR] error - db error : ReferenceError: err is not defined
+[2018-02-03T14:21:57.870] [INFO] normal - sendCenter[object Object]
+[2018-02-03T14:21:57.914] [ERROR] error - db error : ReferenceError: err is not defined
+[2018-02-03T14:25:08.083] [INFO] normal - sendCenter[object Object]
+[2018-02-03T14:27:17.782] [INFO] normal - sendCenter[object Object]
+[2018-02-03T14:28:12.797] [INFO] normal - sendCenter[object Object]
+[2018-02-03T14:30:31.454] [INFO] normal - sendCenter[object Object]
+[2018-02-03T15:00:35.507] [INFO] normal - sendCenter[object Object]
+[2018-02-03T15:05:32.469] [INFO] normal - sendCenter[object Object]
+[2018-02-03T15:08:24.981] [INFO] normal - sendCenter[object Object]
+[2018-02-03T15:09:21.335] [INFO] normal - sendCenter[object Object]

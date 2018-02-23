@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>帮亲友呼救</title>
+    <link rel="stylesheet" href="css/relativesCall.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/mask.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+    <script src="js/libs/template.js"></script>
+    <script type="text/html" id="relativesList">
+        {{each data  value i}}
+        <li>
+            <span class="left ">{{value.relation}}</span>
+            <div  class="center ">
+                <span class="name">{{value.realName}}</span>
+                <p>{{value.address}}</p>
+            </div>
+            <a class="right" href="tel:120"  data-uid = '{{value.uid}}'  data-realName= '{{value.realName}}'></a>
+        </li>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <section class="recommend-mask">
+    <div class="recommend">
+        <h3>提示:为了更好的为您服务，请输入手机号码</h3>
+        <form class="clearfix">
+            <label class="form-item require">手机号：</label><input type="text"  name="mobilePhone"/><br/>
+            <div class="separate" style="height: .5em"></div>
+            <label class="form-item sms fl">验证码：</label><input type="text" class="fl verificationCode" name="verificationCode" /> <button class="getVCode fr" id="getVCode" type="button" >获取验证码</button><br/>
+        </form>
+        <button type="button" id="btn">提交</button>
+    </div>
+</section>
+    <section class="background">
+        <p>当您的亲友发生紧急情况，轻微他们呼救</p>
+        <div id="show-relatives">
+            <ul></ul>
+        </div>
+        <div id="add-relatives">
+            <ul>
+            </ul>
+        </div>
+        <p class="relationCount"></p>
+        <p>把爱随身携带，我们的服务您放心</p>
+    </section>
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script>
+        var openid = localStorage.getItem('openid');
+        var userInfoStr = localStorage.getItem('userInfoStr');
+        var userInfo=JSON.parse(userInfoStr);
+//        var userInfo={
+//
+//        }
+        var userPhone = userInfo.mobilePhone;
+        if(!userPhone||userPhone=='undefined'){
+            $('.recommend-mask').css('display','block');
+        }
+        $('#getVCode').click(function(){
+            var mobilePhone  =  $("input[name='mobilePhone']").val();
+            if(!mobilePhone){
+                alert('手机号不能为空') ;
+                return;
+            }
+            $.ajax({
+                url:'/sendMessage',
+                type:'post',
+                data:{mobilePhone:mobilePhone},
+                success:function(data){
+                    console.log('sendMessageSuccess');
+                    $('#getVCode').attr('disabled',true).css('background-color','#59ccba');
+                    var i=60;
+                    var timer = setInterval(function(){
+                        i--;
+                        console.log(i);
+                        if(i<0){
+                            window.clearInterval(timer);
+                            $('#getVCode').html('获取验证码').attr('disabled',false).css('background-color','#168171');
+
+                        }else{
+                            $('#getVCode').html(i+'秒后重试')
+                            $('#getVCode').attr('disabled',true).css('background-color','#59ccba');
+                        }
+                    },1000)
+                },
+                error:function(err){
+                    console.log(err);
+                }
+            })
+        });
+        $('#btn').click(function(){
+            if(!$("input[name='mobilePhone']").val()||!$("input[name='verificationCode']").val()){
+                alert('请输入电话号码或验证码');
+                return;
+            }else{
+                var data = $('form').serialize() + '&openid=' + localStorage.getItem('openid') +'&isRegistered=' + false;
+                console.log(data);
+                $.ajax({
+                    url:'/editDetailPersonInfo',
+                    type:'post',
+                    data: data,
+                    success:function(data){
+                        if(data.success){
+                            $('.recommend-mask').css('display','none');
+                        }else{
+                            if(data.msg=="verificationCodeFalse"){
+                                alert('验证码错误');
+                                return;
+                            }
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+    <script>
+        $(function(){
+            var openid = localStorage.getItem('openid');
+            $.ajax({
+                url: '/getRelativesList',
+                data:{ openid: openid},
+                type: 'get',
+                success:function(data){
+                    var html = template('relativesList', data);
+                    $('#show-relatives ul').html(html);
+                    var lis = data.data.length;
+                    for(var i=0;i<(5-lis);i++){
+                        var li = $('<li><a href="relativesBaseInfo.html?type=addRelatives">+ 添加亲友</a></li>');
+                        $('#add-relatives ul').append(li)
+                    }
+                    $('.relationCount').html('您还可以添加'+ (5-lis) +'位亲友哦');
+                    $('#show-relatives>ul>li').each(function(i,v){
+                        $(v).css('border-radius',$(v).outerHeight()/2);
+                    });
+                    $('#add-relatives>ul>li').each(function(i,v){
+                        $(v).css('border-radius',$(v).outerHeight()/2);
+                    });
+                    $('#show-relatives>ul>li>a').each(function(i,v){
+                        $(v).unbind('click').click(function(){
+                            relativesCall($(v).attr('data-uid'),$(v).attr('data-realName'));
+                        })
+                    });
+                }
+            })
+        })
+    </script>
+    <script>
+        function relativesCall(uid,realName){
+            var openid = localStorage.getItem('openid');
+            $.ajax({
+                url:'/aidCall',
+                type:'post',
+                data:{helpType:1,callerName: openid,helperuid:uid},
+                success:function(eventList){
+                    if(eventList.success){
+                  	window.location.href="eventDetail.html?eventCode="+ eventList.data.uid+"&realName="+ realName+"&time="+ eventList.data.time;
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

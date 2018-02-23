@@ -1,0 +1,52 @@
+.swiper-container {
+  width: 100%;
+}
+nav > ul {
+  padding: 0  1em;
+}
+nav > ul > li {
+  display: inline-block;
+  width: 23%;
+  padding-top: 1em ;
+}
+nav > ul > li > a {
+  display: block;
+  text-align: center;
+}
+nav > ul > li > a > img {
+  display: inline-block;
+  width: 50%;
+}
+nav > ul > li > a > p {
+  text-align: center;
+  line-height: 2em;
+}
+section > .swiper-container > img {
+  width: 100%;
+}
+section > .info {
+  padding: .2rem ;
+  border-top: 1px solid #ccc;
+}
+section > .info > span {
+  padding: .05rem;
+  display: inline-block;
+  width: 80%;
+  border-right: 1px solid #ccc;
+}
+section > .info > a {
+  display: inline-block;
+  text-align: center;
+  width: 18%;
+}
+section > .info > a > img {
+  width: 35%;
+}
+section > #introduceContent {
+  padding: 2em .2rem 5em .2em;
+  text-indent: 2em;
+  line-height: 2em;
+}
+section > #introduceContent > a {
+  color: blue;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>120智慧急救</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/microAid.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+
+<section class="content">
+    <!--<div class="content-title">-->
+        <!--<h1>120智慧急救</h1>-->
+        <!--<p>当遇到紧急情况发生时，可立即呼救</p>-->
+    <!--</div>-->
+    <div class="content-nav">
+        <!--<a href="selfCall.html" class="selfCall"><img src="images/gongzhonghao2_03.png" alt=""/></a>-->
+        <!--<a href="relativesCall.html" class="relativesCall"><img src="images/gongzhonghao2_14.png" alt=""/></a>-->
+        <!--<a href="othersCall.html" class="othersCall"><img src="images/gongzhonghao2_11.png" alt=""/></a>-->
+        <!--<img src="images/gongzhonghao2_06.png" alt="" class="left"/>-->
+        <!--<img src="images/gongzhonghao2_04.png" alt="" class="right"/>-->
+        <!--<img src="images/gongzhonghao9_03_07.png" alt="" class="center"/>-->
+        <div class="banner">
+            <img src="images/microaid.png" alt=""/>
+        </div>
+        <div class="microAid">
+            <ul class="clearfix">
+                <li class="fl">
+                    <a href="selfCall.html" class="selfCall">
+                        <img src="images/selfCall.png" alt=""/>
+                        <p>本人呼救</p>
+                    </a>
+                </li>
+                <li class="fl">
+                    <a href="relativesCall.html" class="relativesCall">
+                        <img src="images/relativesCall.png" alt=""/>
+                        <p>帮亲朋呼救</p>
+                    </a>
+                </li>
+                <li class="fl">
+                    <a href="othersCall.html" class="othersCall">
+                        <img src="images/others.png" alt=""/>
+                        <p>帮他人呼救</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<footer class="footer-nav">
+    <ul>
+        <li style="color:#168171"><a href="microNet.html"><img src="images/computer%20(2).png" alt=""/>微网站</a></li>
+        <li><a href="microAid.html"><img src="images/aid.png" alt=""/>智慧急救</a></li>
+        <li><a href="personalCenter.html"><img src="images/mine%20(2).png" alt=""/>我的</a></li>
+    </ul>
+</footer>
+<script src="js/libs/pxToRem.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    function cancel(){
+        $('.recommend-mask').css('display','none');
+    }
+</script>
+<script>
+    //处理openid
+    $(function(){
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        var openid = GetQueryString('openid');
+        var city = GetQueryString('city');
+        var token = GetQueryString('token');
+        openid = 'oY5aUuIaXXFhMJaHnT8ly6IsvL0s';
+        if(openid){
+            localStorage.setItem('openid',openid);
+            localStorage.setItem('city',city);
+            localStorage.setItem('token',token);
+        }else{
+            openid = localStorage.getItem('openid');
+            city = localStorage.getItem('city');
+        };
+
+        $.ajax({
+            url:'/getDetailPersonInfo',
+            type: 'get',
+            data: {openid:openid},
+            success:function(data){
+                var userInfo = data.data[0];
+//                if(!!userInfo.realName){
+//                    $('.recommend-mask').css('display','block');
+//                }
+                var userInfoStr = JSON.stringify(userInfo);
+                localStorage.setItem('userInfoStr',userInfoStr);
+            }
+        })
+    });
+    //获取用户openid
+
+</script>
+<script>
+    $(function(){
+        var footerHeight = $('.footer-nav').outerHeight();
+        $('.content').css('height',document.documentElement.clientHeight-footerHeight);
+    })
+</script>
+</body>
+</html>
+

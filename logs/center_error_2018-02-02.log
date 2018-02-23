@@ -1,0 +1,23 @@
+[2018-02-02T17:15:44.857] [ERROR] error - db error : [object Object]
+[2018-02-02T17:18:03.776] [ERROR] error - db error : [object Object]
+[2018-02-02T17:19:28.990] [ERROR] error - db error : [object Object]
+[2018-02-02T17:20:49.243] [ERROR] error - db error : [object Object]
+[2018-02-02T17:22:27.261] [INFO] normal - wechatAid<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /api/center/dispatchTask</pre>
+</body>
+</html>
+
+[2018-02-02T17:25:39.687] [ERROR] error - db error : RangeError: "port" option should be >= 0 and < 65536: /acceptMessage
+[2018-02-02T17:27:00.640] [INFO] normal - wechatAid{"success":true,"msg":"success","data":{}}
+[2018-02-02T17:31:31.897] [INFO] normal - wechatAid{"success":true,"msg":"success","data":{}}
+[2018-02-02T17:36:38.992] [INFO] normal - wechatAid{"success":true,"msg":"success","data":[]}
+[2018-02-02T17:45:21.309] [INFO] normal - wechatAid{"success":true,"msg":"success","data":[]}
+[2018-02-02T17:47:20.543] [INFO] normal - wechatAid{"success":true,"msg":"success","data":[]}
+[2018-02-02T17:48:04.875] [INFO] normal - wechatAid{"success":true,"msg":"success","data":{"lng":"113.649644","lat":"34.75661","eventAddress":"河南省郑州市二七区大学路54号院附1号","helpType":"0","time":"2018-02-02 17:48:04","lsh":"20180202174804SyhRQh-LG","userInfo":{"realName":"李国伟","sex":"1","age":"27","idNumber":"123456","mobilePhone":"18530809240","address":"河南省郑州市","contactPerson1":"张三","linkTele1":"456789","contactPerson2":"李四","linkTele2":"123456"},"healthInfo":{"height":"180","weight":"90","bloodType":"B","commonDrugs":"板蓝根","chronicDisease":"没有","allergies":"花粉过敏","others":"没有"}}}
+[2018-02-02T17:50:59.337] [INFO] normal - wechatAid{"success":true,"msg":"success","data":{"lng":"113.649644","lat":"34.75661","eventAddress":"河南省郑州市二七区大学路54号院附1号","helpType":"0","time":"2018-02-02 17:50:58","lsh":"20180202175058SJitVnb8z","userInfo":{"realName":"李国伟","sex":"1","age":"27","idNumber":"123456","mobilePhone":"18530809240","address":"河南省郑州市","contactPerson1":"张三","linkTele1":"456789","contactPerson2":"李四","linkTele2":"123456"},"healthInfo":{"height":"180","weight":"90","bloodType":"B","commonDrugs":"板蓝根","chronicDisease":"没有","allergies":"花粉过敏","others":"没有"}}}

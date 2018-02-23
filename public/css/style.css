@@ -1,0 +1,27 @@
+body {
+    padding: 20px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+input {
+    border: 1px solid #95b8e7;
+    margin: 0;
+    padding: 0 2px;
+    vertical-align: middle;
+    border-radius: 5px;
+    height: 18px;
+}
+
+textarea,section {
+    border: 1px solid #95b8e7;
+    margin: 0;
+    padding: 0 2px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+li{list-style:none;}
+a{text-decoration:none;}
+.none{display: none;}
+
+/*label, span, div {font-size: 15px !important;}*/

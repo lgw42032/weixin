@@ -1,0 +1,70 @@
+.add-item {
+  text-align: center;
+}
+.add-item > button {
+  border: none;
+  background-color: #168171;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+.add-item-form,
+.add-category-form {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.add-item-form > h3,
+.add-category-form > h3 {
+  background-color: #168171;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+}
+.add-item-form > .item-content,
+.add-category-form > .item-content {
+  text-align: center;
+  padding: 0 10px ;
+}
+.add-item-form > .item-content > .item-title,
+.add-category-form > .item-content > .item-title {
+  padding: 10px 0;
+}
+.add-item-form > .btn,
+.add-category-form > .btn {
+  margin: 10px;
+  text-align: center;
+}
+.add-item-form > .btn > button,
+.add-category-form > .btn > button {
+  border: none;
+  background-color: #168171;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+a {
+  color: #168178;
+}
+.show-lists {
+  background-color: lightblue;
+}
+.show-lists table {
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
+.show-lists td,
+th {
+  border-left: 1px solid orange;
+  border-top: 1px solid orange;
+  height: 40px;
+  line-height: 40px;
+}

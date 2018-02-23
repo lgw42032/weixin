@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>关于我们</title>
+    <link rel="stylesheet" href="/public/css/base.css"/>
+    <link rel="stylesheet" href="/public/js/libs/Swiper-3.4.2/swiper-3.4.2.min.css"/>
+    <link rel="stylesheet" href="/public/css/microNet.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+    <script src="/public/js/libs/pxToRem.js"></script>
+    <script src="js/libs/template.js"></script>
+    <script type="text/html" id="centerImgUrl">
+        {{each list  value i}}
+        <div class="swiper-slide">
+            <img src="{{value}}" alt="{{value}}" width="100%" />
+        </div>
+        {{/each}}
+    </script>
+    <style>
+        .introduce h3{
+            padding: 1em ;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="/public/aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/timg.jpg" alt="" width="100%"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/timg%20(1).jpg" alt="" width="100%"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/timg%20(2).jpg" alt="" width="100%"/>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+
+<section class="introduce" >
+    <h3>中心简介</h3>
+    <div id="introduceContent"></div>
+</section>
+<footer>
+    <ul>
+        <li style="color:#168171"><a href="microNet.html">微网站</a></li>
+        <li><a href="microAid.html">智慧急救</a></li>
+        <li><a href="personalCenter.html">我的</a></li>
+    </ul>
+</footer>
+<script src="/public/js/libs/jquery-3.2.1.min.js"></script>
+<script src="/public/js/libs/Swiper-3.4.2/swiper-3.4.2.jquery.min.js"></script>
+<script src="js/header.js" defer="defer"></script>
+<script>
+    function init(){
+        var len = 60;      //默认显示字数
+        var ctn = document.getElementById("introduceContent");  //获取div对象
+        var content = ctn.innerHTML;                   //获取div里的内容
+
+        //alert(content);
+        var span = document.createElement("span");     //创建<span>元素
+        var a = document.createElement("a");           //创建<a>元素
+        span.innerHTML = content.substring(0,len);     //span里的内容为content的前len个字符
+
+        a.innerHTML = content.length>len?"... 展开":"";  ////判断显示的字数是否大于默认显示的字数    来设置a的显示
+        a.href = "javascript:void(0)";//让a链接点击不跳转
+
+        a.onclick = function(){
+            if(a.innerHTML.indexOf("展开")>0){      //如果a中含有"展开"则显示"收起"
+                a.innerHTML = "<<&nbsp;收起";
+                span.innerHTML = content;
+            }else{
+                a.innerHTML = "... 展开";
+                span.innerHTML = content.substring(0,len);
+            }
+        }
+        // 设置div内容为空，span元素 a元素加入到div中
+        ctn.innerHTML = "";
+        ctn.appendChild(span);
+        ctn.appendChild(a);
+    }
+</script>
+<script>
+    var city = localStorage.getItem('city');
+    function getConfig(){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getConfig',
+                type:'get',
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    getConfig().then(function(config){
+        host = config.host;
+        var centerInfoStr = localStorage.getItem('centerInfoStr');
+        var centerInfo=JSON.parse(centerInfoStr);
+        $('#introduceContent').html(centerInfo.centerDesc);
+        var imgUrl = centerInfo.centerImgUrl.split(';');
+        console.log(imgUrl);
+        var imgObj={};
+        imgObj.list =  imgUrl.map(function(v,i,arr){
+            return  host + v;
+        });
+        console.log(imgObj);
+        var html = template('centerImgUrl', imgObj);
+        $('.swiper-wrapper').html(html);
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true,
+            autoplay: 3000,
+            pagination: '.swiper-pagination'
+        });
+        init();
+    })
+</script>
+</body>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>亲朋信息</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/relativesInfo.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+    <script src="js/libs/template.js"></script>
+    <script type="text/html" id="relativesList">
+        {{each data  value i}}
+        <li class="border-bottom-1px">
+            <span>{{value.realName}}</span><span>{{value.relation}}</span><span class="operate"><a href="relativesBaseInfo.html?type=editRelatives&uid={{value.uid}}">编辑</a><a href="javascript:;" class="delRelation"  data-uid = "{{value.uid}}">删除</a></span>
+        </li>
+        {{/each}}
+    </script>
+</head>
+<body>
+<header>
+    <div class="header-img"></div>
+    <div class="header-content">
+        <h3>亲朋信息</h3>
+        <p>请留下您的健康档案，为您服务时，我们需要它</p>
+    </div>
+</header>
+<section>
+    <div class="relatives-list">
+        <ul>
+        </ul>
+    </div>
+    <p><span >温馨提示：</span>您最多可添加5位亲朋的信息</p>
+    <a href="relativesBaseInfo.html?type=addRelatives" class="addRelatives">添加亲朋</a>
+</section>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    function delRelatives(uid){
+       $.ajax({
+           url:'/delRelatives',
+           type: 'post',
+           data:{uid:uid},
+           success:function(data){
+               if(data.data.affectedRows==1){
+                   window.location.href="relativesInfo.html";
+               }else{
+                   alert('删除失败');
+               }
+
+           }
+       })
+    }
+</script>
+<script>
+   $(function(){
+       var openid = localStorage.getItem('openid');
+        var userInfoStr = localStorage.getItem('userInfoStr');
+             var userInfo=JSON.parse(userInfoStr);
+             $('header .header-img').css('background-image','url('+ userInfo.headimgurl+')');
+       $.ajax({
+           url:'/getRelativesList',
+           type:'get',
+           data:{openid: openid},
+           success:function(data){
+              var totalRelatives = data.data.length;
+               if(totalRelatives>=5){
+                   $('.addRelatives').attr('href','javascript:void(0)').unbind('click').click(function(){
+                       alert('添加亲朋数量达到上限')
+                   });
+               }else{
+                   $('.addRelatives').unbind('click');
+               }
+               var html = template('relativesList', data);
+               $('.relatives-list ul').html(html);
+               $('.relatives-list>ul>li .delRelation').each(function(i,v){
+                   $(v).unbind('click').click(function(){
+                       delRelatives($(v).attr('data-uid'));
+                   })
+               });
+           }
+       })
+   })
+</script>
+</body>
+</html>

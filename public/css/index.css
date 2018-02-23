@@ -1,0 +1,137 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.password {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: url('../images/login-1600.jpg');
+}
+.password .password-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 435px;
+  height: 370px;
+  background: #fff;
+  border: 15px solid #17a462;
+  transform: translate(-50%, -50%);
+}
+.password .password-form .login-filter {
+  position: absolute;
+  width: 101px;
+  height: 101px;
+  top: -15px;
+  left: -15px;
+  background: #fff;
+}
+.password .password-form .user-filter {
+  position: absolute;
+  height: 40px;
+  left: 365px;
+  top: 117px;
+  display: none;
+}
+.password .password-form .password-filter {
+  position: absolute;
+  height: 40px;
+  left: 365px;
+  top: 181px;
+  display: none;
+}
+.password .password-form .input-quite {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  background: #fbfcc3;
+  top: 14px;
+  left: 40px;
+  z-index: 1;
+  border-left: 1px solid #f00;
+  border-bottom: 1px solid #f00;
+}
+.password .password-form .input-html {
+  position: absolute;
+  width: auto;
+  white-space: nowrap;
+  color: red;
+  padding: 8px 10px;
+  font-size: 16px;
+  height: 40px;
+  background: #fbfcc3;
+  left: 45px;
+  border: 1px solid #f00;
+}
+.password .password-form ul {
+  margin: 30px 40px;
+  padding-left: 0;
+  height: 280px;
+}
+.password .password-form ul li {
+  width: 100%;
+}
+.password .password-form ul li img {
+  width: 20%;
+  margin-left: 5%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.password .password-form ul li b {
+  font-size: 28px;
+  width: 75%;
+  color: #2961c0;
+  text-align: center;
+}
+.password .password-form ul li b span {
+  color: #f6b036;
+}
+.password .password-form ul li .btn {
+  width: 100%;
+  background: #17a462;
+  color: #fff;
+  font-size: 18px;
+  height: 45px;
+  margin-top: 40px;
+  border-radius: 0;
+}
+.password .password-form ul li .btn span {
+  margin-right: 25px;
+}
+.password .password-form ul li .btn:hover {
+  width: 100%;
+  background: #2fa8dd;
+  color: #fff;
+  border-radius: 0;
+}
+.password .password-form ul .login-title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.password .password-form ul .login-input {
+  position: relative;
+  margin-top: 20px;
+}
+.password .password-form ul .login-input input {
+  display: inline-block;
+  font-size: 18px;
+  height: 45px;
+  width: 83%;
+  padding-left: 57px;
+}
+.password .password-form ul .login-input label {
+  position: absolute;
+  top: 8px;
+  left: 13px;
+}
+.password .password-form ul .login-input label img {
+  width: 28px;
+  height: 28px;
+}

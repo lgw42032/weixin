@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <script src="js/libs/template.js"></script>
+    <link rel="stylesheet" href="css/addHospital.css"/>
+    <title></title>
+    <style>
+        a{
+            color: #168178;
+        }
+        .show-hospitals {
+            background-color: lightblue;
+        }
+        .show-hospitals table {
+            width: 100%;
+            text-align: center;
+            border-right: 1px solid orange;
+            border-bottom: 1px solid orange;
+        }
+        .show-hospitals td,th {
+            border-left: 1px solid orange;
+            border-top: 1px solid orange;
+            height: 40px;
+            line-height: 40px;
+        }
+        .edit-hospital{
+            margin-right: 20px;
+        }
+        body{
+            background: #dee9e3
+        }
+    </style>
+    <script type="text/html" id="hospitalList">
+        {{each data  value i}}
+        <!--<li><span>{{value.stationName}}</span><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="edit-hospital">编辑</a><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="del-hospital">删除</a></li>-->
+        <tr><td>{{value.stationName}}</td><td><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="edit-hospital">编辑</a><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="del-hospital">删除</a></td></tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+<div class="show-hospitals">
+    <table>
+        <thead>
+        <tr>
+            <th>医院名称</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="hospital-list"></tbody>
+    </table>
+</div>
+<div class="add-hospital" style="margin-top: 30px">
+    <button id="addHospital">增加医院</button>
+</div>
+<div class="add-hospital-form">
+    <h3>增加医院</h3>
+    <form action="#">
+        <label>医院名称：</label><input type="text" name="stationName"/><br/>
+        <input name="stationCode" type="hidden">
+        <label class="form-item">百度经度：</label><input type="text"  name="lng"/><br/>
+        <label class="form-item">百度纬度：</label><input type="text"  name="lat"/><br/>
+        <a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank" style="color:#168171">百度坐标拾取</a>
+        <div class="btn">
+            <button id="save" type="button" >保存</button>
+            <button id="cancel" type="button" style="margin-left: 10px">取消</button>
+        </div>
+    </form>
+</div>
+<script>
+    $(function(){
+        var centerInfo = $.cookie("centerInfo");
+        var hospitals=[];
+        centerInfo = JSON.parse(centerInfo);
+        $.ajax({
+            url:'/getHospitalNet',
+            type:'get',
+            data:{cityCode:centerInfo.cityCode },
+            success:function(hospitalsList){
+                 hospitals = hospitalsList.data;
+                var html = template('hospitalList', hospitalsList);
+                $('.hospital-list').html(html);
+                $('.edit-hospital').click(function(){
+                    var stationCode = $(this).attr('data-hospital');
+                    console.log(stationCode);
+                    $('h3').html('编辑医院');
+                    hospitals.forEach(function(v,i,arr){
+                        if(v.stationCode==stationCode){
+                            console.log(v);
+                            $("input[name='stationCode']").val(v.stationCode);
+                            $("input[name='stationName']").val(v.stationName);
+                            $("input[name='lng']").val(v.lng);
+                            $("input[name='lat']").val(v.lat);
+                        }
+                    });
+                    $('.add-hospital-form').css('display','block');
+                })
+                $('.del-hospital').click(function(){
+                    var stationCode = $(this).attr('data-hospital')
+                    $.ajax({
+                        url:'/delHospital',
+                        type:'post',
+                        data:{
+                            cityCode:centerInfo.cityCode,
+                            stationCode:stationCode
+                        },
+                        success:function(data){
+                            if(data.success){
+                                location.reload();
+                            }
+                    }
+
+                    })
+                })
+            }
+        });
+        $('#addHospital').click(function(){
+            $('h3').html('增加医院')
+            $('.add-hospital-form').css('display','block');
+        })
+        $('#cancel').click(function(){
+            $('form')[0].reset();
+            $('.add-hospital-form').css('display','none');
+        });
+        $('#save').click(function(){
+            var data = $('form').serialize()+'&cityCode='+centerInfo.cityCode ;
+            console.log(data);
+            $.ajax({
+                url:'/addHospital',
+                type:'post',
+                data: data,
+                success:function(data){
+                   if(data.success){
+                       $('form')[0].reset();
+                       location.reload();
+
+                   }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

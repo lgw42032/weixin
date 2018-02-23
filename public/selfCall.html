@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/locations.css"/>
+    <link rel="stylesheet" href="css/mask.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=l0iZxA2yrCz1hvrZwNa0lGyd"></script>
+
+    <title>本人呼救</title>
+    <style>
+        #allmap{
+            height: 45%;
+        }
+        #r-result{
+            height: 40%;
+            overflow: auto;
+            border-bottom: 1px solid #168171;
+        }
+    </style>
+</head>
+<body>
+<section class="recommend-mask">
+    <div class="recommend">
+        <h3>提示:为了更好的为您服务，请输入手机号码</h3>
+        <form class="clearfix">
+            <label class="form-item require">手机号：</label><input type="text"  name="mobilePhone"/><br/>
+            <div class="separate" style="height: .5em"></div>
+            <label class="form-item sms fl">验证码：</label><input type="text" class="fl verificationCode" name="verificationCode" /> <button class="getVCode fr" id="getVCode" type="button" >获取验证码</button><br/>
+        </form>
+        <button type="button" id="btn">提交</button>
+    </div>
+</section>
+<div id="allmap"></div>
+<div id="r-result">
+    <ul id="results"></ul>
+</div>
+<div class="call">
+    <div class="clearfix">
+        <a class="fl" href="tel:120"  id="selfCall">定位中...</a>
+        <a class="videoCall fr"> 视频通话</a>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    var openid = localStorage.getItem('openid');
+    var userInfoStr = localStorage.getItem('userInfoStr');
+    var userInfo=JSON.parse(userInfoStr);
+//    var userInfo={
+//        mobilePhone:'18530809240'
+//    }
+    var userPhone = userInfo.mobilePhone;
+    if(!userPhone||userPhone=='undefined'){
+        $('.recommend-mask').css('display','block');
+    }
+    $('#getVCode').click(function(){
+        var mobilePhone  =  $("input[name='mobilePhone']").val();
+        if(!mobilePhone){
+            alert('手机号不能为空') ;
+            return;
+        }
+        $.ajax({
+            url:'/sendMessage',
+            type:'post',
+            data:{mobilePhone:mobilePhone},
+            success:function(data){
+                console.log('sendMessageSuccess');
+                $('#getVCode').attr('disabled',true).css('background-color','#59ccba');
+                var i=60;
+                var timer = setInterval(function(){
+                    i--;
+                    console.log(i);
+                    if(i<0){
+                        window.clearInterval(timer);
+                        $('#getVCode').html('获取验证码').attr('disabled',false).css('background-color','#168171');
+
+                    }else{
+                        $('#getVCode').html(i+'秒后重试')
+                        $('#getVCode').attr('disabled',true).css('background-color','#59ccba');
+                    }
+                },1000)
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+    });
+    $('#btn').click(function(){
+        if(!$("input[name='mobilePhone']").val()||!$("input[name='verificationCode']").val()){
+            alert('请输入电话号码或验证码');
+            return;
+        }else{
+            var data = $('form').serialize() + '&openid=' + localStorage.getItem('openid') +'&isRegistered='+ false;
+            console.log(data);
+            $.ajax({
+                url:'/editDetailPersonInfo',
+                type:'post',
+                data: data,
+                success:function(data){
+                    if(data.success){
+                        $('.recommend-mask').css('display','none');
+                    }else{
+                        if(data.msg=="verificationCodeFalse"){
+                            alert('验证码错误');
+                            return;
+                        }
+                    }
+                }
+            })
+        }
+    })
+</script>
+<script type="text/javascript">
+    var map = new BMap.Map("allmap");
+    var newPoint;
+    map.centerAndZoom('北京',12);
+    var selfLocation = {lng:'',lat:''};
+    var chineseAddress='';
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r){
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);
+            map.panTo(r.point);
+            newPoint = new BMap.Point(r.point.lng,r.point.lat);
+            var mOption = {
+                poiRadius : 200,           //半径为1000米内的POI,默认100米
+                numPois : 20                //列举出50个POI,默认10个
+            }
+
+            var myGeo = new BMap.Geocoder();        //创建地址解析实例
+            function displayPOI(){
+                myGeo.getLocation(newPoint,
+                        function mCallback(rs){
+                            var site = rs.addressComponents;
+                            var realSite='';
+                            for(var k in site){
+                                realSite =  site[k] + realSite;
+                            }
+                            var li = document.createElement('li');
+                            li.style.listStyle = 'none';
+                            li.innerHTML =    "1、"  + realSite;
+                            selfLocation.lng= rs.point.lng;
+                            selfLocation.lat= rs.point.lat;
+                            chineseAddress = realSite;
+                            $(li).addClass('choosed');
+
+                            $('#selfCall').html('一键呼救');
+                            $('#selfCall').unbind('click').click(function(){call()});
+                            li.onclick = function(){
+                                map.clearOverlays();
+                                map.addOverlay(new BMap.Marker(rs.point));
+                                console.log(rs.point);
+                                selfLocation.lng= rs.point.lng;
+                                selfLocation.lat= rs.point.lat;
+                                chineseAddress = realSite;
+                                $(this).siblings('li').removeClass('choosed');
+                                $(this).addClass('choosed');
+                            };
+                            var container = document.getElementById("results");
+                            container.appendChild(li);
+                            var allPois = rs.surroundingPois;       //获取全部POI（该点半径为100米内有6个POI点）
+                            allPois.forEach(function(value,index,arr){
+                                var li = document.createElement('li');
+                                li.style.listStyle = 'none';
+                                li.innerHTML =  (index+2) + "、" + value.title + ",地址:" + value.address;
+                                li.onclick = function(){
+                                    map.clearOverlays();
+                                    map.addOverlay(new BMap.Marker(value.point));
+                                    console.log(value.point);
+                                    selfLocation.lng= value.point.lng;
+                                    selfLocation.lat= value.point.lat;
+                                    chineseAddress =  value.title;
+                                    $(this).siblings('li').removeClass('choosed');
+                                    $(this).addClass('choosed');
+                                };
+                                var container = document.getElementById("results");
+                                container.appendChild(li);
+                            })
+                        },mOption
+                );
+            }
+            displayPOI();
+        }
+        else {
+            alert('failed'+this.getStatus());
+        }
+    },{enableHighAccuracy: true});
+</script>
+<script>
+
+    function call(){
+
+        var openid = localStorage.getItem('openid');
+//        var openid ='oY5aUuIaXXFhMJaHnT8ly6IsvL0s';
+        $.ajax({
+            url: '/aidCall',
+            type: 'post',
+            data:{ helpType:0,callerName: openid,lng:selfLocation.lng,lat:selfLocation.lat,address:chineseAddress},
+            success:function(eventList){
+                if(eventList.success){
+                  window.location.href="eventDetail.html?eventCode="+ eventList.data.uid+"&address="+ chineseAddress+"&time="+ eventList.data.time;
+                }
+            }
+        });
+
+    }
+</script>
+<script>
+    $('.videoCall').click(function(){
+        alert('请确保您已开通视频功能')
+    })
+</script>

@@ -1,0 +1,70 @@
+body {
+  background-color: rgba(22, 129, 113, 0.5) !important;
+}
+section {
+  height: 100%;
+  width: 100%;
+}
+section > p {
+  line-height: 2em;
+  height: 2em;
+  text-align: center;
+}
+section > #add-relatives > ul > li {
+  margin: .5rem auto;
+  border-radius: 3px;
+  border: 2px dashed  #168171;
+  line-height: 1rem;
+  text-align: center;
+  color: #168171;
+  width: 80%;
+  height: 1rem;
+}
+section > #show-relatives > ul > li {
+  position: relative;
+  background-color: #fff;
+  padding: .4rem .2rem;
+  width: 80%;
+  margin: .5em auto;
+}
+section > #show-relatives > ul > li > .left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  display: block;
+  border: 1px solid #168171;
+  width: 4em ;
+  height: 4em;
+  border-radius: 2em;
+  line-height: 4em;
+}
+section > #show-relatives > ul > li > .center {
+  margin: 0 auto;
+  width: 50%;
+  padding-left: .5em;
+}
+section > #show-relatives > ul > li > .center > .name {
+  color: #000000;
+}
+section > #show-relatives > ul > li > .center > p {
+  color: #ccc;
+  line-height: 1.5em;
+}
+section > #show-relatives > ul > li > .right {
+  position: absolute;
+  top: 50%;
+  right: .2rem;
+  transform: translateY(-50%);
+  text-align: center;
+  display: block;
+  border: 1px solid #168171;
+  width: 4em ;
+  height: 4em;
+  border-radius: 2em;
+  line-height: 4em;
+  background-image: url('../images/tel.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

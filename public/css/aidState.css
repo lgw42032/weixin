@@ -1,0 +1,17 @@
+header {
+  padding: .2rem 0 .4rem 0;
+  border-bottom: 4px solid #cccccc;
+}
+header > div {
+  text-align: center;
+}
+header > div > h2 {
+  color: #000;
+  line-height: 3em;
+}
+header > div > h2 > img {
+  width: 2em;
+}
+header > div > p {
+  font-size: .28125rem;
+}

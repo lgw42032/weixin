@@ -1,0 +1,77 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.aid-class-content {
+  text-align: center;
+  line-height: .8rem;
+}
+.aid-class-content > .content-nav {
+  border-bottom: 1px solid #ccc;
+}
+.aid-class-content > .content-nav h3 {
+  width: 50%;
+  color: #168171;
+}
+.aid-class-content > .content-nav .border-bottom-1px {
+  border-bottom: 1px solid #168171;
+}
+.aid-class-content > .content > div {
+  display: none;
+}
+.aid-class-content > .content > .choosed {
+  display: block;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category {
+  width: 100%;
+  overflow: auto;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul {
+  border-bottom: 1px solid #ccc;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > li {
+  padding: 0 .4rem;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > .border-bottom-1px {
+  border-bottom: 1px solid #168171;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-content > ul > li {
+  padding: .2rem ;
+  border-bottom: 1px solid #ccc;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-content > ul > li img {
+  width: 1.6rem;
+  height: .9rem;
+}
+.aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-content > ul > li h4 {
+  padding-left: .2rem;
+  box-sizing: border-box;
+  width: 5.5rem;
+  text-align: left;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.aid-class-content > .content > .aid-video-area > ul > li {
+  padding: .2rem ;
+  border-bottom: 1px solid #ccc;
+}
+.aid-class-content > .content > .aid-video-area > ul > li img {
+  width: 1.6rem;
+  height: .9rem;
+}
+.aid-class-content > .content > .aid-video-area > ul > li h4 {
+  padding-right: .2rem;
+  box-sizing: border-box;
+  width: 5.5rem;
+  text-align: left;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

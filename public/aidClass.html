@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>课程列表</title>
+    <link rel="stylesheet" href="/public/css/base.css"/>
+    <link rel="stylesheet" href="/public/js/libs/Swiper-3.4.2/swiper-3.4.2.min.css"/>
+    <link rel="stylesheet" href="css/aidClass.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+</head>
+<body>
+<header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="/public/aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="aid-class-content">
+   <div class="content-nav clearfix">
+       <h3 class="aid-knowledge fl border-bottom-1px">急救常识</h3><h3 class="aid-video fr">急救微视</h3>
+   </div>
+   <div class="content">
+        <div class="aid-knowledge-area choosed">
+            <div class="aid-knowledge-category">
+                <ul class="clearfix">
+                    <li class="fl border-bottom-1px first">全部</li>
+                </ul>
+            </div>
+            <div class="aid-knowledge-content">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div class="aid-video-area">
+            <ul>
+                <li class="clearfix">
+                    <img src="images/heart.png" alt="" class="fl"/>
+                    <h4 class="fl">怎样呼叫120</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script src="/public/js/libs/pxToRem.js"></script>
+<script src="js/libs/template.js"></script>
+<script type="text/html" id="aidKnowledge">
+    {{each data  value i}}
+    <li class="clearfix" data-id="{{value.id}}">
+        <img src="{{value.img}}" alt="" class="fl"/>
+        <h4 class="fl">{{value.title}}</h4>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="aidVideo">
+    {{each data  value i}}
+    <li class="clearfix" data-id="{{value.id}}">
+        <h4 class="fl">{{value.title}}</h4>
+        <img src="{{value.img}}" alt="" class="fl"/>
+    </li>
+    {{/each}}
+</script>
+<script src="/public/js/libs/jquery-3.2.1.min.js"></script>
+<script src="js/header.js" defer="defer"></script>
+<script>
+    function getAidKnowledgeCategoryAllList(city){
+
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidKnowledgeCategoryAllList',
+                type:'get',
+                data:{cityCode:city},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getAidKnowledgeByCategory(city,category,page){
+        console.log(page);
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidKnowledgeByCategory',
+                type:'get',
+                data:{cityCode:city,category:category,page:page},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getAidKnowledgeAllList(city,page){
+        console.log(page);
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidKnowledgeAllList',
+                type:'get',
+                data:{cityCode:city,page:page},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getAidVideoAllList(city){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidVideoAllList',
+                type:'get',
+                data:{cityCode:city},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+
+    $(function(){
+        var cityCode = localStorage.getItem('city');
+        var knowledgePage =1;
+        var videoPage = 1;
+        var p = $('<p></p>');
+        p.html('点击加载更多');
+        $('.aid-knowledge-content').append(p);
+        getAidKnowledgeCategoryAllList(cityCode).then(function(data){
+            var ulWidth= 0;
+            var category = data.data;
+            console.log(category);
+            var index=[];
+            category.forEach(function(v,i,arr){
+                index[i]=1;
+                var li = $('<li></li>');
+                li.html(v.categoryname);
+                li.addClass('fl');
+                li.click(function(){
+                    $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
+                    getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function(aidKnowledge){
+
+                        var aidKnowledgeList = aidKnowledge.data;
+                        $('.aid-knowledge-content>ul').html('');
+                        aidKnowledgeList.forEach(function(v,i,arr){
+                            var li =$('<li></li>');
+                            li.addClass("clearfix");
+                            li.attr('data-id', v.id);
+                            var img = $('<img src="" alt="" class="fl"/>');
+                            img.attr('src', v.img);
+                            li.append(img);
+                            var h4 = $(' <h4 class="fl"></h4>');
+                            h4.html(v.title);
+                            li.append(h4);
+                            $('.aid-knowledge-content>ul').append(li);
+                        });
+                        if(aidKnowledgeList.length<=5){
+                            p.html('已加载全部');
+                            p.unbind('click');
+                        }else{
+                            p.click(function() {
+                                index[i] ++ ;
+                                getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function (aidKnowledge) {
+                                    var aidKnowledgeList = aidKnowledge.data;
+                                    aidKnowledgeList.forEach(function (v, i, arr) {
+                                        var li = $('<li></li>');
+                                        li.addClass("clearfix");
+                                        li.attr('data-id', v.id);
+                                        var img = $('<img src="" alt="" class="fl"/>');
+                                        img.attr('src', v.img);
+                                        li.append(img);
+                                        var h4 = $(' <h4 class="fl"></h4>');
+                                        h4.html(v.title);
+                                        li.append(h4);
+                                        $('.aid-knowledge-content>ul').append(li);
+                                    })
+                                    $('.aid-knowledge-content>ul>li').click(function(){
+                                        var id = $(this).attr('data-id');
+                                        window.location.href="aidKnowledge.html?id="+ id;
+                                    })
+                                })
+                            });
+                        }
+                        $('.aid-knowledge-content>ul>li').click(function(){
+                            var id = $(this).attr('data-id');
+                            window.location.href="aidKnowledge.html?id="+ id;
+                        })
+                    });
+                });
+                $('.aid-knowledge-category>ul').append(li);
+                ulWidth+=li.outerWidth();
+            });
+            ulWidth = ulWidth + $('.first').outerWidth();
+            $('.aid-knowledge-category>ul').width(ulWidth+10);
+        });
+
+        $('.aid-knowledge').click(function(){
+            $(this).addClass('border-bottom-1px');
+            $('.aid-video').removeClass('border-bottom-1px');
+            $('.aid-knowledge-area').addClass('choosed');
+            $('.aid-video-area').removeClass('choosed');
+
+            $('.first').click(function(){
+                $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
+                getAidKnowledgeAllList(cityCode,knowledgePage).then(function(aidKnowledge){
+                    var aidKnowledgeList = aidKnowledge.data;
+                    $('.aid-knowledge-content>ul').html('');
+                    console.log(aidKnowledgeList);
+                    aidKnowledgeList.forEach(function(v,i,arr){
+                        var li =$('<li></li>');
+                        li.addClass("clearfix");
+                        li.attr('data-id', v.id);
+                        var img = $('<img src="" alt="" class="fl"/>');
+                        img.attr('src', v.img);
+                        li.append(img);
+                        var h4 = $(' <h4 class="fl"></h4>');
+                        h4.html(v.title);
+                        li.append(h4);
+                        $('.aid-knowledge-content>ul').append(li);
+                    });
+                    if(aidKnowledgeList.length<=5){
+                        p.html('已加载全部');
+                        p.unbind('click');
+                    }else{
+                        p.click(function() {
+                            knowledgePage ++ ;
+                            getAidKnowledgeAllList(cityCode, knowledgePage).then(function (aidKnowledge) {
+                                var aidKnowledgeList = aidKnowledge.data;
+                                aidKnowledgeList.forEach(function (v, i, arr) {
+                                    var li = $('<li></li>');
+                                    li.addClass("clearfix");
+                                    li.attr('data-id', v.id);
+                                    var img = $('<img src="" alt="" class="fl"/>');
+                                    img.attr('src', v.img);
+                                    li.append(img);
+                                    var h4 = $(' <h4 class="fl"></h4>');
+                                    h4.html(v.title);
+                                    li.append(h4);
+                                    $('.aid-knowledge-content>ul').append(li);
+                                })
+                                $('.aid-knowledge-content>ul>li').click(function(){
+                                    var id = $(this).attr('data-id');
+                                    window.location.href="aidKnowledge.html?id="+ id;
+                                })
+                            })
+                        });
+                    }
+                    $('.aid-knowledge-content>ul>li').click(function(){
+                        var id = $(this).attr('data-id');
+                        window.location.href="aidKnowledge.html?id="+ id;
+                    })
+                })
+            });
+            $('.first').trigger('click');
+
+        });
+        $('.aid-video').click(function(){
+            $(this).addClass('border-bottom-1px');
+            $('.aid-knowledge').removeClass('border-bottom-1px');
+            $('.aid-video-area').addClass('choosed');
+            $('.aid-knowledge-area').removeClass('choosed');
+            getAidVideoAllList(cityCode).then(function(aidVideo){
+                var html = template('aidVideo',aidVideo);
+                $('.aid-video-area>ul').html(html);
+                $('.aid-video-area>ul>li').click(function(){
+                    var id = $(this).attr('data-id');
+                    window.location.href="aidVideo.html?id="+ id;
+                })
+            })
+        })
+        $('.aid-knowledge').trigger('click');
+    })
+</script>
+</body>
+</body>
+</html>

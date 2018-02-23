@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <script src="js/libs/template.js"></script>
+    <link rel="stylesheet" href="css/editCenterRegimenDiet.css"/>
+    <title>急救常识</title>
+    <style>
+        .item-title label{
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .item-title label{
+            display: inline-block;
+            margin-top: 10px;
+        }
+        body{
+            background: #dee9e3
+        }
+    </style>
+    <script type="text/html" id="dataList">
+        {{each data  value i}}
+        <tr><td>{{value.categoryname}}</td><td><a href="javascript:void(0);" data-id="{{value.id}}" class="edit-data" style="margin-right: 20px">编辑</a><a href="javascript:void(0);" data-id="{{value.id}}" class="del-data">删除</a></td></tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+<div class="show-lists">
+    <table>
+        <thead>
+        <tr>
+            <th>急救常识分类列表</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="item-list"></tbody>
+    </table>
+</div>
+<div class="add-item" style="margin-top: 30px">
+   <button id="addItem">增加分类</button>
+</div>
+
+<div class="add-category-form">
+    <h3 class="category-head">增加分类</h3>
+    <div class="item-content">
+        <div class="item-title">
+            <label>分类：</label><input type="text" name="categoryname"/><br/>
+        </div>
+        <input type="hidden" name="id"/>
+    </div>
+    <div class="btn">
+        <button id="save" type="button" >保存</button>
+        <button id="cancel" type="button" style="margin-left: 10px">取消</button>
+    </div>
+</div>
+<script>
+    function getAidKnowledgeCategoryList(city,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidKnowledgeCategoryList',
+                type:'get',
+                data:{cityCode:city,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getAidKnowledgeCategoryItem(city,id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidKnowledgeCategoryItem',
+                type:'get',
+                data:{cityCode:city,id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function addAidKnowledgeCategoryItem(city,id,category,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/addAidKnowledgeCategoryItem',
+                type:'post',
+                data:{cityCode:city,id:id,category:category,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function delAidKnowledgeCategoryItem(id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/delAidKnowledgeCategoryItem',
+                type:'post',
+                data:{id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    $(function(){
+        var centerInfo = $.cookie("centerInfo");
+        centerInfo = JSON.parse(centerInfo);
+        var flag=1;
+        if(centerInfo.cityCode=='99999'){
+            flag=0;
+        }
+        getAidKnowledgeCategoryList(centerInfo.cityCode,flag).then(function(data){
+            console.log(data);
+
+            var html = template('dataList', data);
+            $('.item-list').html(html);
+            $('.edit-data').click(function(){
+                var id = $(this).attr('data-id');
+                getAidKnowledgeCategoryItem(centerInfo.cityCode,id).then(function(data){
+                    console.log(data);
+                    var item =data.data[0];
+                    $('.item-head').html('编辑'+ item.title);
+                    $('.add-category-form').css('display','block');
+                    $("input[name='id']").val(item.id);
+                    $("input[name='categoryname']").val(item.categoryname);
+                })
+            });
+            $('.del-data').click(function(){
+                var id = $(this).attr('data-id');
+                delAidKnowledgeCategoryItem(id).then(function(data){
+                    if(data.success){
+                        location.reload();
+                    }
+                })
+            })
+        });
+
+        $('#addItem').click(function(){
+            $('.category-head').html('增加分类')
+            $('.add-category-form').css('display','block');
+        });
+        $('#cancel').click(function(){
+            $("input[name='id']").val(null);
+            $("input[name='addCategory']").val(null);
+            $('.add-category-form').css('display','none');
+        });
+        $('#save').click(function(){
+            var id = $("input[name='id']").val();
+            var category=$("input[name='categoryname']").val();
+            var flag;
+            if(centerInfo.cityCode=='99999'){
+                flag = 0;
+            }else{
+                flag = 1;
+            }
+            addAidKnowledgeCategoryItem(centerInfo.cityCode,id,category,flag).then(function(data){
+                console.log(data);
+                if(data.success){
+                    $("input[name='id']").val(null);
+                    $("input[name='categoryname']").val(null);
+                    location.reload();
+                }
+            })
+        })
+
+
+    })
+</script>
+</body>
+</html>

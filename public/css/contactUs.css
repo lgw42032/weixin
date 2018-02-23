@@ -1,0 +1,34 @@
+form {
+  width: 400px;
+  position: absolute;
+  font-size: 18px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form label {
+  display: inline-block;
+  width: 25%;
+  line-height: 2em;
+  box-sizing: border-box;
+}
+form input {
+  display: inline-block;
+  width: 75%;
+  line-height: 2em;
+  box-sizing: border-box;
+}
+form a {
+  color: blue;
+}
+form > .btn {
+  margin-top: 10px;
+  text-align: center;
+}
+form > .btn #save {
+  border: none;
+  background-color: #168171;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}

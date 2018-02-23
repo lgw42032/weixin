@@ -1,0 +1,177 @@
+.border-1px,
+.border-bottom-1px,
+.border-top-1px,
+.border-left-1px,
+.border-right-1px {
+  position: relative;
+}
+/*线条颜色 黑色*/
+.border-1px::after,
+.border-bottom-1px::after,
+.border-top-1px::after,
+.border-left-1px::after,
+.border-right-1px::after {
+  background-color: #ccc;
+}
+/*底边边框一像素*/
+.border-bottom-1px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0 0;
+}
+/*上边边框一像素*/
+.border-top-1px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0 0;
+}
+/*左边边框一像素*/
+.border-left-1px::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform-origin: 0 0;
+}
+/*右边边框1像素*/
+.border-right-1px::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform-origin: 0 0;
+}
+/*边框一像素*/
+.border-1px::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+/*设备像素比*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+  .border-bottom-1px::after,
+  .border-top-1px::after {
+    transform: scaleY(0.5);
+  }
+  .border-left-1px::after,
+  .border-right-1px::after {
+    transform: scaleX(0.5);
+  }
+  .border-1px::after {
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+  }
+}
+/*设备像素比*/
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx) {
+  .border-bottom-1px::after,
+  .border-top-1px::after {
+    transform: scaleY(0.333);
+  }
+  .border-left-1px::after,
+  .border-right-1px::after {
+    transform: scaleX(0.333);
+  }
+  .border-1px::after {
+    width: 300%;
+    height: 300%;
+    transform: scale(0.333);
+    transform-origin: 0 0;
+  }
+}
+header {
+  position: relative;
+  height: 2rem;
+  background: linear-gradient(to right, #168171, #21ffc9);
+  border-bottom: 1px solid #168171 ;
+  padding: 1.1em 0;
+  padding-left: 5.5em;
+  box-sizing: border-box;
+}
+header .header-img {
+  box-sizing: border-box;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-size: contain;
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .header-content > h3 {
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px #fff;
+}
+header .header-content > p {
+  font-size: .7em;
+  line-height: 2em;
+  color: #fff;
+}
+section .content > form .form-title {
+  text-align: center;
+  height: 3em;
+  line-height: 3em;
+  color: #168171;
+  font-size: 1.2em;
+}
+section .content > form label {
+  line-height: 3em;
+  height: 3em;
+}
+section .content > form input {
+  line-height: 3em;
+  height: 3em;
+}
+section .content > form div {
+  color: #ccc;
+}
+section .content > form .form-item {
+  display: inline-block;
+  padding-left: 1em;
+  width: 7em;
+}
+section .content > form .require {
+  color: red;
+}
+section .content > form .margin-left {
+  margin-left: 2em;
+}
+section .content > form button {
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  padding: .5em 3em;
+  color: #fff;
+  background-color: #59ccba;
+  border-radius: 2px;
+}
+section .content > form .btn {
+  width: 100%;
+  text-align: center;
+}
+section .content > form select {
+  width: 60%;
+  border: none;
+}

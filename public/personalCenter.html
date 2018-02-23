@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/personalCenter.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+<header>
+    <div class="headerContent clearfix">
+        <div class="headerImg"></div>
+        <span class="nickname"></span>
+    </div>
+</header>
+<section class="personal-info">
+    <ul class="detail-info">
+        <li>
+            <a href="selfInfo.html" class="clearfix">
+                <div class="fl">
+                    <img src="" alt=""/><span>我的档案</span>
+                </div>
+                <div class="fr">
+                    <span>建立您的个人档案</span><img src="images/rightArrow.png" alt="" />
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="healthInfo.html" class="clearfix">
+                <div class="fl">
+                    <img src="" alt=""/><span>健康信息</span>
+                </div>
+                <div class="fr">
+                    <span>建立您的健康档案</span><img src="images/rightArrow.png" alt="" />
+                </div>
+            </a>
+        </li>
+        <li style="border-bottom: none">
+            <a href="relativesInfo.html" class="clearfix">
+                <div class="fl">
+                    <img src="" alt=""/><span>亲朋信息</span>
+                </div>
+                <div class="fr">
+                    <span>建立您的亲朋信息</span><img src="images/rightArrow.png" alt="" />
+                </div>
+            </a>
+        </li>
+    </ul>
+    <ul class="service-info">
+        <li class="service-record">
+            <a href="" class="clearfix">
+                <div class="fl">
+                    <img src="" alt=""/><span>服务记录</span>
+                </div>
+                <div class="fr">
+                    <span>查看您的服务记录</span><img src="images/rightArrow.png" alt="" />
+                </div>
+            </a>
+        </li>
+        <li style="border-bottom: none">
+            <a href="feedback.html" class="clearfix">
+                <div class="fl">
+                    <img src="" alt=""/><span>意见反馈</span>
+                </div>
+                <div class="fr">
+                    <span>反馈您的意见与建议</span><img src="images/rightArrow.png" alt="" />
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+<footer class="footer-nav">
+    <ul>
+        <li style="color:#168171"><a href="microNet.html"><img src="images/computer%20(2).png" alt=""/>微网站</a></li>
+        <li><a href="microAid.html"><img src="images/aid%20(2).png" alt=""/>智慧急救</a></li>
+        <li><a href="personalCenter.html"><img src="images/mine.png" alt=""/>我的</a></li>
+    </ul>
+</footer>
+<script src="js/libs/pxToRem.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    //处理openid
+    $(function(){
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        var openid = GetQueryString('openid');
+        var city = GetQueryString('city');
+        var token = GetQueryString('token');
+        openid = 'oY5aUuIaXXFhMJaHnT8ly6IsvL0s';
+        if(openid){
+            localStorage.setItem('openid',openid);
+            localStorage.setItem('city',city);
+            localStorage.setItem('token',token);
+        }else{
+            openid = localStorage.getItem('openid');
+            city = localStorage.getItem('city');
+        }
+
+        $('.service-record>a').attr('href','serviceRecord.html?callerName='+openid);
+        $.ajax({
+            url:'/getDetailPersonInfo',
+            type: 'get',
+            data:{openid:openid},
+            success:function(data){
+                var userInfo = data.data[0];
+                var userInfoStr = JSON.stringify(userInfo);
+                localStorage.setItem('userInfoStr',userInfoStr);
+                $('header .nickname').html(userInfo.nickname);
+                $('.headerContent').css('width',$('.nickname').outerWidth()+ $('.headerImg').outerWidth()*0.75 );
+                $('.headerImg').css('background-image','url('+ userInfo.headimgurl+')');
+            }
+        })
+
+    })
+    //获取用户openid
+
+</script>
+</body>
+</html>

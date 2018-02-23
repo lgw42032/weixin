@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <script src="js/libs/template.js"></script>
+    <link rel="stylesheet" href="css/editCenterRegimenDiet.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="js/libs/ueditor/lang/zh-cn/zh-cn.js"> </script>
+    <title></title>
+    <script type="text/html" id="dataList">
+        {{each data  value i}}
+                <tr><td>{{value.title}}</td><td><a href="javascript:void(0);" data-id="{{value.id}}" class="edit-data" style="margin-right: 20px">编辑</a><a href="javascript:void(0);" data-id="{{value.id}}" class="del-data">删除</a></td></tr>
+        {{/each}}
+    </script>
+</head>
+<body style="background: #dee9e3">
+<div class="show-lists">
+    <table>
+        <thead>
+        <tr>
+            <th>食疗列表</th><th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="item-list"></tbody>
+    </table>
+</div>
+<div class="add-item" style="margin-top: 30px">
+    <button id="addItem">增加条目</button>
+</div>
+<div class="add-item-form">
+    <h3>增加条目</h3>
+    <div class="item-content">
+        <div class="item-title"><label>标题：</label><input type="text" name="title"/></div>
+        <input type="hidden" name="id"/>
+        <script id="editor" type="text/plain" style="width:100%;height:400px;"></script>
+    </div>
+
+    <div class="btn">
+        <button id="save" type="button" >保存</button>
+        <button id="cancel" type="button" style="margin-left: 10px">取消</button>
+    </div>
+</div>
+<script>
+    function getCenterRegimenDietList(city,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getCenterRegimenDietList',
+                type:'get',
+                data:{cityCode:city,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function getCenterRegimenDietItem(city,id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getCenterRegimenDietItem',
+                type:'get',
+                data:{cityCode:city,id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function addCenterRegimenDietItem(city,id,title,content,flag){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/addCenterRegimenDietItem',
+                type:'post',
+                data:{cityCode:city,id:id,title:title,content:content,flag:flag},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    function delCenterRegimenDietItem(id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/delCenterRegimenDietItem',
+                type:'post',
+                data:{id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    $(function(){
+        var ue = UE.getEditor('editor');
+        var centerInfo = $.cookie("centerInfo");
+        centerInfo = JSON.parse(centerInfo);
+        var flag=1;
+        if(centerInfo.cityCode=='99999'){
+            flag=0;
+        }
+        getCenterRegimenDietList(centerInfo.cityCode,flag).then(function(data){
+            console.log(data);
+
+            var html = template('dataList', data);
+            $('.item-list').html(html);
+            $('.edit-data').click(function(){
+                var id = $(this).attr('data-id');
+                getCenterRegimenDietItem(centerInfo.cityCode,id).then(function(data){
+                    console.log(data);
+                    var item =data.data[0];
+                    $('h3').html('编辑'+ item.title);
+                    $('.add-item-form').css('display','block');
+                    $("input[name='title']").val(item.title);
+                    $("input[name='id']").val(item.id);
+                    ue.execCommand('insertHtml', item.content);
+                })
+            });
+            $('.del-data').click(function(){
+                var id = $(this).attr('data-id');
+                delCenterRegimenDietItem(id).then(function(data){
+                   if(data.success){
+                       location.reload();
+                   }
+                })
+            })
+        });
+
+        $('#addItem').click(function(){
+            $('h3').html('增加条目')
+            ue.setContent('');
+            $('.add-item-form').css('display','block');
+        });
+        $('#cancel').click(function(){
+            ue.setContent('');
+            $("input[name='id']").val(null);
+            $("input[name='title']").val(null);
+            $('.add-item-form').css('display','none');
+        });
+        $('#save').click(function(){
+            var html = UE.getEditor('editor').getContent();
+            var title = $("input[name='title']").val();
+            var id = $("input[name='id']").val();
+            var flag;
+            if(centerInfo.cityCode=='99999'){
+                flag = 0;
+            }else{
+                flag = 1;
+            }
+            addCenterRegimenDietItem(centerInfo.cityCode,id,title,html,flag).then(function(data){
+                console.log(data);
+                if(data.success){
+                    ue.setContent('');
+                    $("input[name='id']").val(null);
+                    $("input[name='title']").val(null);
+                    location.reload();
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+header {
+  position: relative;
+  height: 3rem;
+  background: linear-gradient(to right, #168171, #21ffc9);
+  border-bottom: 1px solid #168171 ;
+}
+header > .headerContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+header > .headerContent > .headerImg {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-size: contain;
+  position: relative;
+  z-index: 10;
+}
+header > .headerContent > .nickname {
+  position: absolute;
+  left: 1.125rem;
+  bottom: .5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 8em;
+  background-color: #168171;
+  line-height: 2em;
+  color: #fff;
+  padding-left: 2em;
+  padding-right: 1em;
+  border-radius: 1em ;
+}
+.personal-info {
+  background-color: #ddd;
+  overflow: hidden;
+}
+.personal-info > ul {
+  padding: 0 1em ;
+  margin-top: 1em;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 0.28125rem;
+}
+.personal-info > ul > li {
+  line-height: 3em;
+  height: 3em;
+  border-bottom: 1px solid #ddd;
+}
+.personal-info > ul > li > a {
+  display: block;
+}
+.personal-info > ul > li > a > .fr {
+  color: #ddd;
+}
+.personal-info > ul > li > a > .fr img {
+  width: 1.4em;
+}

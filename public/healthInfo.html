@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>健康信息</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/selfInfo.css"/>
+
+    <style>
+        section form .form-item
+        {
+            width: 6em;
+        }
+       input{
+           width: 58%;
+       }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-img"></div>
+    <div class="header-content">
+        <h3>健康信息</h3>
+        <p>请留下您的健康档案，为您服务时，我们需要它</p>
+    </div>
+</header>
+<section>
+    <form>
+        <label class="form-item">身高：</label><input type="text"  name="height"/><label class="unit">厘米</label><br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">体重：</label><input type="text"  name="weight"/><label class="unit">公斤</label><br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">血型：</label>
+        <select name="bloodType">
+            <option value= null>请选择</option>
+            <option value="A">A型</option>
+            <option value="B">B型</option>
+            <option value="AB">AB型</option>
+            <option value="O">O型</option>
+            <option value="unknown">未知</option>
+        </select>
+        <br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">常用药物：</label><input type="text"  name="commonDrugs"/><br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">慢性病：</label><input type="text" name="chronicDisease"/><br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">过敏史：</label><input type="text"  name="allergies"/><br/>
+        <div class="line border-bottom-1px"></div>
+        <label class="form-item">其他：</label><input type="text" name="others"/><br/>
+        <div class="line border-bottom-1px"></div>
+        <div class="btn">
+            <button id="save" type="button" style="background: #168171" >保存</button>
+        </div>
+    </form>
+</section>
+<script src="js/libs/pxToRem.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        var openid=localStorage.getItem('openid');
+     //   $('header .header-img').css('background-image','url('+ localStorage.getItem('headimgurl')+')');
+  	     var userInfoStr = localStorage.getItem('userInfoStr');
+             var userInfo=JSON.parse(userInfoStr);
+             $('header .header-img').css('background-image','url('+ userInfo.headimgurl+')');
+        $.ajax({
+            url:'/getHealthInfo',
+            type:'get',
+            data:{relationuid:openid},
+            success:function(data){
+                var healthInfo = data.data[0];
+                $("input[name='height']").val(healthInfo.height);
+                $("input[name='weight']").val(healthInfo.weight);
+                $("select").val(healthInfo.bloodType);
+                $("input[name='commonDrugs']").val(healthInfo.commonDrugs);
+                $("input[name='chronicDisease']").val(healthInfo.chronicDisease);
+                $("input[name='allergies']").val(healthInfo.allergies);
+                $("input[name='others']").val(healthInfo.others);
+            }
+        });
+
+        $('#save').click(function(){
+            var data = $('form').serialize() + '&relationuid=' + localStorage.getItem('openid');
+            console.log(data);
+            $.ajax({
+                url:'/editHealthInfo',
+                type:'post',
+                data: data,
+                success:function(data){
+                    if(data.success){
+                        window.location.href="personalCenter.html";
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

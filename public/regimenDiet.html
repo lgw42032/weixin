@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/regimenDiet.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+
+    <title>养生食疗</title>
+    <script src="js/libs/template.js"></script>
+    <script type="text/html" id="dataList">
+        {{each data  value i}}
+        <li class="item" data-item="{{value.id}}">
+            {{value.title}}
+        </li>
+        {{/each}}
+    </script>
+</head>
+<body>
+<header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="content">
+    <ul class="item-list">
+
+    </ul>
+</section>
+<script src="js/libs/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="js/libs/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/regimenDiet.js"></script>
+    <script src="js/header.js" defer="defer"></script>
+<script>
+    function getCenterRegimenDietAllList(city){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getCenterRegimenDietAllList',
+                type:'get',
+                data:{cityCode:city},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+    $(function(){
+        var cityCode = localStorage.getItem('city');
+        getCenterRegimenDietAllList(cityCode).then(function(data){
+            var html = template('dataList', data);
+            $('.item-list').html(html);
+            $('.item').click(function(){
+                var id = $(this).attr('data-item');
+                window.location.href="showRegimenDietItem.html?id="+id;
+            })
+        });
+    })
+
+</script>
+</body>
+</html>

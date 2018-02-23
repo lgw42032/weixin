@@ -1,0 +1,79 @@
+.recommend-mask {
+    text-align: center;
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+.recommend-mask > .recommend {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 3px;
+    width: 90%;
+    line-height: 2em;
+}
+.recommend-mask > .recommend > h3 {
+    line-height: 3em;
+    height: 3em;
+    /*font-size: 1.2em;*/
+}
+.recommend-mask > .recommend > p {
+    line-height: 1.5em;
+    width: 17em;
+    text-align: left;
+    padding: 0 2em;
+    color: #ccc;
+    padding-bottom: 1em;
+}
+.recommend-mask > .recommend > div > span {
+    font-size: 1.2em;
+    display: inline-block;
+    line-height: 3em;
+    height: 3em;
+    text-align: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+.recommend-mask > .recommend > div > span > a {
+    color: #168171;
+}
+.recommend-mask > .recommend > form{
+    padding-left: 1em;
+    text-align: left;
+}
+.recommend-mask > .recommend > form > input{
+    border: 1px solid #ccc;
+    line-height: 2em;
+    padding-left: 1em;
+}
+.recommend-mask > .recommend > form >.verificationCode{
+    width: 6em;
+}
+#getVCode{
+    display: inline-block;
+    /* margin-top: 0; */
+    /* margin-bottom: 0; */
+    padding: .5em;
+    /*margin: .5em;*/
+    margin-right: 1em;
+    color: #fff;
+    background-color: #168171;
+    border-radius: 2px;
+}
+#btn{
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em 3em;
+    color: #fff;
+    background-color: #168171;
+    border-radius: 2px;
+}

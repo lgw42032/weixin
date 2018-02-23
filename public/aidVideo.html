@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>急救微课</title>
+    <link rel="stylesheet" href="/public/css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+
+    <style>
+        section {
+            padding: .2rem;
+        }
+        .detail >p{
+            text-align: center;
+            line-height: 2em;
+            border-bottom: 1px solid #ccc;
+            color: #168171;
+        }
+        .detail-content {
+            border: 1px solid #ccc;
+        }
+        .video-detail{
+            line-height: 2em;
+            padding-left: .5em;
+        }
+        .detail-content{
+            margin-top: 1em;
+        }
+        .detail-content .video-title{
+            text-align: center;
+            line-height: 2em;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="/public/aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="/public/hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="video">
+    <video src="" autoplay controls width="100%"></video>
+</section>
+<section class="detail">
+
+    <p>课堂详情</p>
+    <div class="detail-content">
+        <h3 class="video-title"></h3>
+       <div class="video-detail"></div>
+   </div>
+</section>
+<script src="/public/js/libs/pxToRem.js"></script>
+<script src="js/libs/template.js"></script>
+<script type="text/html" id="aidVideo">
+    {{each data  value i}}
+    <li class="clearfix" data-id="{{value.id}}">
+        <img src="{{value.img}}" alt="" class="fl"/>
+        <h4 class="fl">{{value.title}}</h4>
+    </li>
+    {{/each}}
+</script>
+<script src="/public/js/libs/jquery-3.2.1.min.js"></script>
+<script src="js/header.js" defer="defer"></script>
+<script>
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+    function getAidVideoItem(city,id){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAidVideoItem',
+                type:'get',
+                data:{cityCode:city,id:id},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    reject(err)
+                }
+            })
+        });
+    }
+
+    $(function(){
+        var cityCode = localStorage.getItem('city');
+        var id = GetQueryString('id');
+        getAidVideoItem(cityCode,id).then(function(data){
+            var aidVideo= data.data[0];
+            $('.video>video').attr('src',aidVideo.videoUrl);
+            $('.video-detail').html(aidVideo.videoDetail);
+            $('.video-title').html(aidVideo.title);
+
+        })
+    })
+</script>
+</body>
+</body>
+</html>

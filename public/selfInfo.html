@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>基本信息</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/selfInfo.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+    <style>
+        .sms{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+     <header>
+             <div class="header-img"></div>
+             <div class="header-content">
+                 <h3>个人档案</h3>
+                 <p>请留下您的健康档案，为您服务时，我们需要它</p>
+             </div>
+     </header>
+    <section>
+        <form action="http://www.baidu.com">
+            <label class="form-item require">姓名：</label><input type="text" placeholder="请输入真实姓名（必填）" name="realName"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">性别：</label><label for="male">男</label><input type="radio" name="sex" id="male" value="1"/></label><label class="margin-left" for="female">女</label><input type="radio" name="sex" id="female" value="0"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">年龄：</label><input type="text" placeholder="请输入真实年龄" name="age"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">身份证号：</label><input type="text" placeholder="请输入真实身份证" name="idNumber"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item require">手机号：</label><input type="text" placeholder="请输入真实手机号（必填）" name="mobilePhone"/><br/>
+            <div class="line border-bottom-1px sms"></div>
+            <div class="sms clearfix">
+                <label class="form-item sms fl">验证码：</label><input type="text" class="fl" style="width: 6em" name="verificationCode"/> <button class="getVCode fl" id="getVCode" type="button" >获取验证码</button><br/>
+            </div>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item require">地址：</label><input type="text" placeholder="请输入真实地址（必填）" name="address"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">联络人1：</label><input type="text" placeholder="报警时短信自动联络此人" name="contactPerson1"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">联络人1手机：</label><input type="text" placeholder="紧急联络人手机号" name="linkTele1"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">联络人2：</label><input type="text" placeholder="报警时短信自动联络此人" name="contactPerson2"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <label class="form-item">联络人2手机：</label><input type="text" placeholder="紧急联络人手机号" name="linkTele2"/><br/>
+            <div class="line border-bottom-1px"></div>
+            <input type="checkbox" id="isAgree" style="margin-left: 1em"/><label for="isAgree"><a href="#">我同意《河南急救服务条款》</a></label>
+            <div class="line border-bottom-1px"></div>
+            <div class="btn">
+                <button id="save" type="button" disabled="disabled">保存</button>
+            </div>
+        </form>
+    </section>
+     <script src="js/libs/jquery-3.2.1.min.js"></script>
+     <script>
+         $(function(){
+//             var openid = localStorage.getItem('openid');
+//             var userInfoStr = localStorage.getItem('userInfoStr');
+//             var userInfo=JSON.parse(userInfoStr);
+//             $('header .header-img').css('background-image','url('+ userInfo.headimgurl+')');
+//             $("input[name='realName']").val(userInfo.realName);
+//             $("input[value="+ userInfo.sex +"]").prop('checked',true);
+//             $("input[name='age']").val(userInfo.age);
+//             $("input[name='idNumber']").val(userInfo.idNumber);
+//             $("input[name='mobilePhone']").val(userInfo.mobilePhone);
+//             $("input[name='address']").val(userInfo.address);
+//             $("input[name='contactPerson1']").val(userInfo.contactPerson1);
+//             $("input[name='linkTele1']").val(userInfo.linkTele1);
+//             $("input[name='contactPerson2']").val(userInfo.contactPerson2);
+//             $("input[name='linkTele2']").val(userInfo.linkTele2);
+         })
+     </script>
+     <script>
+         $(function(){
+                var isRegistered  = false;
+                var openid = localStorage.getItem('openid');
+                var userInfoStr = localStorage.getItem('userInfoStr');
+                var userInfo=JSON.parse(userInfoStr);
+                var userPhone = userInfo.mobilePhone;
+//              var userPhone = '15617878090';
+                if(!!userPhone&&userPhone.indexOf('1')==0){
+                    isRegistered = true;
+                }
+                 $('header .header-img').css('background-image','url('+ userInfo.headimgurl+')');
+                 $("input[name='realName']").val(userInfo.realName);
+                 if(!! userInfo.sex){
+                     $("input[value="+ userInfo.sex +"]").prop('checked',true);
+                 }
+                 $("input[name='age']").val(userInfo.age);
+                 $("input[name='idNumber']").val(userInfo.idNumber);
+                 $("input[name='mobilePhone']").val(userInfo.mobilePhone);
+                 $("input[name='address']").val(userInfo.address);
+                 $("input[name='contactPerson1']").val(userInfo.contactPerson1);
+                 $("input[name='linkTele1']").val(userInfo.linkTele1);
+                 $("input[name='contactPerson2']").val(userInfo.contactPerson2);
+                 $("input[name='linkTele2']").val(userInfo.linkTele2);
+
+            
+             var checkSuccess = false;
+ 	         var city = localStorage.getItem('city');
+             if(!isRegistered){
+                 $('.sms').css('display','block');
+             }else{
+                 $('.sms').css('display','none');
+             }
+             $("input[name='mobilePhone']").on('input propertychange',function(){
+                 if(!!userPhone){
+                     if($(this).val()!= userPhone){
+                         $('.sms').css('display','block');
+                         isRegistered = false;
+                     }else{
+                         $('.sms').css('display','none');
+                         isRegistered = true;
+                     }
+                 }
+             });
+
+             $('#isAgree').change(function(){
+                 if($(this).prop('checked')){
+                     $('#save').removeAttr("disabled").css('background-color','#168171');
+                 }else{
+                     $('#save').attr('disabled',"true").css('background-color','#59ccba')
+                 }
+             })
+             function checkNull(){
+                 if(!$("input[name='realName']").val()){
+                     alert('姓名不能为空') ;
+                     return;
+                 }else if(!$("input[name='mobilePhone']").val()){
+                     alert('手机号不能为空') ;
+                     return;
+                 }else if(!$("input[name='address']").val()){
+                     alert('地址不能为空') ;
+                     return;
+                 }else{
+                     checkSuccess = true;
+                     return;
+                 }
+             }
+             function checkVC(){
+                 if(!$("input[name='verificationCode']").val()){
+                     alert('请输入验证码');
+                 }
+             }
+             $('#getVCode').click(function(){
+                 var mobilePhone  =  $("input[name='mobilePhone']").val();
+                 if(!mobilePhone){
+                     alert('手机号不能为空') ;
+                     return;
+                 }
+                 $.ajax({
+                     url:'/sendMessage',
+                     type:'post',
+                     data:{mobilePhone:mobilePhone},
+                     success:function(data){
+                         console.log('sendMessageSuccess');
+                         var i=60;
+                         var timer = setInterval(function(){
+                             i--;
+                             console.log(i);
+                             if(i<0){
+                                 window.clearInterval(timer);
+                                 $('#getVCode').html('获取验证码').attr('disabled',false).css('background-color','#168171');
+
+                             }else{
+                                 $('#getVCode').html(i+'秒后重试')
+                                 $('#getVCode').attr('disabled',true).css('background-color','#59ccba');
+
+                             }
+                         },1000)
+                     },
+                     error:function(err){
+                         console.log(err);
+                     }
+                 })
+             })
+            $('#save').click(function(){
+
+                checkNull();
+                if(!isRegistered){
+                    if(!$("input[name='verificationCode']").val()){
+                        alert('请输入验证码');
+                        return;
+                    }
+                }
+                if(!checkSuccess){
+                    return;
+                }else{
+                    var data = $('form').serialize() + '&openid=' + openid +'&isRegistered=' + isRegistered;
+                    console.log(data);
+                    $.ajax({
+                        url:'/editDetailPersonInfo',
+                        type:'post',
+                        data: data,
+                        success:function(data){
+                            if(data.success){
+                                window.location.href= "personalCenter.html";
+                            }else {
+                                if(data.msg=="verificationCodeFalse"){
+                                    alert('验证码错误');
+                                    return;
+                                }
+                            }
+                        }
+                    })
+                }
+            })
+         })
+     </script>
+</body>
+</html>

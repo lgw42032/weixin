@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>120微信公众号管理系统</title>
+    <link rel='stylesheet' href='css/adminHeader.css'/>
+    <link rel="Shortcut Icon" href="favicon.ico">
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var mainTabs;
+        var mainMenu;
+        var centerInfo = $.cookie("centerInfo");
+        centerInfo = eval("(" + centerInfo + ")");
+        $(document).ready(function () {
+            if (!isEmpty(centerInfo)) {
+                $("#username").html(centerInfo.centerName);
+                $("#stationName").html(centerInfo.centerName);
+            }
+
+            /* 修改密码 */
+            $('#passwordDialog').show().dialog({
+                modal: true,
+                closable: true,
+                iconCls: 'ext-icon-lock_edit',
+                buttons: [{
+                    text: '修改',
+                    handler: function () {
+                        if ($('#passwordDialog form').form('validate')) {
+                            $.post('/users/changePwd', {
+                                'dataPwd': $('#pwd').val()
+                            }, function (result) {
+                                if (result.success) {
+                                    $.messager.alert('提示', '密码修改成功！', 'info');
+                                    $('#passwordDialog').dialog('close');
+                                } else {
+                                    $.messager.alert('提示', '密码修改失败！', 'info');
+                                    $('#passwordDialog').dialog('close');
+                                }
+                            }, 'json');
+                        }
+                    }
+                }],
+                onOpen: function () {
+                    $('#passwordDialog form :input').val('');
+                }
+            }).dialog('close');
+
+            initPage();
+
+        });
+    </script>
+</head>
+<body class="easyui-layout">
+<!--顶部信息-->
+<div data-options="region:'north',split:false" style="height: 65px;">
+    <div class="header">
+        <div class="right_head">
+            <a class="button fr" href="/public/login.html"><i class="icon icon_top_exit"></i>退出</a>
+            <a class="button fr" id="editPass" onclick="$('#passwordDialog').dialog('open');"><i
+                    class="icon icon_top_edit"></i>修改密码</a>
+            <a class="button fr no-border-l">
+                <img src="images/def_head.png" class="vm mr10" alt=""><span id="username">无名氏</span>
+            </a>
+        </div>
+        <div class="left_head">
+            <img src="images/logo.png"/>
+            <span>微信公众号管理系统</span>
+        </div>
+        <div class="middle_head">
+            <span id="stationName"></span>
+        </div>
+    </div>
+</div>
+<!--底部版权相关信息-->
+<div data-options="region:'south',split:true," style="height:25px;">
+    <div style="text-align: center;">
+        <span style="font-size: 12px; font-weight: bold; color: #43b1fe;margin: 0 auto">郑州祥和盛电子技术有限公司</span>
+    </div>
+</div>
+<!--左侧菜单导航栏-->
+<div data-options="region:'west',title:'导航',split:true" style="width: 200px;background: #2f8771;">
+    <!-- <div id="menu_left" class="easyui-accordion" data-options="fit:true">
+     </div>-->
+    <ul id="mainMenu">
+    </ul>
+</div>
+<!--中间内容呈现区-->
+<div data-options="region:'center'" style="">
+    <div id="mainTabs" class="easyui-tabs" data-options="fit:true">
+        <div title="欢迎" data-options="iconCls:'ext-icon-page',closable:false,fit:true">
+            <iframe src="/public/welcome.html" style="border: 0; width: 100%; height: 99%;"></iframe>
+        </div>
+    </div>
+</div>
+<div id="passwordDialog" title="修改密码" style="display: none;width: 400px;">
+    <form method="post" class="form" onsubmit="return false;" style="margin: 10px 85px">
+        <table class="table">
+            <tr>
+                <th>新密码</th>
+                <td><input id="pwd" name="dataPwd" type="password"
+                           class="easyui-validatebox" data-options="required:true"/></td>
+            </tr>
+            <tr>
+                <th>重复密码</th>
+                <td><input type="password" class="easyui-validatebox"
+                           data-options="required:true,validType:'eqPwd[\'#pwd\']'"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        !(function () {
+            var flag = true;
+            $('#mainMenu>li>div').on('click', function () {
+                flag = !flag;
+                if (flag == true) {
+                    $(this).next('ul').slideDown("slow");
+                    $(this).find('span:eq(0)').css({
+                        'transform': 'rotate(0deg)'
+                    });
+                } else {
+                    $(this).next('ul').slideUp("slow");
+                    $(this).find('span:eq(0)').css({
+                        'transform': 'rotate(450deg)'
+                    });
+                }
+            });
+        })();
+        $('.tree-hit.tree-expanded').on('click', function () {
+            $('#_easyui_tree_1 + ul').css("display", 'block');
+        })
+    })
+</script>

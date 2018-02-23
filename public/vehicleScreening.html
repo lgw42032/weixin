@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/vehicleScreening.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+    <link rel="stylesheet" href="js/libs/Swiper-3.4.2/swiper-3.4.2.min.css"/>
+    <title>车牌号查询</title>
+</head>
+<body>
+    <header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+    <section class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="queryArea">
+        <div class="reminder">
+            您可以通过输入3位连续车牌号或车身编码，查询甄别车辆信息，以便确认是否是急救中心的正规车辆
+        </div>
+        <div class="queryContent">
+            <form action="#">
+                <input type="text" placeholder="请输入三位连续车牌号如：888" class="plateNumber"/> <br/>
+                <input type="button" value="查询" id="btn"/>
+            </form>
+        </div>
+        <div class="queryResult">
+            <ul id="vehicleList"></ul>
+        </div>
+    </section>
+    <script src="js/libs/pxToRem.js"></script>
+    <script src="js/libs/template.js"></script>
+    <script type="text/html" id="queryResult">
+        {{each data  value i}}
+        <li>
+            <p><label>车牌号：</label><span>{{value.plateNumber}}</span></p>
+            <p><label>查询结果：</label><span>{{value.stationName}}</span></p>
+        </li>
+        {{/each}}
+    </script>
+    <script type="text/html" id="centerImgUrl">
+        {{each list  value i}}
+        <div class="swiper-slide">
+            <img src="{{value}}" alt="{{value}}" width="100%" />
+        </div>
+        {{/each}}
+    </script>
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script src="js/header.js" defer="defer"></script>
+    <script src="js/libs/Swiper-3.4.2/swiper-3.4.2.jquery.min.js"></script>
+    <script src="js/vehicleScreening.js"></script>
+    <script>
+        var city = localStorage.getItem('city');
+        function getConfig(){
+            return new Promise(function(resolve,reject){
+                $.ajax({
+                    url:'/getConfig',
+                    type:'get',
+                    success:function(data){
+                        resolve(data);
+                    },
+                    error:function(err){
+                        reject(err)
+                    }
+                })
+            });
+        }
+        var host = '';
+        getConfig().then(function(config){
+            host = config.host;
+            var centerInfoStr = localStorage.getItem('centerInfoStr');
+            var centerInfo=JSON.parse(centerInfoStr);
+            var imgUrl = centerInfo.centerImgUrl.split(';');
+            console.log(imgUrl);
+            var imgObj={};
+            imgObj.list =  imgUrl.map(function(v,i,arr){
+                return  host + v;
+            });
+            console.log(imgObj);
+            var html = template('centerImgUrl', imgObj);
+            $('.swiper-wrapper').html(html);
+            var mySwiper = new Swiper ('.swiper-container', {
+                loop: true,
+                autoplay: 3000,
+                pagination: '.swiper-pagination'
+            });
+        });
+        $('#btn').click(function(){
+            var plateNumber = $('.plateNumber').val();
+            console.log(plateNumber);
+            $.ajax({
+                url:'/searchVehicles',
+                type:'get',
+                data:{cityCode:city,plateNumber:plateNumber },
+                success:function(vehicleList){
+                    if(vehicleList.data.length==0) {
+                        alert('没有查询到类似车辆')
+                    }else{
+                        var html = template('queryResult',vehicleList);
+                        $('#vehicleList').html(html);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

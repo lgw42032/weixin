@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>亲朋基本信息</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/relativesBaseInfo.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-img"></div>
+        <div class="header-content">
+        <h3>亲朋信息</h3>
+        <p>请留下您的健康档案，为您服务时，我们需要它</p>
+    </div>
+    </header>
+    <section>
+        <div class="content">
+            <form action="http://www.baidu.com">
+                    <div class="line border-bottom-1px form-title">基本信息</div>
+                    <label class="form-item require">与本人关系：</label><input type="text" placeholder="请输入与本人关系（必填）" name="relation"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item require">姓名：</label><input type="text" placeholder="请输入真实姓名（必填）" name="realName"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">性别：</label><label for="male">男</label><input type="radio" name="sex" id="male" value="1"/></label><label class="margin-left" for="female">女</label><input type="radio" name="sex" id="female" value="0"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">年龄：</label><input type="text" placeholder="请输入真实年龄" name="age"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">身份证号：</label><input type="text" placeholder="请输入真实身份证" name="idNumber"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item require">手机号：</label><input type="text" placeholder="请输入真实手机号（必填）" name="mobilePhone"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item require">地址：</label><input type="text" placeholder="请输入真实地址（必填）" name="address"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <div class="line border-bottom-1px form-title">健康信息</div>
+                    <label class="form-item">身高：</label><input type="text"  name="height"/><label class="unit">厘米</label><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">体重：</label><input type="text"  name="weight"/><label class="unit">公斤</label><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">血型：</label>
+                    <select name="bloodType">
+                        <option value=null>请选择</option>
+                        <option value="A">A型</option>
+                        <option value="B">B型</option>
+                        <option value="AB">AB型</option>
+                        <option value="O">O型</option>
+                        <option value="unknown">未知</option>
+                    </select>
+                    <br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">常用药物：</label><input type="text"  name="commonDrugs"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">慢性病：</label><input type="text" name="chronicDisease"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">过敏史：</label><input type="text"  name="allergies"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <label class="form-item">其他：</label><input type="text" name="others"/><br/>
+                    <div class="line border-bottom-1px"></div>
+                    <div class="btn">
+                        <button id="save" type="button">保存</button>
+                    </div>
+                </form>
+        </div>
+    </section>
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script>
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        $(function(){
+            $('header .header-img').css('background-image','url('+ localStorage.getItem('headimgurl')+')');
+            var type = GetQueryString('type');
+            var relationuid = GetQueryString('uid')||null;
+            if(type=='editRelatives'){
+                $.ajax({
+                    url:'/getRelatives',
+                    type:'get',
+                    data:{uid:relationuid},
+                    success:function(data){
+                        var relativesInfo = data.data[0];
+                        $("input[name='relation']").val(relativesInfo.relation);
+                        $("input[name='realName']").val(relativesInfo.realName);
+                        $("input[name='age']").val(relativesInfo.age);
+                        $("input[value="+ relativesInfo.sex +"]").prop('checked',true);
+                        $("input[name='idNumber']").val(relativesInfo.idNumber);
+                        $("input[name='mobilePhone']").val(relativesInfo.mobilePhone);
+                        $("input[name='address']").val(relativesInfo.address);
+                    }
+
+                });
+                $.ajax({
+                    url:'/getHealthInfo',
+                    type:'get',
+                    data:{relationuid:relationuid},
+                    success:function(data){
+                        console.log(data);
+                        var healthInfo = data.data[0];
+                        $("input[name='height']").val(healthInfo.height);
+                        $("input[name='weight']").val(healthInfo.weight);
+                        $("select").find("option[value=" + healthInfo.bloodType + "]").attr("selected",true);
+                        $("input[name='commonDrugs']").val(healthInfo.commonDrugs);
+                        $("input[name='chronicDisease']").val(healthInfo.chronicDisease);
+                        $("input[name='allergies']").val(healthInfo.allergies);
+                        $("input[name='others']").val(healthInfo.others);
+                    }
+                })
+            }
+        })
+    </script>
+    <script>
+        $(function(){
+            var relationuid = GetQueryString('uid')||null;
+            function checkNull(){
+                if(!$("input[name='relation']").val()){
+                    alert('与本人关系不能为空');
+                    return false;
+                }else if(!$("input[name='realName']").val()){
+                    alert('姓名不能为空') ;
+                    return false;
+                }else if(!$("input[name='mobilePhone']").val()){
+                    alert('电话不能为空') ;
+                    return false;
+                }else if(!$("input[name='address']").val()){
+                    alert('地址不能为空') ;
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            $('#save').click(function(){
+                if(!checkNull()){
+                    return;
+                }else{
+                    var data = $('form').serialize() + '&relationuid='+ relationuid+ '&openid='+ localStorage.getItem('openid');
+                    $.ajax({
+                        url:'/editHealthInfo',
+                        type:'post',
+                        data:data,
+                        success:function(data){
+                            if(data.success){
+                                window.location.href="relativesInfo.html";
+                            }
+                        }
+
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/contactUs.css"/>
+    <script src="js/common.js"></script>
+</head>
+<body style="background: #dee9e3">
+<form action="">
+    <label class="form-item">中心名称：</label><input type="text"  name="centerName"/><br/>
+
+    <label class="form-item">地址：</label><input type="text"  name="centerAddress"/><br/>
+    <label class="form-item">联系电话：</label><input type="text"  name="linkTele"/><br/>
+    <label class="form-item">百度经度：</label><input type="text"  name="lng"/><br/>
+    <label class="form-item">百度纬度：</label><input type="text"  name="lat"/><br/>
+    <a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">百度坐标拾取</a>
+    <div class="btn">
+        <button id="save" type="button" >保存</button>
+    </div>
+</form>
+<script>
+    $(function(){
+        var centerInfo = $.cookie("centerInfo");
+        centerInfo = JSON.parse(centerInfo);
+        console.log(centerInfo)
+        $("input[name='centerName']").val(centerInfo.centerName);
+        $("input[name='centerAddress']").val(centerInfo.centerAddress);
+        $("input[name='linkTele']").val(centerInfo.linkTele);
+        $("input[name='lng']").val(centerInfo.lng);
+        $("input[name='lat']").val(centerInfo.lat);
+        $('#save').click(function(){
+            var data = $('form').serialize()+'&cityCode='+centerInfo.cityCode;
+            console.log(data);
+            $.ajax({
+                url:'/editContactUs',
+                type:'post',
+                data: data,
+                success:function(data){
+                    if(data.success){
+                        $("input[name='centerName']").val(null);
+                        $("input[name='centerAddress']").val(null);
+                        $("input[name='linkTele']").val(null);
+                        $("input[name='lng']").val(null);
+                        $("input[name='lat']").val(null);
+                        alert('修改成功');
+
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

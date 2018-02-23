@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script src="js/libs/pxToRem.js"></script>
+    <style>
+        body{
+        padding: 2em;
+        }
+        .event-node{
+            line-height: 2em;
+        }
+        .event-node li{
+            border-bottom:  1px solid #ccc;
+        }
+        #btn{
+            font-size: 1.5em;
+            height: 2em;
+            line-height: 2em;
+            padding: 0 1em;
+            border-radius: 5px;
+            background-color: #168171;
+            color: #fff;
+            display: inline-block;
+        }
+        .refresh{
+            margin-top: 2em;
+            text-align: center;
+        }
+       ul{
+           padding: 1em;
+           border: 1px dotted red;
+           margin-bottom: 1em;
+
+       }
+    </style>
+    <title>事件进程</title>
+</head>
+<body>
+<section class="event-node">
+    <ul>
+        <li class="event"></li>
+    </ul>
+</section>
+<div class="refresh">
+    <button id="btn">点击刷新</button>
+</div>
+</body>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script>
+    function getUrlParam(key) {
+        // 获取参数
+        var url = window.location.search;
+        // 正则筛选地址栏
+        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+        // 匹配目标参数
+        var result = url.substr(1).match(reg);
+        //返回参数值
+        return result ? decodeURIComponent(result[2]) : null;
+    }
+    $(function(){
+        var eventCode = getUrlParam('eventCode');
+        var address =  getUrlParam('address');
+        var time = getUrlParam('time');
+	var realName = getUrlParam('realName');
+        if(address){
+            $('.event').html(time+'： 已定位（'+ address + '）;');
+        }else if(realName){
+            $('.event').html(time+'： 已报警（'+ realName + '）;');
+        }else{
+            $('.event').css('display','none');
+        }
+
+        $.ajax({
+            url:'/getEventNode',
+            type:'get',
+            data:{lsh:eventCode
+            },
+            success:function(eventNode){
+                console.log(eventNode.data.length);
+                var event = eventNode.data;
+                event.forEach(function(v,i,arr){
+                    var eventDetail = v;
+                    var ul = $('<ul></ul>');
+                    var amd = $('<li></li>');
+                    amd.css({'textAlign': 'center','color':'red'});
+                    amd.html('救护车'+ parseInt(i+1));
+                    ul.append(amd);
+                    if(eventDetail.handleTime){
+                        var  li0 = $('<li></li>');
+                        var html0 = eventDetail.handleTime + '： 已受理';
+                        li0.html(html0);
+                        ul.append(li0);
+                    }
+                    if(eventDetail.dispatchTime){
+                        var  li6 = $('<li></li>');
+                        var html6 = eventDetail.dispatchTime + '： 已派车<br/>急救车牌号：'+ eventDetail.platenumber +'<br/>联系电话：<a style="color:blue" href="tel:'+ eventDetail.ambulanceTelCode+'">'+ eventDetail.ambulanceTelCode||'未知'
+                                + '</a><br/>司机：'+ eventDetail.driver||'未知' + '<br/>医生：'+ eventDetail.doctor||'未知' +'<br/>护士：'+ eventDetail.nurse||'未知';
+                        li6.html(html6);
+                        ul.append(li6);
+                    }
+                    if ( eventDetail.taskDriveToTime){
+                        var  li1 = $('<li></li>');
+                        var html1 = eventDetail.taskDriveToTime + '： 驶向现场';
+                        li1.html(html1);
+                        ul.append(li1);
+                    }
+                    if ( eventDetail.taskArriveTime){
+                        var  li2 = $('<li></li>');
+                        var html2 = eventDetail.taskArriveTime + '： 到达现场';
+                        li2.html(html2);
+                        ul.append(li2);
+                    }
+                    if ( eventDetail.taskLeaveTime){
+                        var  li3 = $('<li></li>');
+                        var html3 = eventDetail.taskLeaveTime + '： 离开现场';
+                        li3.html(html3);
+                        ul.append(li3);
+                    }
+                    if ( eventDetail.taskBackHospitalTime){
+                        var  li4 = $('<li></li>');
+                        var html4 = eventDetail.taskBackHospitalTime + '： 到达医院';
+                        li4.html(html4);
+                        ul.append(li4);
+                    }
+                    if ( eventDetail.taskStopTime){
+                        var  li5 = $('<li></li>');
+                        var html5 = eventDetail.taskStopTime + '： 中止任务';
+                        li5.html(html5);
+                        ul.append(li5);
+                    }
+                    if ( eventDetail.taskEndTime){
+                        var  li7 = $('<li></li>');
+                        var html7 = eventDetail.taskEndTime + '： 结束任务';
+                        li7.html(html7);
+                        ul.append(li7);
+                    }
+                    $('.event-node').append(ul);
+                })
+//                var eventDetail = eventNode.data[0];
+            }
+        })
+        $('#btn').click(function(){
+            window.location.reload();
+        })
+    })
+
+</script>
+</html>

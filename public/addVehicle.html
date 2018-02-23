@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/common.js"></script>
+    <script src="js/libs/template.js"></script>
+    <link rel="stylesheet" href="css/addHospital.css"/>
+    <title></title>
+    <style>
+        a{
+            color: #168178;
+        }
+        .show-hospitals {
+            background-color: lightblue;
+        }
+        .show-hospitals table {
+            width: 100%;
+            text-align: center;
+            border-right: 1px solid orange;
+            border-bottom: 1px solid orange;
+        }
+        .show-hospitals td,th {
+            border-left: 1px solid orange;
+            border-top: 1px solid orange;
+            height: 40px;
+            line-height: 40px;
+        }
+        .edit-vehicle{
+            margin-right: 20px;
+        }
+        body{
+            background: #dee9e3
+        }
+    </style>
+    <script type="text/html" id="vehicleList">
+        {{each data  value i}}
+        <!--<li><span>{{value.stationName}}</span><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="edit-hospital">编辑</a><a href="javascript:void(0);" data-hospital="{{value.stationCode}}" class="del-hospital">删除</a></li>-->
+        <tr><td>{{value.plateNumber}}</td><td>{{value.stationName}}</td><td><a href="javascript:void(0);" data-vehicle="{{value.vehicleCode}}" class="edit-vehicle">编辑</a><a href="javascript:void(0);" data-vehicle="{{value.vehicleCode}}" class="del-vehicle">删除</a></td></tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+<div class="show-hospitals">
+    <table>
+        <thead>
+            <tr>
+                <th>车牌号码</th><th>所属医院</th><th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="vehicle-list"></tbody>
+    </table>
+</div>
+<div class="add-hospital" style="margin-top: 30px">
+    <button id="addHospital">增加车辆</button>
+</div>
+<div class="add-hospital-form">
+    <h3>增加车辆</h3>
+    <form action="#">
+        <label>所属医院：</label><input type="text" name="stationName"/><br/>
+        <input name="vehicleCode" type="hidden">
+        <label>车牌号码：</label><input type="text"  name="plateNumber"/><br/>
+        <div class="btn">
+            <button id="save" type="button" >保存</button>
+            <button id="cancel" type="button" style="margin-left: 10px">取消</button>
+        </div>
+    </form>
+</div>
+<script>
+    $(function(){
+        var centerInfo = $.cookie("centerInfo");
+        var vehicles=[];
+        centerInfo = JSON.parse(centerInfo);
+        $.ajax({
+            url:'/getVehicles',
+            type:'get',
+            data:{cityCode:centerInfo.cityCode },
+            success:function(vehiclesList){
+                vehicles = vehiclesList.data;
+                var html = template('vehicleList', vehiclesList);
+                $('.vehicle-list').html(html);
+                $('.edit-vehicle').click(function(){
+                    var vehicleCode = $(this).attr('data-vehicle');
+                    $('h3').html('编辑车辆');
+                    vehicles.forEach(function(v,i,arr){
+                        if(v.vehicleCode==vehicleCode){
+                            $("input[name='plateNumber']").val(v.plateNumber);
+                            $("input[name='stationName']").val(v.stationName);
+                            $("input[name='vehicleCode']").val(v.vehicleCode);
+                        }
+                    });
+                    $('.add-hospital-form').css('display','block');
+                });
+                $('.del-vehicle').click(function(){
+                    var vehicleCode = $(this).attr('data-vehicle');
+                    $.ajax({
+                        url:'/delVehicle',
+                        type:'post',
+                        data:{
+                            cityCode:centerInfo.cityCode,
+                            vehicleCode:vehicleCode
+                        },
+                        success:function(data){
+                            if(data.success){
+                                location.reload();
+                            }
+                        }
+
+                    })
+                })
+            }
+        });
+        $('#addHospital').click(function(){
+            $('h3').html('增加车辆')
+            $('.add-hospital-form').css('display','block');
+        })
+        $('#cancel').click(function(){
+            $('form')[0].reset();
+            $('.add-hospital-form').css('display','none');
+        });
+        $('#save').click(function(){
+            var data = $('form').serialize()+'&cityCode='+centerInfo.cityCode ;
+            console.log(data);
+            $.ajax({
+                url:'/addVehicle',
+                type:'post',
+                data: data,
+                success:function(data){
+                    if(data.success){
+                        location.reload();
+                        $('form')[0].reset();
+                    }
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

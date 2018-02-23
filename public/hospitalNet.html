@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>急救助手</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/hospitalNet.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/toggleNav.css"/>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=l0iZxA2yrCz1hvrZwNa0lGyd"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <style>
+        #r-result{
+            height: 40%;
+            overflow: auto;
+            border-bottom: 1px solid #168171;
+        }
+        #r-result #result {
+            padding: 0;
+        }
+        #r-result #result > li {
+            padding: 0 1em;
+            border-radius: 5px;
+            border-bottom: 1px solid #ccc;
+            line-height: 2em;
+        }
+        #r-result #result .choosed {
+            background-color: #168171;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-title clearfix">
+        <a href="microNet.html" class="fl logo"><img  src="images/gongzhonghao_sq.png" alt=""/></a>
+        <!--<img class="fr navbar" src="images/caidan.png" alt=""/>-->
+        <div id="main"  class="">
+            <em></em>
+        </div>
+    </div>
+    <div class="header-nav">
+        <ul>
+            <li>
+                <a href="aboutUs.html">
+                    <img src="images/aboutUs.png" alt=""/>
+                    <p>关于我们</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidState.html">
+                    <img src="images/message.png" alt=""/>
+                    <p>急救动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="vehicleScreening.html">
+                    <img src="images/vehicle.png" alt=""/>
+                    <p>车辆甄别</p>
+                </a>
+            </li>
+            <li>
+                <a href="regimenDiet.html">
+                    <img src="images/healthy.png" alt=""/>
+                    <p>养生食疗</p>
+                </a>
+            </li>
+            <li>
+                <a href="aidClass.html">
+                    <img src="images/myClass.png" alt=""/>
+                    <p>急救微课</p>
+                </a>
+            </li>
+            <li>
+                <a href="hospitalNet.html">
+                    <img src="images/location.png" alt=""/>
+                    <p>网络医院</p>
+                </a>
+            </li>
+            <li>
+                <a href="selfCall.html">
+                    <img src="images/videoCall.png" alt=""/>
+                    <p>视频呼救</p>
+                </a>
+            </li>
+            <li>
+                <a href="treatment.html">
+                    <img src="images/treatment.png" alt=""/>
+                    <p>救治反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.169000.net/index.gl">
+                    <img src="images/registration.png" alt=""/>
+                    <p>预约挂号</p>
+                </a>
+            </li>
+            <li>
+                <a href="http://3g.xywy.com">
+                    <img src="images/medicine.png" alt=""/>
+                    <p>寻医问药</p>
+                </a>
+            </li>
+            <li>
+                <a href="autoLocation.html">
+                    <img src="images/autoLocation.png" alt=""/>
+                    <p>自动定位</p>
+                </a>
+            </li>
+            <li>
+                <a href="notice.html">
+                    <img src="images/aidNews.png" alt=""/>
+                    <p>通告公示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section class="show-hospitals">
+    <div id="allmap"></div>
+    <div id="r-result">
+        <ul id="result">
+
+        </ul>
+    </div>
+</section>
+<script src="js/libs/pxToRem.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script src="js/hospitalNet.js"></script>
+<script src="js/header.js" defer="defer"></script>
+<script type="text/javascript">
+    var city =localStorage.getItem('city');
+    var map;
+    var getHospitalInfo = new Promise(function(resolve,reject){
+        $.ajax({
+            url:'/getHospitalNet',
+            type:'get',
+            data:{cityCode:city},
+            success:function(hospitals){
+                hospitals = hospitals.data;
+                var hospitalsArr =[];
+                hospitals.forEach(function(v,i,arr){
+                    hospitalsArr.push([v.lng, v.lat, v.stationName]);
+                });
+                console.log(hospitalsArr);
+                resolve(hospitalsArr);
+            },
+            error:function(err){
+                reject(err)
+            }
+        })
+    });
+    getHospitalInfo.then(function(data){
+        console.log(data);
+        var lis =[];
+        var myLocation;
+        var data_info = data;
+        map = new BMap.Map("allmap");
+//        map.centerAndZoom(new BMap.Point(113.933871,35.308968), 12);
+        var geolocation = new BMap.Geolocation();
+        var searchComplete = function (results){
+            console.log(results);
+//            if (transit.getStatus() != BMAP_STATUS_SUCCESS){
+//                return ;
+//            }
+            data_info.forEach(function(v,i,arr){
+                if(results.bv.point.lng== v[0]){
+                    var point = new BMap.Point(v[0],v[1]);
+                    var distance= results.getPlan(0).getDistance(true);
+                    console.log('distance',distance);
+                    var marker =  new BMap.Marker(point);
+                    marker.setIcon(null)
+                    var content = v[2];
+                    var li = $('<li></li>');
+                    li.attr('distance',distance);
+                    li.html(content+'总路程为'+ distance);
+                    $('#result').append(li);
+                    addClickHandler(content,marker,li);
+                }
+            });
+
+        };
+//        var transit = new BMap.DrivingRoute(map, {
+//            renderOptions:map,
+//            onSearchComplete: function(results){
+//                searchComplete(results);
+//            },
+//            onPolylinesSet: function(resutls){
+//                console.log('onPllylines',resutls)
+//            }});
+
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                myLocation = new BMap.Point(r.point.lng,r.point.lat);
+                map.centerAndZoom(myLocation, 12);
+                for(var i=0;i<data_info.length;i++){
+                    console.log(data_info[i]);
+                    let point = new BMap.Point(data_info[i][0],data_info[i][1]);
+                    var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}, onSearchComplete: function(results){
+                        searchComplete(results);
+                    }});
+                    driving.search(myLocation,point);
+                    driving.setPolicy(BMAP_DRIVING_POLICY_LEAST_TIME);
+                }
+            }
+            else {
+                alert('failed'+this.getStatus());
+            }
+        },{enableHighAccuracy: true});
+
+        function addClickHandler(content,marker,li){
+
+            var searchInfoWindow = null;
+            searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+                title  : content,      //标题
+                width  : 40,             //宽度
+                height : 40,              //高度
+                panel  : "panel",         //检索结果面板
+                enableAutoPan : true,     //自动平移
+                searchTypes   :[
+                    BMAPLIB_TAB_SEARCH,   //周边检索
+                    BMAPLIB_TAB_TO_HERE,  //到这里去
+                    BMAPLIB_TAB_FROM_HERE //从这里出发
+                ]
+            });
+            li.on("click",function(e){
+                        $(this).siblings('li').removeClass('choosed');
+                        $(this).addClass('choosed');
+                        searchInfoWindow.open(marker);
+                    }
+            );
+            map.addOverlay(marker);
+
+        }
+    },function(err){
+        console.log(err);
+    })
+</script>
+</body>
+</html>

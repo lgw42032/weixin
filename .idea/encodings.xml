@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/logs/center_error_2018-02-02.log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logs/center_event_2018-02-02.log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logs/center_normal_2018-02-02.log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/addCenter.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/centerImgUrl.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/contactUs.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/css/change.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/css/cxwExtIcon.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/css/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/favicon.ico" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/aidNews.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/autoLocation.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/ext_icons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/gongzhonghao10.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/gongzhonghao_sq.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/medicine.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/microaid.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/othersCall.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/registration.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/relativesCall.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/selfCall.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/treatment.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/ueditor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/videoCall.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/common.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/cxwExtEasyUI.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/cxwExtJavascript.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/cxwExtJquery.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/cxwUtil.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/easyui-1.5" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/libs/jquery.cookie.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/main.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tokens/411400/token.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils/appLog.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils/sms.js" charset="UTF-8" />
+  </component>
+</project>
