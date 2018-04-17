@@ -274,9 +274,13 @@
             })
         })
     }
-    async  function init(){
-        var accountInfo = await getAccountInfo();
-        var config = await getConfig();
+    var config;
+    var accountInfo;
+    getConfig().then(function(data){
+        config = data;
+        return getAccountInfo();
+    }).then(function(data){
+        accountInfo = data;
         wx.config({
             debug: true,
             appId: config.config[0].appId,
@@ -284,11 +288,11 @@
             nonceStr: accountInfo.nonce,
             signature: accountInfo.signature,
             jsApiList: [
-            // 所有要调用的 API 都要加到这个列表中
-            'checkJsApi',
-            'openLocation',
-            'getLocation'
-        ]
+                // 所有要调用的 API 都要加到这个列表中
+                'checkJsApi',
+                'openLocation',
+                'getLocation'
+            ]
         });
         wx.ready(function(){
             wx.getLocation({
@@ -303,10 +307,40 @@
                 }
             });
         });
-
-
-
-    }
+    })
+//    async  function init(){
+//        var accountInfo = await getAccountInfo();
+//        var config = await getConfig();
+//        wx.config({
+//            debug: true,
+//            appId: config.config[0].appId,
+//            timestamp: accountInfo.timestamp,
+//            nonceStr: accountInfo.nonce,
+//            signature: accountInfo.signature,
+//            jsApiList: [
+//            // 所有要调用的 API 都要加到这个列表中
+//            'checkJsApi',
+//            'openLocation',
+//            'getLocation'
+//        ]
+//        });
+//        wx.ready(function(){
+//            wx.getLocation({
+//                success: function (res) {
+//                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+//                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+//                    var speed = res.speed; // 速度，以米/每秒计
+//                    var accuracy = res.accuracy; // 位置精度
+//                },
+//                cancel: function (res) {
+//                    alert('用户拒绝授权获取地理位置');
+//                }
+//            });
+//        });
+//
+//
+//
+//    }
 </script>
 </body>
 </html>
