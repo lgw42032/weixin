@@ -118,7 +118,7 @@ exports.join =(req,res)=>{
         nonce:nonce
     }
     fs.writeFile(path.join('./accoutInfo.json'),  JSON.stringify(info), function (err) {
-        //console.log(err);
+        console.log('writeAccout',err);
     });
 
     /*  加密/校验流程如下： */
