@@ -3,6 +3,7 @@ const service = require('./service.js');
 const router = express.Router();
 const config = require('../config.json');
 const accountInfo = require('../accountInfo.json');
+console.log('accountInfo',accountInfo);
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
@@ -22,7 +23,8 @@ router.get('/getConfig', function(req, res) {
 
 //获取账户信息
 router.get('/getAccountInfo', function(req, res) {
-    res.json(JSON.parse(accountInfo));
+    var account = JSON.parse(accountInfo)
+    res.json(account);
 });
 
 //增加中心
