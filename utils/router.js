@@ -23,8 +23,8 @@ router.get('/getConfig', function(req, res) {
 
 //获取账户信息
 router.get('/getAccountInfo', function(req, res) {
-    //var account = JSON.parse(accountInfo);
-    res.json(accountInfo);
+    const accountInfo1 = require('../accountInfo.json');
+    res.json(accountInfo1);
 });
 
 //增加中心
