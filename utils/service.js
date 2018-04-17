@@ -117,6 +117,7 @@ exports.join =(req,res)=>{
         timestamp:timestamp,
         nonce:nonce
     }
+    console.log('info',info);
     fs.writeFile(path.join('./accoutInfo.json'),  JSON.stringify(info), function (err) {
         console.log('writeAccout',err);
     });
