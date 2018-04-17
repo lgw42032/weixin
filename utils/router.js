@@ -2,7 +2,7 @@
 const service = require('./service.js');
 const router = express.Router();
 const config = require('../config.json');
-const accountInfo = require('../account.json');
+const accountInfo = require('../accountInfo.json');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
