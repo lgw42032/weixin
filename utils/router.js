@@ -2,6 +2,7 @@
 const service = require('./service.js');
 const router = express.Router();
 const config = require('../config.json');
+const accountInfo = require('../account.json');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
@@ -18,6 +19,12 @@ router.post('/sendMessage',service.sendMessage);
 router.get('/getConfig', function(req, res) {
     res.json(config);
 });
+
+//获取账户信息
+router.get('/getAccountInfo', function(req, res) {
+    res.json(JSON.parse(accountInfo));
+});
+
 //增加中心
 router.post('/addCenter',service.addCenter);
 //中心登陆
