@@ -133,113 +133,180 @@
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="js/hospitalNet.js"></script>
 <script src="js/header.js" defer="defer"></script>
-<script type="text/javascript">
-    var city =localStorage.getItem('city');
-    var map;
-    var getHospitalInfo = new Promise(function(resolve,reject){
-        $.ajax({
-            url:'/getHospitalNet',
-            type:'get',
-            data:{cityCode:city},
-            success:function(hospitals){
-                hospitals = hospitals.data;
-                var hospitalsArr =[];
-                hospitals.forEach(function(v,i,arr){
-                    hospitalsArr.push([v.lng, v.lat, v.stationName]);
-                });
-                console.log(hospitalsArr);
-                resolve(hospitalsArr);
-            },
-            error:function(err){
-                reject(err)
-            }
+<!--<script type="text/javascript">-->
+    <!--var city =localStorage.getItem('city');-->
+    <!--var map;-->
+    <!--var getHospitalInfo = new Promise(function(resolve,reject){-->
+        <!--$.ajax({-->
+            <!--url:'/getHospitalNet',-->
+            <!--type:'get',-->
+            <!--data:{cityCode:city},-->
+            <!--success:function(hospitals){-->
+                <!--hospitals = hospitals.data;-->
+                <!--var hospitalsArr =[];-->
+                <!--hospitals.forEach(function(v,i,arr){-->
+                    <!--hospitalsArr.push([v.lng, v.lat, v.stationName]);-->
+                <!--});-->
+                <!--console.log(hospitalsArr);-->
+                <!--resolve(hospitalsArr);-->
+            <!--},-->
+            <!--error:function(err){-->
+                <!--reject(err)-->
+            <!--}-->
+        <!--})-->
+    <!--});-->
+    <!--getHospitalInfo.then(function(data){-->
+        <!--console.log(data);-->
+        <!--var lis =[];-->
+        <!--var myLocation;-->
+        <!--var data_info = data;-->
+        <!--map = new BMap.Map("allmap");-->
+<!--//        map.centerAndZoom(new BMap.Point(113.933871,35.308968), 12);-->
+        <!--var geolocation = new BMap.Geolocation();-->
+        <!--var searchComplete = function (results){-->
+            <!--console.log(results);-->
+<!--//            if (transit.getStatus() != BMAP_STATUS_SUCCESS){-->
+<!--//                return ;-->
+<!--//            }-->
+            <!--data_info.forEach(function(v,i,arr){-->
+                <!--if(results.bv.point.lng== v[0]){-->
+                    <!--var point = new BMap.Point(v[0],v[1]);-->
+                    <!--var distance= results.getPlan(0).getDistance(true);-->
+                    <!--console.log('distance',distance);-->
+                    <!--var marker =  new BMap.Marker(point);-->
+                    <!--marker.setIcon(null)-->
+                    <!--var content = v[2];-->
+                    <!--var li = $('<li></li>');-->
+                    <!--li.attr('distance',distance);-->
+                    <!--li.html(content+'总路程为'+ distance);-->
+                    <!--$('#result').append(li);-->
+                    <!--addClickHandler(content,marker,li);-->
+                <!--}-->
+            <!--});-->
+
+        <!--};-->
+<!--//        var transit = new BMap.DrivingRoute(map, {-->
+<!--//            renderOptions:map,-->
+<!--//            onSearchComplete: function(results){-->
+<!--//                searchComplete(results);-->
+<!--//            },-->
+<!--//            onPolylinesSet: function(resutls){-->
+<!--//                console.log('onPllylines',resutls)-->
+<!--//            }});-->
+
+        <!--geolocation.getCurrentPosition(function(r){-->
+            <!--if(this.getStatus() == BMAP_STATUS_SUCCESS){-->
+                <!--myLocation = new BMap.Point(r.point.lng,r.point.lat);-->
+                <!--map.centerAndZoom(myLocation, 12);-->
+                <!--for(var i=0;i<data_info.length;i++){-->
+                    <!--console.log(data_info[i]);-->
+                    <!--let point = new BMap.Point(data_info[i][0],data_info[i][1]);-->
+                    <!--var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}, onSearchComplete: function(results){-->
+                        <!--searchComplete(results);-->
+                    <!--}});-->
+                    <!--driving.search(myLocation,point);-->
+                    <!--driving.setPolicy(BMAP_DRIVING_POLICY_LEAST_TIME);-->
+                <!--}-->
+            <!--}-->
+            <!--else {-->
+                <!--alert('failed'+this.getStatus());-->
+            <!--}-->
+        <!--},{enableHighAccuracy: true});-->
+
+        <!--function addClickHandler(content,marker,li){-->
+
+            <!--var searchInfoWindow = null;-->
+            <!--searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {-->
+                <!--title  : content,      //标题-->
+                <!--width  : 40,             //宽度-->
+                <!--height : 40,              //高度-->
+                <!--panel  : "panel",         //检索结果面板-->
+                <!--enableAutoPan : true,     //自动平移-->
+                <!--searchTypes   :[-->
+                    <!--BMAPLIB_TAB_SEARCH,   //周边检索-->
+                    <!--BMAPLIB_TAB_TO_HERE,  //到这里去-->
+                    <!--BMAPLIB_TAB_FROM_HERE //从这里出发-->
+                <!--]-->
+            <!--});-->
+            <!--li.on("click",function(e){-->
+                        <!--$(this).siblings('li').removeClass('choosed');-->
+                        <!--$(this).addClass('choosed');-->
+                        <!--searchInfoWindow.open(marker);-->
+                    <!--}-->
+            <!--);-->
+            <!--map.addOverlay(marker);-->
+
+        <!--}-->
+    <!--},function(err){-->
+        <!--console.log(err);-->
+    <!--})-->
+<!--</script>-->
+<script>
+    function getConfig(){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getConfig',
+                type:'get',
+                data: {},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    console.log('getConfig',err)
+                    reject(err)
+                }
+            })
         })
-    });
-    getHospitalInfo.then(function(data){
-        console.log(data);
-        var lis =[];
-        var myLocation;
-        var data_info = data;
-        map = new BMap.Map("allmap");
-//        map.centerAndZoom(new BMap.Point(113.933871,35.308968), 12);
-        var geolocation = new BMap.Geolocation();
-        var searchComplete = function (results){
-            console.log(results);
-//            if (transit.getStatus() != BMAP_STATUS_SUCCESS){
-//                return ;
-//            }
-            data_info.forEach(function(v,i,arr){
-                if(results.bv.point.lng== v[0]){
-                    var point = new BMap.Point(v[0],v[1]);
-                    var distance= results.getPlan(0).getDistance(true);
-                    console.log('distance',distance);
-                    var marker =  new BMap.Marker(point);
-                    marker.setIcon(null)
-                    var content = v[2];
-                    var li = $('<li></li>');
-                    li.attr('distance',distance);
-                    li.html(content+'总路程为'+ distance);
-                    $('#result').append(li);
-                    addClickHandler(content,marker,li);
+    }
+    function getAccountInfo(){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getAccountInfo',
+                type:'get',
+                data: {},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    console.log('getAccountInfo',err)
+                    reject(err)
+                }
+            })
+        })
+    }
+    async  function init(){
+        var accountInfo = await getAccountInfo();
+        var config = await getConfig();
+        wx.config({
+            debug: true,
+            appId: config.config[0].appId,
+            timestamp: accountInfo.timestamp,
+            nonceStr: accountInfo.nonce,
+            signature: accountInfo.signature,
+            jsApiList: [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'openLocation',
+            'getLocation'
+        ]
+        });
+        wx.ready(function(){
+            wx.getLocation({
+                success: function (res) {
+                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    var speed = res.speed; // 速度，以米/每秒计
+                    var accuracy = res.accuracy; // 位置精度
+                },
+                cancel: function (res) {
+                    alert('用户拒绝授权获取地理位置');
                 }
             });
+        });
 
-        };
-//        var transit = new BMap.DrivingRoute(map, {
-//            renderOptions:map,
-//            onSearchComplete: function(results){
-//                searchComplete(results);
-//            },
-//            onPolylinesSet: function(resutls){
-//                console.log('onPllylines',resutls)
-//            }});
 
-        geolocation.getCurrentPosition(function(r){
-            if(this.getStatus() == BMAP_STATUS_SUCCESS){
-                myLocation = new BMap.Point(r.point.lng,r.point.lat);
-                map.centerAndZoom(myLocation, 12);
-                for(var i=0;i<data_info.length;i++){
-                    console.log(data_info[i]);
-                    let point = new BMap.Point(data_info[i][0],data_info[i][1]);
-                    var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}, onSearchComplete: function(results){
-                        searchComplete(results);
-                    }});
-                    driving.search(myLocation,point);
-                    driving.setPolicy(BMAP_DRIVING_POLICY_LEAST_TIME);
-                }
-            }
-            else {
-                alert('failed'+this.getStatus());
-            }
-        },{enableHighAccuracy: true});
 
-        function addClickHandler(content,marker,li){
-
-            var searchInfoWindow = null;
-            searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
-                title  : content,      //标题
-                width  : 40,             //宽度
-                height : 40,              //高度
-                panel  : "panel",         //检索结果面板
-                enableAutoPan : true,     //自动平移
-                searchTypes   :[
-                    BMAPLIB_TAB_SEARCH,   //周边检索
-                    BMAPLIB_TAB_TO_HERE,  //到这里去
-                    BMAPLIB_TAB_FROM_HERE //从这里出发
-                ]
-            });
-            li.on("click",function(e){
-                        $(this).siblings('li').removeClass('choosed');
-                        $(this).addClass('choosed');
-                        searchInfoWindow.open(marker);
-                    }
-            );
-            map.addOverlay(marker);
-
-        }
-    },function(err){
-        console.log(err);
-    })
+    }
 </script>
 </body>
 </html>
