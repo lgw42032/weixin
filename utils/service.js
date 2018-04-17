@@ -112,7 +112,15 @@ exports.join =(req,res)=>{
     var timestamp = req.query.timestamp;
     var nonce = req.query.nonce;
     var echostr = req.query.echostr;
-    console.log('hahalgw',req.query);
+    var info={
+        signature:signature,
+        timestamp:timestamp,
+        nonce:nonce
+    }
+    fs.writeFile(path.join('./accoutInfo.json'),  JSON.stringify(info), function (err) {
+        //console.log(err);
+    });
+
     /*  加密/校验流程如下： */
     //1. 将token、timestamp、nonce三个参数进行字典序排序
     var array = new Array(token,timestamp,nonce);
