@@ -29,7 +29,7 @@ const getAccessToken = function (config) {
         });
     })
 };
-const saveToken = function (config) {
+const getJsTicket = function(config){
     getAccessToken(config).then(res => {
         let token = res['access_token'];
         fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
@@ -48,16 +48,20 @@ const saveToken = function (config) {
                     let bodys = JSON.parse(body) ;    // 解析微信服务器返回的
                     let ticket = bodys.ticket   ;     // 获取 ticket
                     let expires = bodys.expires_in  ; // 获取过期时间
-
-                    fs.writeFile(path.join('./tokens',config.city,'JsTicket.txt'), ticket, function (err) {
-                        console.log(err);
-                    });
                     resolve(ticket)
                 } else {
                     reject(err)
                 }
             })
         })
+    })
+}
+const saveToken = function (config) {
+    getJsTicket(config).then(data => {
+        let token = data;
+        fs.writeFile(path.join('./tokens',config.city,'JsTicket.txt'), ticket, function (err) {
+            console.log(err);
+        });
     })
 };
 
