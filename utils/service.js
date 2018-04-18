@@ -174,7 +174,7 @@ exports.getJssdk = (req,res) => {
     }
     let jsTicket = fs.readFileSync(path.join(__dirname + '/../tokens/411400/JsTicket.txt').toString());
     let ret =tools.sign(jsTicket,clientUrl);
-    
+
     res.json(ret);
 };
 /*短信验证码：*/

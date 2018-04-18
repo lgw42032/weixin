@@ -401,8 +401,8 @@ exports.raw = function (args) {
 exports.sign = function(jsapi_ticket, url) {
     var ret = {
         jsapi_ticket: jsapi_ticket,
-        nonceStr: createNonceStr(),
-        timestamp: createTimestamp(),
+        nonceStr: this.createNonceStr(),
+        timestamp:this.createTimestamp(),
         url: url
     }
     var string = raw(ret)
