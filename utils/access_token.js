@@ -35,6 +35,29 @@ const saveToken = function (config) {
         fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
             //console.log(err);
         });
+        return new Promise((resolve, reject) => {
+
+            let reqUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ token +'&type=jsapi'
+            let options = {
+                method: 'get',
+                url: reqUrl
+            }
+
+            request(options, function (err, res, body) {
+                if (res) {
+                    let bodys = JSON.parse(body) ;    // 解析微信服务器返回的
+                    let ticket = bodys.ticket   ;     // 获取 ticket
+                    let expires = bodys.expires_in  ; // 获取过期时间
+
+                    fs.writeFile(path.join('./tokens',config.city,'JsTicket.txt'), ticket, function (err) {
+                        console.log(err);
+                    });
+                    resolve(ticket)
+                } else {
+                    reject(err)
+                }
+            })
+        })
     })
 };
 
