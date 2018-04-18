@@ -21,6 +21,8 @@ router.get('/getConfig', function(req, res) {
     res.json(config);
 });
 
+router.get('/getToken',service.getToken);
+
 //获取账户信息
 router.post('/getJssdk',service.getJssdk);
 

@@ -166,6 +166,12 @@ exports.interaction = (req,res) => {
         });
 };
 
+//获取token
+exports.getToken = (req,res)=>{
+    let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
+    tools.echoSuccess(res,"success",token);
+}
+
 //获取jssdk
 exports.getJssdk = (req,res) => {
     let clientUrl = req.body.url
