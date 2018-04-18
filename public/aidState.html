@@ -127,8 +127,7 @@
                 // 每页展示5个
                 var size = 5;
                 var token = localStorage.getItem('token');
-                alert(data.data)
-                alert(token)
+               
 //                console.log(token);
                 // dropload
                 $('.content').dropload({
@@ -139,36 +138,40 @@
                         var result = '';
                         $.ajax({
                             type: 'post',
-//                        url: 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token,
+                            url: 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token,
                             data:{ type:'news',offset:page*size,count:size},
-                            url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+//                            url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
                             dataType: 'json',
                             success: function(data){
                                 var arrLen = data.length;
-                                var data = {
-                                    "total_count": 10,
-                                    "item_count": 5,
-                                    "item": [{
-                                        "media_id": 1,
-                                        "content": {
-                                            "news_item": [{
-                                                "title": '',
-                                                "thumb_media_id": THUMB_MEDIA_ID,
-                                                "show_cover_pic": SHOW_COVER_PIC(0 / 1),
-                                                "author": AUTHOR,
-                                                "digest": DIGEST,
-                                                "content": CONTENT,
-                                                "url": URL,
-                                                "content_source_url": CONTETN_SOURCE_URL
-                                            },
-
-                                            ]
-                                        },
-                                        "update_time": UPDATE_TIME
-                                    },
-                                        //可能有多个图文消息item结构
-                                    ]
+                                for(var k in data){
+                                    alert(data[k])
                                 }
+
+                                //                                var data = {
+//                                    "total_count": 10,
+//                                    "item_count": 5,
+//                                    "item": [{
+//                                        "media_id": 1,
+//                                        "content": {
+//                                            "news_item": [{
+//                                                "title": '',
+//                                                "thumb_media_id": THUMB_MEDIA_ID,
+//                                                "show_cover_pic": SHOW_COVER_PIC(0 / 1),
+//                                                "author": AUTHOR,
+//                                                "digest": DIGEST,
+//                                                "content": CONTENT,
+//                                                "url": URL,
+//                                                "content_source_url": CONTETN_SOURCE_URL
+//                                            },
+//
+//                                            ]
+//                                        },
+//                                        "update_time": UPDATE_TIME
+//                                    },
+//                                        //可能有多个图文消息item结构
+//                                    ]
+//                                }
                                 if(arrLen > 0){
 //                                for(var i=0; i<arrLen; i++){
 //                                    result +=   '<a class="item opacity" href="'+data[i].link+'">'
