@@ -276,18 +276,17 @@
             })
         })
     }
-    var config;
     var accountInfo;
     getConfig().then(function(data){
-        config = data;
+
         return getJssdk();
     }).then(function(data){
         accountInfo = data;
         wx.config({
             debug: true,
-            appId: config.config[0].appId,
+            appId: accountInfo.appid,
             timestamp: accountInfo.timestamp,
-            nonceStr: accountInfo.nonce,
+            nonceStr: accountInfo.nonce_str,
             signature: accountInfo.signature,
             jsApiList: [
                 // 所有要调用的 API 都要加到这个列表中
