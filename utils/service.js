@@ -175,27 +175,43 @@ exports.getNews =(req,res) => {
     let type = req.body.type;
     let offset = req.body.offset;
     let count = req.body.count;
-
+    let  requestData= {
+        "type":type+ "",
+        "offset":offset,
+        "count":count
+}
     let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
     let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token;
     let options = {
-        method: 'post',
         url: wxGetAccessTokenBaseUrl,
-        data:{
-            "type":type,
-            "offset":offset,
-            "count":count
-        }
+        method: "POST",
+        json: true,
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify(requestData)
     };
-    request(options, function (err, res, body) {
-        if (res) {
-            console.log('getNews',body);
-            tools.echoSuccess(res,"success",body);
-        } else {
-            console.log('err',err);
-            tools.echoError(res,"error", '调用失败');
-        }
-    });
+    function postWX(option){
+        return new Promise((resolve, reject) => {
+            request(option, function (err, res, body) {
+                if (res) {
+                    console.log('postWX',body);
+                    resolve(JSON.parse(body));
+                } else {
+                    console.log('err',err);
+                    reject(err);
+                }
+            });
+        })
+
+    }
+    postWX(options).then(function(data){
+        tools.echoSuccess(res,"success",data);
+    },function(err){
+        tools.echoError(res,"error", '获取图文列表失败');
+    })
+
+
 
 
 };
