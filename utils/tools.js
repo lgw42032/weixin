@@ -416,17 +416,3 @@ exports.sign = function(jsapi_ticket, url) {
  * @param  {字符串} url 当前访问URL
  * @return {promise}     返回promise类 val为对象
  */
-function jsSdk (url) {
-    return getJsTicket().then(function (ticket) {
-            return sign(ticket, url)
-        })
-        .catch(function (err) {
-            console.log(err)
-        })
-}
-
-function routerSdk (req, res, next) {
-
-}
-
-module.exports = routerSdk
