@@ -347,6 +347,7 @@ exports.isJson = function(obj){
     return isjson;
 };
 exports.sha1=function(str) {
+    const crypto = require('crypto');
     let shasum = crypto.createHash("sha1")
     shasum.update(str)
     str = shasum.digest("hex")
