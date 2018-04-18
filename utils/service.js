@@ -172,8 +172,9 @@ exports.getJssdk = (req,res) => {
     if(tools.isEmpty(clientUrl)){
         return tools.echoError(res, req.url + "no url");
     }
-    let jsTicket = fs.readFileSync(path.join(__dirname + '/../tokens/411400/jsTicket.txt').toString());
+    let jsTicket = fs.readFileSync(path.join(__dirname + '/../tokens/411400/JsTicket.txt').toString());
     let ret =tools.sign(jsTicket,clientUrl);
+    
     res.json(ret);
 };
 /*短信验证码：*/
