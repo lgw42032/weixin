@@ -171,11 +171,11 @@ exports.getJssdk = (req,res) => {
     const grant_type = 'client_credential';
     const appid = config[0].appId;
     const secret = config[0].appsecret ;
+    let access_token = fs.readFileSync(path.join('./tokens',v.city,'token.txt').toString());
 
-    request('https://api.weixin.qq.com/cgi-bin/token?grant_type=' + grant_type + '&appid=' + appid + '&secret=' + secret, (err, response, body) => {
-        let access_toekn = JSON.parse(body).access_token
 
-        request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', (err, response, body) => {
+
+    request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', (err, response, body) => {
             let jsapi_ticket = JSON.parse(body).ticket
             let nonce_str = '123456'  // 密钥，字符串任意，可以随机生成
             let timestamp = new Date().getTime() // 时间戳
@@ -194,7 +194,7 @@ exports.getJssdk = (req,res) => {
                 signature: signature,
             })
         })
-    })
+
 
 
 };
