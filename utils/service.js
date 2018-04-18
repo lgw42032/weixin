@@ -9,6 +9,7 @@ const tools = require('./tools');
 const db = require('./db');
 const sms = require('./sms');
 const moment = require('moment');
+const config = require('../config.json').config;
 var i=0;
 //xml解析模块
 const XMLJS = require('xml2js');
@@ -107,20 +108,21 @@ var EventFunction = {
         res.send(xml);
     }
 };
+//js 安全域名校验
 exports.join =(req,res)=>{
     var signature = req.query.signature;
     var timestamp = req.query.timestamp;
     var nonce = req.query.nonce;
     var echostr = req.query.echostr;
-    var info={
-        signature:signature,
-        timestamp:timestamp,
-        nonce:nonce
-    }
-    console.log('info',info);
-    fs.writeFile(path.join('./accountInfo.json'),  JSON.stringify(info), function (err) {
-        console.log('writeAccout',err);
-    });
+    //var info={
+    //    signature:signature,
+    //    timestamp:timestamp,
+    //    nonce:nonce
+    //}
+    //console.log('info',info);
+    //fs.writeFile(path.join('./accountInfo.json'),  JSON.stringify(info), function (err) {
+    //    console.log('writeAccout',err);
+    //});
 
     /*  加密/校验流程如下： */
     //1. 将token、timestamp、nonce三个参数进行字典序排序
@@ -161,6 +163,40 @@ exports.interaction = (req,res) => {
                     }
                 });
         });
+};
+
+//获取jssdk
+exports.getJssdk = (req,res) => {
+
+    const grant_type = 'client_credential';
+    const appid = config[0].appId;
+    const secret = config[0].appsecret ;
+
+    request('https://api.weixin.qq.com/cgi-bin/token?grant_type=' + grant_type + '&appid=' + appid + '&secret=' + secret, (err, response, body) => {
+        let access_toekn = JSON.parse(body).access_token
+
+        request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', (err, response, body) => {
+            let jsapi_ticket = JSON.parse(body).ticket
+            let nonce_str = '123456'  // 密钥，字符串任意，可以随机生成
+            let timestamp = new Date().getTime() // 时间戳
+            let url = req.query.url  // 使用接口的url链接，不包含#后的内容
+
+            // 将请求以上字符串，先按字典排序，再以'&'拼接，如下：其中j > n > t > u，此处直接手动排序
+            let str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonce_str + '×tamp=' + timestamp + '&url=' + url
+
+            // 用sha1加密
+            let signature = sha1(str)
+
+            res.send({
+                appId: appid,
+                timestamp: timestamp,
+                nonceStr: nonce_str,
+                signature: signature,
+            })
+        })
+    })
+
+
 };
 /*短信验证码：*/
 exports.sendMessage =(req,res)=>{
