@@ -168,36 +168,13 @@ exports.interaction = (req,res) => {
 
 //获取jssdk
 exports.getJssdk = (req,res) => {
-
-    const grant_type = 'client_credential';
-    const appid = config[0].appId;
-    const secret = config[0].appsecret ;
-    let access_token = fs.readFileSync(path.join('./tokens/411400/token.txt').toString());
-
-
-
-    request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', (err, response, body) => {
-            let jsapi_ticket = JSON.parse(body).ticket
-            let nonceStr = '123456'  // 密钥，字符串任意，可以随机生成
-            let timestamp = new Date().getTime() // 时间戳
-            let url = req.query.url  // 使用接口的url链接，不包含#后的内容
-
-            // 将请求以上字符串，先按字典排序，再以'&'拼接，如下：其中j > n > t > u，此处直接手动排序
-            let str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonceStr + '×tamp=' + timestamp + '&url=' + url
-
-            // 用sha1加密
-            let signature = sha1(str)
-
-            res.send({
-                appId: appid,
-                timestamp: timestamp,
-                nonceStr: nonceStr,
-                signature: signature,
-            })
-        })
-
-
-
+    let clientUrl = req.body.url
+    if(tools.isEmpty(clientUrl)){
+        return tools.echoError(res, req.url + "no url");
+    }
+    let jsTicket = fs.readFileSync(path.join('./tokens/411400/jsTicket.txt').toString());
+    let ret =tools.sign(jsTicket,clientUrl);
+    res.json(ret);
 };
 /*短信验证码：*/
 exports.sendMessage =(req,res)=>{
