@@ -10,6 +10,7 @@ const db = require('./db');
 const sms = require('./sms');
 const moment = require('moment');
 const config = require('../config.json').config;
+const sha1 = require('sha1');
 var i=0;
 //xml解析模块
 const XMLJS = require('xml2js');
