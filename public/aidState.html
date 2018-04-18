@@ -128,7 +128,7 @@
                 var size = 5;
                 var token = localStorage.getItem('token');
 
-              console.log(token);
+                alert(token);
                 // dropload
                 $('.content').dropload({
                     scrollArea : window,
@@ -139,7 +139,7 @@
                         $.ajax({
                             type: 'post',
                             url:'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=' + token,
-                            data:{ type:'news',offset:page*size,count:size},
+                            data:{ "type":"news","offset": page*size ,"count":size},
                             success: function(data){
                                 var arrLen = data.length;
                                 for(var k in data){
@@ -194,10 +194,8 @@
                                 },1000);
                             },
                             error: function(err){
-                                for(var k in err){
-                                    alert(err[k]);
-                                }
-//                                alert(err);
+
+                                alert('error');
                                 // 即使加载出错，也得重置
                                 me.resetload();
                             }
