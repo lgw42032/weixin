@@ -127,7 +127,7 @@
                 // 每页展示5个
                 var size = 5;
                 var token = localStorage.getItem('token');
-               
+
 //                console.log(token);
                 // dropload
                 $('.content').dropload({
@@ -138,10 +138,8 @@
                         var result = '';
                         $.ajax({
                             type: 'post',
-                            url: 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token,
+                            url:'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=' + token,
                             data:{ type:'news',offset:page*size,count:size},
-//                            url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
-                            dataType: 'json',
                             success: function(data){
                                 var arrLen = data.length;
                                 for(var k in data){
@@ -196,7 +194,8 @@
                                 },1000);
                             },
                             error: function(xhr, type){
-                                alert('Ajax error!');
+                                alert('xhr!',xhr);
+                                alert('type!',type);
                                 // 即使加载出错，也得重置
                                 me.resetload();
                             }
