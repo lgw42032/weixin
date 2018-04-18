@@ -30,13 +30,12 @@ const getAccessToken = function (config) {
     })
 };
 const getJsTicket = function(config){
-    getAccessToken(config).then(res => {
-        let token = res['access_token'];
-        fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
-            //console.log(err);
-        });
-        return new Promise((resolve, reject) => {
-
+    return new Promise((resolve, reject) => {
+        getAccessToken(config).then(res => {
+            let token = res['access_token'];
+            fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
+                //console.log(err);
+            });
             let reqUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ token +'&type=jsapi'
             let options = {
                 method: 'get',
@@ -53,8 +52,11 @@ const getJsTicket = function(config){
                     reject(err)
                 }
             })
+
         })
+
     })
+
 }
 const saveToken = function (config) {
     getJsTicket(config).then(data => {
