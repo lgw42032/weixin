@@ -339,8 +339,8 @@
                     //地图初始化
 
                     //坐标转换完之后的回调函数
-                    translateCallback = function (data1){
-                        console.log(data1);
+                    translateCallback = function (locationArr){
+                        let location = locationArr.points[0];
                         getHospitalInfo.then(function(data){
 
                             var lis =[];
@@ -393,7 +393,7 @@
                                 });
 
                             };
-                            myLocation = new BMap.Point(data1.points[0]);
+                            myLocation = new BMap.Point(location.lng,location.lat);
                             console.log('myLocation',myLocation)
                             map.centerAndZoom(myLocation, 12);
                             for(var i=0;i<data_info.length;i++){
