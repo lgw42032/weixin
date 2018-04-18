@@ -138,7 +138,7 @@
                         var result = '';
                         $.ajax({
                             type: 'post',
-                            url:'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=' + token,
+                            url:'/getNews',
                             data:{ "type":"news","offset": page*size ,"count":size},
                             success: function(data){
                                 var arrLen = data.length;

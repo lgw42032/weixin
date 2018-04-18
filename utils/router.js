@@ -15,6 +15,8 @@ var jsonParser = bodyParser.json();
 //发送验证码
 router.post('/sendMessage',service.sendMessage);
 
+//获取图文列表
+router.post('/getNews',service.getNews);
 
 //获取配置文件
 router.get('/getConfig', function(req, res) {

@@ -171,7 +171,34 @@ exports.getToken = (req,res)=>{
     let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
     tools.echoSuccess(res,"success",token);
 }
+exports.getNews =(req,res) => {
+    let type = req.body.type;
+    let offset = req.body.offset;
+    let count = req.body.count;
 
+    let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
+    let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token;
+    let options = {
+        method: 'post',
+        url: wxGetAccessTokenBaseUrl,
+        data:{
+            "type":type,
+            "offset":offset,
+            "count":count
+        }
+    };
+    request(options, function (err, res, body) {
+        if (res) {
+            console.log('getNews',body);
+            tools.echoSuccess(res,"success",body);
+        } else {
+            console.log('err',err);
+            tools.echoError(res,"error", '调用失败');
+        }
+    });
+
+
+};
 //获取jssdk
 exports.getJssdk = (req,res) => {
     let clientUrl = req.body.url
