@@ -258,17 +258,19 @@
             })
         })
     }
-    function getAccountInfo(){
+    function getJssdk(){
         return new Promise(function(resolve,reject){
             $.ajax({
-                url:'/getAccountInfo',
-                type:'get',
-                data: {},
+                url:'/getJssdk',
+                type:'post',
+                data: {
+                    url:location.href
+                },
                 success:function(data){
                     resolve(data);
                 },
                 error:function(err){
-                    console.log('getAccountInfo',err)
+                    console.log('getJssdk',err)
                     reject(err)
                 }
             })
@@ -278,7 +280,7 @@
     var accountInfo;
     getConfig().then(function(data){
         config = data;
-        return getAccountInfo();
+        return getJssdk();
     }).then(function(data){
         accountInfo = data;
         wx.config({

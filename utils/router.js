@@ -22,10 +22,7 @@ router.get('/getConfig', function(req, res) {
 });
 
 //获取账户信息
-router.get('/getAccountInfo', function(req, res) {
-    const accountInfo1 = require('../accountInfo.json');
-    res.json(accountInfo1);
-});
+router.post('/getJssdk',service.getJssdk);
 
 //增加中心
 router.post('/addCenter',service.addCenter);
