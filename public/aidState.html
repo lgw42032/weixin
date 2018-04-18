@@ -193,12 +193,9 @@
                                     me.resetload();
                                 },1000);
                             },
-                            error: function(xhr, type){
-                                for(var k in xhr){
-                                    alert(xhr[k])
-                                }
+                            error: function(err){
 
-                                alert(type);
+                                alert(err);
                                 // 即使加载出错，也得重置
                                 me.resetload();
                             }
