@@ -171,7 +171,7 @@ exports.getJssdk = (req,res) => {
     const grant_type = 'client_credential';
     const appid = config[0].appId;
     const secret = config[0].appsecret ;
-    let access_token = fs.readFileSync(path.join('./tokens',v.city,'token.txt').toString());
+    let access_token = fs.readFileSync(path.join('./tokens/411400/token.txt').toString());
 
 
 
