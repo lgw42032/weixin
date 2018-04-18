@@ -2,4 +2,6 @@
 /config.json
 /node_modules/
 /tokens/
+/accountInfo.json
+
 
