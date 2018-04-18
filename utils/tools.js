@@ -405,9 +405,9 @@ exports.sign = function(jsapi_ticket, url) {
         timestamp:this.createTimestamp(),
         url: url
     }
-    var string = raw(ret)
-    ret.signature = sha1(string)
-    ret.appId =  config.appid
+    var string = this.raw(ret)
+    ret.signature = this.sha1(string)
+    ret.appId =  config.config[0].appid
     return ret
 }
 
