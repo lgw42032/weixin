@@ -242,7 +242,7 @@
         let accountInfo = data;
         console.log('getJssdk',data);
         wx.config({
-            debug: true,
+            debug: false,
             appId: appId,
             timestamp: accountInfo.timestamp,
             nonceStr: accountInfo.nonceStr,
