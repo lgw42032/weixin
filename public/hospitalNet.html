@@ -331,9 +331,7 @@
                         speed:speed,
                         accuracy:accuracy
                     })
-
-
-
+                    map = new BMap.Map("allmap");
                     var y =  latitude;
                     var x =  longitude;
                     var ggPoint = new BMap.Point(x,y);
@@ -342,47 +340,12 @@
 
                     //坐标转换完之后的回调函数
                     translateCallback = function (data1){
+                        console.log(data1);
                         getHospitalInfo.then(function(data){
 
                             var lis =[];
                             var myLocation;
                             var data_info = data;
-                            map = new BMap.Map("allmap");
-//        map.centerAndZoom(new BMap.Point(113.933871,35.308968), 12);
-                            var searchComplete = function (results){
-                                console.log(results);
-//            if (transit.getStatus() != BMAP_STATUS_SUCCESS){
-//                return ;
-//            }
-                                data_info.forEach(function(v,i,arr){
-                                    if(results.bv.point.lng== v[0]){
-                                        var point = new BMap.Point(v[0],v[1]);
-                                        var distance= results.getPlan(0).getDistance(true);
-                                        console.log('distance',distance);
-                                        var marker =  new BMap.Marker(point);
-                                        marker.setIcon(null)
-                                        var content = v[2];
-                                        var li = $('<li></li>');
-                                        li.attr('distance',distance);
-                                        li.html(content+'总路程为'+ distance);
-                                        $('#result').append(li);
-                                        addClickHandler(content,marker,li);
-                                    }
-                                });
-
-                            };
-                            myLocation = new BMap.Point(data1.points[0]);
-                            map.centerAndZoom(myLocation, 12);
-                            for(var i=0;i<data_info.length;i++){
-                                console.log(data_info[i]);
-                                let point = new BMap.Point(data_info[i][0],data_info[i][1]);
-                                var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}, onSearchComplete: function(results){
-                                    searchComplete(results);
-                                }});
-                                driving.search(myLocation,point);
-                                driving.setPolicy(BMAP_DRIVING_POLICY_LEAST_TIME);
-                            }
-
                             function addClickHandler(content,marker,li){
 
                                 var searchInfoWindow = null;
@@ -407,6 +370,43 @@
                                 map.addOverlay(marker);
 
                             }
+
+                            var searchComplete = function (results){
+                                console.log(results);
+//            if (transit.getStatus() != BMAP_STATUS_SUCCESS){
+//                return ;
+//            }
+                                data_info.forEach(function(v,i,arr){
+                                    if(results.bv.point.lng== v[0]){
+                                        var point = new BMap.Point(v[0],v[1]);
+                                        var distance= results.getPlan(0).getDistance(true);
+                                        console.log('distance',distance);
+                                        var marker =  new BMap.Marker(point);
+                                        marker.setIcon(null)
+                                        var content = v[2];
+                                        var li = $('<li></li>');
+                                        li.attr('distance',distance);
+                                        li.html(content+'总路程为'+ distance);
+                                        $('#result').append(li);
+                                        addClickHandler(content,marker,li);
+                                    }
+                                });
+
+                            };
+                            myLocation = new BMap.Point(data1.points[0]);
+                            console.log('myLocation',myLocation)
+                            map.centerAndZoom(myLocation, 12);
+                            for(var i=0;i<data_info.length;i++){
+                                console.log(data_info[i]);
+                                let point = new BMap.Point(data_info[i][0],data_info[i][1]);
+                                var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}, onSearchComplete: function(results){
+                                    searchComplete(results);
+                                }});
+                                driving.search(myLocation,point);
+                                driving.setPolicy(BMAP_DRIVING_POLICY_LEAST_TIME);
+                            }
+
+
                         },function(err){
                             console.log(err);
                         })
