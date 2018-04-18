@@ -128,7 +128,7 @@
                 var size = 5;
                 var token = localStorage.getItem('token');
 
-//                console.log(token);
+              console.log(token);
                 // dropload
                 $('.content').dropload({
                     scrollArea : window,
@@ -194,8 +194,10 @@
                                 },1000);
                             },
                             error: function(err){
-
-                                alert(err);
+                                for(var k in err){
+                                    alert(err[k]);
+                                }
+//                                alert(err);
                                 // 即使加载出错，也得重置
                                 me.resetload();
                             }
