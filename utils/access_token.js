@@ -58,7 +58,7 @@ const getJsTicket = function(config){
 }
 const saveToken = function (config) {
     getJsTicket(config).then(data => {
-        let token = data;
+        let ticket = data;
         fs.writeFile(path.join('./tokens',config.city,'JsTicket.txt'), ticket, function (err) {
             console.log(err);
         });
