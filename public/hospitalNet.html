@@ -258,13 +258,13 @@
             })
         })
     }
-    function getJssdk(){
+    function getJssdk(url){
         return new Promise(function(resolve,reject){
             $.ajax({
                 url:'/getJssdk',
                 type:'post',
                 data: {
-                    url:location.href
+                    url:url
                 },
                 success:function(data){
                     resolve(data);
@@ -279,9 +279,10 @@
     var accountInfo;
     getConfig().then(function(data){
 
-        return getJssdk();
+        return getJssdk(location.href);
     }).then(function(data){
         accountInfo = data;
+        console.log('getJssdk',data);
         wx.config({
             debug: true,
             appId: accountInfo.appId,
