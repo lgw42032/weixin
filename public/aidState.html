@@ -103,12 +103,15 @@
     </script>
     <script>
         //js 读取文件
-        function fmtDate(obj){
-            var date =  new Date(obj);
-            var y = 1900+date.getYear();
-            var m = "0"+(date.getMonth()+1);
-            var d = "0"+date.getDate();
-            return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
+        function timestampToTime(timestamp) {
+            var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+            Y = date.getFullYear() + '-';
+            M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+            D = date.getDate() + ' ';
+            h = date.getHours() + ':';
+            m = date.getMinutes() + ':';
+            s = date.getSeconds();
+            return Y+M+D+h+m+s;
         }
 
         $(function(){
@@ -170,7 +173,7 @@
                                         result +=   '<a class="item opacity" href="'+ newItem[j].url.replace('"','').replace(/[\\]/g,'')+'">'
                                                 +'<img src="'+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
                                                 +'<h3>'+ newItem[j].title+'</h3>'
-                                                +'<span class="date">'+ fmtDate( data[i].content.update_time) +'</span>'
+                                                +'<span class="date">'+ timestampToTime( data[i].content.update_time) +'</span>'
                                                 +'</a>';
                                     }
 
