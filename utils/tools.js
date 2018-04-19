@@ -299,7 +299,7 @@ exports.calculateRate = function (ratio) {
 };
 exports.getApiUrl = function(){
 
-    return "https://"+config.centerHost+':'+config.centerPort;
+    return "http://"+config.centerHost+':'+config.centerPort;
 };
 exports.sendCenter = function(data){
     console.log('sendCenterData',data.data);
