@@ -40,24 +40,32 @@
             /*height: 40px;*/
             border:1px solid #ddd;
         }
-        .content .item h3{
+        .content .item div{
             display: block;
             -webkit-box-flex: 1;
             -webkit-flex: 1;
             -ms-flex: 1;
             flex: 1;
             width: 100%;
-            max-height: 40px;
-            overflow: hidden;
-            line-height: 20px;
-            margin: 0 10px;
-            text-overflow:ellipsis;
-            white-space: nowrap;
         }
-        .content .item .date{
+        .content .item div h3{
+            /*display: block;*/
+            /*-webkit-box-flex: 1;*/
+            /*-webkit-flex: 1;*/
+            /*-ms-flex: 1;*/
+            /*flex: 1;*/
+            /*width: 100%;*/
+            /*max-height: 40px;*/
+            /*overflow: hidden;*/
+            /*line-height: 20px;*/
+            margin: 0 10px;
+            /*text-overflow:ellipsis;*/
+            /*white-space: nowrap;*/
+        }
+        .content .item div .date{
             display: block;
-            height: 20px;
-            line-height: 20px;
+            /*height: 20px;*/
+            /*line-height: 20px;*/
             color: #999;
         }
         .opacity{
@@ -174,8 +182,8 @@
 
                                         result +=   '<a class="item opacity" href="'+ newItem[j].url.replace('"','').replace(/[\\]/g,'')+'">'
                                                 +'<img src="'+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
-                                                +'<h3>'+ newItem[j].title+'</h3>'
-                                                +'<span class="date">'+ timestampToTime( data[i].content.update_time) +'</span>'
+                                                +'<div><h3>'+ newItem[j].title+'</h3>'
+                                                +'<span class="date">'+ timestampToTime( data[i].content.update_time) +'</span></div>'
                                                 +'</a>';
                                     }
 
