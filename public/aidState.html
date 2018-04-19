@@ -138,7 +138,7 @@
                         $.ajax({
                             type: 'post',
                             url:'/getNews',
-                            data:{ "type":"news","offset": page*size ,"count":size},
+                            data:{ "type":"news","offset": (page-1)*size ,"count":size},
                             success: function(data){
                                 var arrLen = data.length;
 
