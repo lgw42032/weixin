@@ -123,7 +123,7 @@
                             url:'/getNews',
                             data:{ "type":"news","offset": (page-1)*size ,"count":size},
                             success: function(news){
-                                let data = news.item;
+                                let data = news.data.item;
                                 var arrLen = data.length;
 
                                 var a = {
