@@ -170,7 +170,7 @@
                                         result +=   '<a class="item opacity" href="'+ newItem[j].url.replace('"','').replace(/[\\]/g,'')+'">'
                                                 +'<img src="'+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
                                                 +'<h3>'+ newItem[j].title+'</h3>'
-                                                +'<span class="date">'+ fmtDate(newItem.update_time) +'</span>'
+                                                +'<span class="date">'+ fmtDate( data[i].content.update_time) +'</span>'
                                                 +'</a>';
                                     }
 
