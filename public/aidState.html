@@ -172,7 +172,7 @@
                                     for(var j=0;j<newItem.length;j++){
 
                                         result +=   '<a class="item opacity" href="'+ newItem[j].url.replace('"','').replace(/[\\]/g,'')+'">'
-                                                +'<img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
+                                                +'<img src="'+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
                                                 +'<h3>'+ newItem[j].title+'</h3>'
                                                 +'<span class="date">'+ timestampToTime( data[i].content.update_time) +'</span>'
                                                 +'</a>';
