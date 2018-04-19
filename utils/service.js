@@ -196,7 +196,7 @@ exports.getNews =(req,res) => {
             request(option, function (err, res, body) {
                 if (res) {
                     console.log('postWX',body);
-                    resolve(JSON.parse(body));
+                    resolve(body);
                 } else {
                     console.log('err',err);
                     reject(err);
