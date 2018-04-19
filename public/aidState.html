@@ -128,7 +128,6 @@
                 var size = 5;
                 var token = localStorage.getItem('token');
 
-                alert(token);
                 // dropload
                 $('.content').dropload({
                     scrollArea : window,
@@ -142,9 +141,6 @@
                             data:{ "type":"news","offset": page*size ,"count":size},
                             success: function(data){
                                 var arrLen = data.length;
-                                for(var k in data){
-                                    alert(data[k])
-                                }
 
                                 //                                var data = {
 //                                    "total_count": 10,
@@ -171,13 +167,13 @@
 //                                    ]
 //                                }
                                 if(arrLen > 0){
-//                                for(var i=0; i<arrLen; i++){
-//                                    result +=   '<a class="item opacity" href="'+data[i].link+'">'
-//                                            +'<img src="'+data[i].pic+'" alt="">'
-//                                            +'<h3>'+data[i].title+'</h3>'
-//                                            +'<span class="date">'+data[i].date+'</span>'
-//                                            +'</a>';
-//                                }
+                                for(var i=0; i<arrLen; i++){
+                                    result +=   '<a class="item opacity" href="'+data[i].link+'">'
+                                            +'<img src="'+data[i].pic+'" alt="">'
+                                            +'<h3>'+data[i].title+'</h3>'
+                                            +'<span class="date">'+data[i].date+'</span>'
+                                            +'</a>';
+                                }
                                     // 如果没有数据
                                 }else{
                                     // 锁定
