@@ -180,6 +180,7 @@ exports.getNews =(req,res) => {
         "offset":offset,
         "count":count
 }
+    console.log(requestData);
     let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
     let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token;
     let options = {
