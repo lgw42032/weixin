@@ -171,7 +171,7 @@
                                     for(var j=0;j<newItem.length;j++){
 
                                         result +=   '<a class="item opacity" href="'+ newItem[j].url.replace('"','').replace(/[\\]/g,'')+'">'
-                                                +'<img src="http://img2.haokoo.com/getImg.php?'+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
+                                                +'<img src="http://img2.haokoo.com/getImg.php?url='+ newItem[j].thumb_url.replace('"','').replace(/[\\]/g,'')+'" alt="">'
                                                 +'<h3>'+ newItem[j].title+'</h3>'
                                                 +'<span class="date">'+ timestampToTime( data[i].content.update_time) +'</span>'
                                                 +'</a>';
