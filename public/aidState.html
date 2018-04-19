@@ -36,7 +36,7 @@
         }
         .content .item img{
             display: block;
-            width: 1rem;
+            width: 2rem;
             /*height: 40px;*/
             border:1px solid #ddd;
         }
@@ -51,7 +51,8 @@
             overflow: hidden;
             line-height: 20px;
             margin: 0 10px;
-            /*font-size: 1.2rem;*/
+            text-overflow:ellipsis;
+            white-space: nowrap;
         }
         .content .item .date{
             display: block;
@@ -112,7 +113,7 @@
             h = date.getHours() + ':';
             m = date.getMinutes() + ':';
             s = date.getSeconds();
-            return Y+M+D+h+m+s;
+            return Y+M+D;
         }
 
         $(function(){
