@@ -18,6 +18,6 @@
   },
   "host":"http://www.brothergo.xin",
   "token":"liguowei",
-  "centerHost":"120.55.49.72",
+  "centerHost":"127.0.0.1",
   "centerPort":"5112"
 }
