@@ -103,30 +103,13 @@
     </script>
     <script>
         //js 读取文件
-        function getToken(){
-           return new Promise(function(resolve,reject){
-                $.ajax({
-                    url:'/getToken',
-                    type:'get',
-                    data:{},
-                    success:function(data){
-                        resolve(data);
-                    },
-                    error:function(err){
-                        reject(err)
-                    }
-                })
-            });
-        }
 
         $(function(){
-            getToken().then(function(data){
-                console.log('data',data)
                 // 页数
                 var page = 0;
                 // 每页展示5个
                 var size = 5;
-                var token = localStorage.getItem('token');
+//                var token = localStorage.getItem('token');
 
                 // dropload
                 $('.content').dropload({
@@ -140,7 +123,8 @@
                             url:'/getNews',
                             data:{ "type":"news","offset": (page-1)*size ,"count":size},
                             success: function(data){
-                                var arrLen = data.length;
+                                console.log(data);
+                                var arrLen = data.item.length;
 
                                 //                                var data = {
 //                                    "total_count": 10,
@@ -198,7 +182,7 @@
                         });
                     }
                 });
-            })
+
 
         });
     </script>
