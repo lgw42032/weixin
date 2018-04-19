@@ -122,41 +122,50 @@
                             type: 'post',
                             url:'/getNews',
                             data:{ "type":"news","offset": (page-1)*size ,"count":size},
-                            success: function(data){
-                                console.log(data);
-                                var arrLen = data.item.length;
+                            success: function(news){
+                                let data = news.item;
+                                var arrLen = data.length;
 
-                                //                                var data = {
-//                                    "total_count": 10,
-//                                    "item_count": 5,
-//                                    "item": [{
-//                                        "media_id": 1,
-//                                        "content": {
-//                                            "news_item": [{
-//                                                "title": '',
-//                                                "thumb_media_id": THUMB_MEDIA_ID,
-//                                                "show_cover_pic": SHOW_COVER_PIC(0 / 1),
-//                                                "author": AUTHOR,
-//                                                "digest": DIGEST,
-//                                                "content": CONTENT,
-//                                                "url": URL,
-//                                                "content_source_url": CONTETN_SOURCE_URL
-//                                            },
-//
-//                                            ]
-//                                        },
-//                                        "update_time": UPDATE_TIME
-//                                    },
-//                                        //可能有多个图文消息item结构
-//                                    ]
-//                                }
+                                var a = {
+                                    "item": [
+                                        {
+                                            "media_id":"x92MtJGmsNaciXksZ_Zw3GVwKY5oxLJMfpU_1UvBrQQ",
+                                            "content":{
+                                                "news_item":[
+                                                    {
+                                                        "title":"测试",
+                                                        "author":"lgw",
+                                                        "digest":"测试文章",
+                                                        "content":"<p>测试文章<\/p><p><img class=\"\" data-copyright=\"0\" data-ratio=\"0.5\" data-s=\"300,640\" data-src=\"https:\/\/mmbiz.qpic.cn\/mmbiz_png\/6lPVBc8YvmkF9ofM0cm01p3ryGtTLXeRO5tU2fApap3MVbQ2H3a1w4z0W3brJRzYO7lMt3h4pQdQFY9icib7lnOw\/640?wx_fmt=png\" data-type=\"png\" data-w=\"50\" style=\"\"  \/><\/p><p><br  \/><\/p>",
+                                                        "content_source_url":"",
+                                                        "thumb_media_id":"x92MtJGmsNaciXksZ_Zw3A0V8CCPn00hq3TpvgRZN30",
+                                                        "show_cover_pic":0,
+                                                        "url":"http:\/\/mp.weixin.qq.com\/s?__biz=MzA5Njc0NTU3MQ==&mid=100000002&idx=1&sn=f30d6ac25c089d4fac1f7ab0923d9bf8&chksm=10aa200e27dda91836ddb4408a15ffbac5baba35bcdc1c36b5a46ebee01857dd16e768a2086c#rd",
+                                                        "thumb_url":"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/6lPVBc8YvmkF9ofM0cm01p3ryGtTLXeRtgmTXmno8ib6bO4icxpYy6ibOC2icYmiazE8Hr17BYpicymKx8v7KNXllv9w\/0?wx_fmt=jpeg",
+                                                        "need_open_comment":1,
+                                                        "only_fans_can_comment":0
+                                                    }
+                                                ],
+                                                "create_time":1524044442,
+                                                "update_time":1524044629
+                                            },
+                                            "update_time":1524044629}
+                                    ],
+                                    "total_count":1,
+                                    "item_count":1
+                                }
+
                                 if(arrLen > 0){
                                 for(var i=0; i<arrLen; i++){
-                                    result +=   '<a class="item opacity" href="'+data[i].link+'">'
-                                            +'<img src="'+data[i].pic+'" alt="">'
-                                            +'<h3>'+data[i].title+'</h3>'
-                                            +'<span class="date">'+data[i].date+'</span>'
-                                            +'</a>';
+                                    var newItem = data[i].content.news_item;
+                                    for(var j=0;j<newItem.length;j++){
+                                        result +=   '<a class="item opacity" href="'+ newItem[j].url+'">'
+                                                +'<img src="'+ newItem[j].thumb_url+'" alt="">'
+                                                +'<h3>'+ newItem[j].title+'</h3>'
+                                                +'<span class="date">'+ newItem[j].date+'</span>'
+                                                +'</a>';
+                                    }
+
                                 }
                                     // 如果没有数据
                                 }else{
