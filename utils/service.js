@@ -176,7 +176,7 @@ exports.getNews =(req,res) => {
     let offset = req.body.offset;
     let count = req.body.count;
     let  requestData= {
-        "type":type+ "",
+        "type":type,
         "offset":offset,
         "count":count
 }
@@ -189,7 +189,7 @@ exports.getNews =(req,res) => {
         headers: {
             "content-type": "application/json",
         },
-        body: JSON.stringify(requestData)
+        body: requestData
     };
     function postWX(option){
         return new Promise((resolve, reject) => {
