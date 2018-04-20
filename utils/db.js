@@ -3,7 +3,7 @@
  */
 var mysql = require('mysql');
 var tools = require('./tools');
-var options = require('../config.json').dbConfig;
+var options = require('../config/config.json').dbConfig;
 var pool = mysql.createPool(options);
 var co = require('co');
 exports.selectSqlList = function(sqlList){

@@ -1,7 +1,7 @@
 ﻿const qs = require('querystring');
 const path = require('path');
 const fs = require('fs');
-//const config = require('./config.json').config;
+//const config = require('./config.tpl.json').config;
 const request = require('request');
 const crypto = require('crypto');
 const co = require('co');
@@ -9,12 +9,12 @@ const tools = require('./tools');
 const db = require('./db');
 const sms = require('./sms');
 const moment = require('moment');
-const config = require('../config.json').config;
+const config = require('../config/config.json').config;
 const sha1 = require('sha1');
 var i=0;
 //xml解析模块
 const XMLJS = require('xml2js');
-const token = require('../config.json').token;
+const token = require('../config/config.json').token;
 //解析，将xml解析为json
 var parser = new XMLJS.Parser();
 //重组，将json重组为xml
@@ -1180,7 +1180,7 @@ exports.microAid = (req,res) => {
     let params = req.query;
 	console.log(params,'params');
     let token='';
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config;
     configs.forEach(function(v,i,arr){
         if(v.city == params.city ){
@@ -1223,7 +1223,7 @@ exports.microAid = (req,res) => {
 //微网站
 exports.microNet = (req,res) => {
     let params = req.query;
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config='';
     let token='';
     configs.forEach(function(v,i,arr){
@@ -1270,7 +1270,7 @@ exports.personalCenter = (req,res) => {
  console.log(params,'params');
 
     let token='';
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config;
     configs.forEach(function(v,i,arr){
         if(v.city == params.city ){

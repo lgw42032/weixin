@@ -1,7 +1,11 @@
-/logs/
-/config.json
-/node_modules/
-/tokens/
+
+/node_modules
+/tokens/*.txt
 /accountInfo.json
+/.idea
+/logs/*.log
+/config/config.js
+/node_modules
+/public/images/ueditor/*.*
 
 

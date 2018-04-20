@@ -1,5 +1,5 @@
 //var async = require('async');
-var config = require('../config.json');
+var config = require('../config/config.json');
 var shortid =  require('shortid');
 var moment = require('moment');
 var request = require('request');

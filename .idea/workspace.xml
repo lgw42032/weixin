@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a094b319-819c-4535-b706-1a0ab2234f79" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tokens/411400/JsTicket.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/config.tpl.json" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\jsLibraryMappings.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\libraries\weixin_node_modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\watcherTasks.xml" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\weixin.iml" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\.idea\workspace.xml" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\accountInfo.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\xhs120\weixin\config.json" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\logs\center_error_2018-02-02.log" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\logs\center_error_2018-02-03.log" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\logs\center_error_2018-02-05.log" afterPath="" />
@@ -10991,8 +11000,755 @@
       <change type="DELETED" beforePath="F:\xhs120\weixin\node_modules\yauzl\README.md" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\node_modules\yauzl\index.js" afterPath="" />
       <change type="DELETED" beforePath="F:\xhs120\weixin\node_modules\yauzl\package.json" afterPath="" />
-      <change type="DELETED" beforePath="F:\xhs120\weixin\tokens\411400\token.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\925980469135282176.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\926025409563332608.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\926025457818800128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\926295459901870080.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\929587749177135104.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\929587763219664896.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877516229447680.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877516254613504.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877516279779328.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877817791516672.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877817825071104.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877817875402752.jpg" afterPath="" />
+      <change type="DELETED" beforePath="F:\xhs120\weixin\public\images\ueditor\940877818114478080.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/Changelog.md" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/Changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/Intro.md" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/Intro.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/README.md" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/accordion/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/accordion/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/panel/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/panel/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/_content.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/_dialog.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/_dialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/aboutUs.html" afterPath="$PROJECT_DIR$/public/aboutUs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/accept.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/accept.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/access_token.js" afterPath="$PROJECT_DIR$/utils/access_token.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/accordion.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/switchbutton/action.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/switchbutton/action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/splitbutton/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/splitbutton/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/actions.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/actions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addAidKnowledgeCategory.html" afterPath="$PROJECT_DIR$/public/addAidKnowledgeCategory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addAidKnowledgeItem.html" afterPath="$PROJECT_DIR$/public/addAidKnowledgeItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addAidVideoItem.html" afterPath="$PROJECT_DIR$/public/addAidVideoItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addCenter.html" afterPath="$PROJECT_DIR$/public/addCenter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/addHospital.css" afterPath="$PROJECT_DIR$/public/css/addHospital.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addHospital.html" afterPath="$PROJECT_DIR$/public/addHospital.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/addVehicle.html" afterPath="$PROJECT_DIR$/public/addVehicle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/addremove.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/addremove.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/adminHeader.css" afterPath="$PROJECT_DIR$/public/css/adminHeader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/aidClass.css" afterPath="$PROJECT_DIR$/public/css/aidClass.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/aidClass.html" afterPath="$PROJECT_DIR$/public/aidClass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/aidKnowledge.html" afterPath="$PROJECT_DIR$/public/aidKnowledge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/aidState.css" afterPath="$PROJECT_DIR$/public/css/aidState.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/aidState.html" afterPath="$PROJECT_DIR$/public/aidState.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/aidVideo.html" afterPath="$PROJECT_DIR$/public/aidVideo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/ajax.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/ajax.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/alert.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/alert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/align.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/align.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/aligncolumns.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/aligncolumns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/alignment.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/alignment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combo/animation.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combo/animation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/animation.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/animation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/appLog.js" afterPath="$PROJECT_DIR$/utils/appLog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/attaching.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/attaching.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/attachment/attachment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/autoLocation.html" afterPath="$PROJECT_DIR$/public/autoLocation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/autoheight.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/autoheight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/autoheight.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/autoheight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/base.css" afterPath="$PROJECT_DIR$/public/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/dialog/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/dialog/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/form/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/form/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/layout/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/layout/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/menu/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/menu/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/tree/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/tree/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combo/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combo/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/easyloader/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/easyloader/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/progressbar/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/progressbar/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/resizable/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/resizable/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/splitbutton/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/splitbutton/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/switchbutton/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/switchbutton/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/basic.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/borderstyle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/borderstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/bower.json" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/button.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/button.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/button.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/button.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/buttonalign.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/buttonalign.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/buttons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cacheeditor.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cacheeditor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/calendar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/category.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cellediting.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cellediting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cellstyle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/cellstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/centerImgUrl.html" afterPath="$PROJECT_DIR$/public/centerImgUrl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/change.css" afterPath="$PROJECT_DIR$/public/css/change.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/changelog.txt" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/changelog.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/checkbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/checkbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/checkbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/checkbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/checkbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/checkbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/checkbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/checkbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/clearicon.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/clearicon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/clearicon.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/clearicon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/clientpagination.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/clientpagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/clientpagination.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/clientpagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/clone.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/clone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/codemirror/codemirror.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/codemirror/codemirror.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/codemirror/codemirror.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/codemirror/codemirror.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/collapsetitle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/collapsetitle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/color.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/color.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/columngroup.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/columngroup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/combo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/combobox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/combobox_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/combobox_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/combobox_data2.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/combobox_data2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common.js" afterPath="$PROJECT_DIR$/public/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/complex.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/complex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/complextoolbar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/complextoolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/complextoolbar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/complextoolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/nodejs/config.json" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/nodejs/config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/constrain.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/constrain.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/contactUs.css" afterPath="$PROJECT_DIR$/public/css/contactUs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/contactUs.html" afterPath="$PROJECT_DIR$/public/contactUs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/contextmenu.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/contextmenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/contextmenu.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/contextmenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/contextmenu.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/contextmenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/createMeau.js" afterPath="$PROJECT_DIR$/utils/createMeau.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/custom.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/custom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/custom.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/custom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/custombuttons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/custombuttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/customcheckbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/customcheckbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/customcheckbox.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/customcheckbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/customcollapsetitle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/customcollapsetitle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/customcolumns.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/customcolumns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/customcontent.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/customcontent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/customformat.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/customformat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/customitem.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/customitem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/custompager.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/custompager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/customstyle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/customstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/customtools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/customtools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/customtools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/customtools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/customtooltip.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/customtooltip.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/cxwExtEasyUI.js" afterPath="$PROJECT_DIR$/public/js/libs/cxwExtEasyUI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/cxwExtIcon.css" afterPath="$PROJECT_DIR$/public/css/cxwExtIcon.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/cxwExtJavascript.js" afterPath="$PROJECT_DIR$/public/js/libs/cxwExtJavascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/cxwExtJquery.js" afterPath="$PROJECT_DIR$/public/js/libs/cxwExtJquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/cxwUtil.js" afterPath="$PROJECT_DIR$/public/js/libs/cxwUtil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/datagrid-detailview.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/datagrid-detailview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datagrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/datagrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/datagrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/datagrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/datagrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/datagrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/datagrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/datagrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/datagrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/datagrid_data2.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/datagrid_data2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datalist.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/datalist_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/datalist_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/dateformat.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/dateformat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/db.js" afterPath="$PROJECT_DIR$/utils/db.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/demo.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/demo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/dialog.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/dialogbase.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/dialogbase.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/disabledate.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/disabledate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/tree/dnd.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/tree/dnd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/dnd.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/dnd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/dropdown.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/dropdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.css" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.js" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.min.js" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/dist/dropload.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/dynamicdata.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/dynamicdata.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/easyloader.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/easyloader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/easyloader.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/easyloader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-af.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-af.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-am.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-am.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ar.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-bg.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ca.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-cs.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-cz.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-cz.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-da.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-de.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-el.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-en.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-es.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-fr.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-it.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-jp.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-jp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ko.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-nl.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-pl.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-pt_BR.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-pt_BR.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ru.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-sv_SE.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-sv_SE.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-tr.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-zh_CN.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-zh_CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-zh_TW.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/locale/easyui-lang-zh_TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/easyui.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/editAboutUs.html" afterPath="$PROJECT_DIR$/public/editAboutUs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/editCenterRegimenDiet.css" afterPath="$PROJECT_DIR$/public/css/editCenterRegimenDiet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/editCenterRegimenDiet.html" afterPath="$PROJECT_DIR$/public/editCenterRegimenDiet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/editable.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/editable.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/emotion/emotion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/error.html" afterPath="$PROJECT_DIR$/public/error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/errorplacement.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/errorplacement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/eventDetail.html" afterPath="$PROJECT_DIR$/public/eventDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/events.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/events.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/events.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/events.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/expandable.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/expandable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/feedback.html" afterPath="$PROJECT_DIR$/public/feedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/filebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/firstday.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/firstday.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/fixedwidth.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/fixedwidth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/flash.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/flash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/filebox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/progressbar/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/progressbar/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/searchbox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/fluid.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/fluid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/footer.css" afterPath="$PROJECT_DIR$/public/css/footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/footer.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/footer.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/footer.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/footer.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/form_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/form_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/format.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimespinner/format.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/format.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/format.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/formatcolumns.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/formatcolumns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/formatting.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/formatting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/formattip.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/formattip.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/frozencolumns.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/frozencolumns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/frozenrows.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/frozenrows.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/full.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/full.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/group.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/group.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/group.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/groupformat.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/groupformat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/header.css" afterPath="$PROJECT_DIR$/public/css/header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/header.js" afterPath="$PROJECT_DIR$/public/js/header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/healthInfo.html" afterPath="$PROJECT_DIR$/public/healthInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/help/help.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/hospitalNet.css" afterPath="$PROJECT_DIR$/public/css/hospitalNet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hospitalNet.html" afterPath="$PROJECT_DIR$/public/hospitalNet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/hospitalNet.js" afterPath="$PROJECT_DIR$/public/js/hospitalNet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/hover.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/hover.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/icon.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/icon.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/iconalign.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/iconalign.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/icons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/icons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/icons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/themes/iframe.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/themes/iframe.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/image/image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/increment.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/increment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/index.css" afterPath="$PROJECT_DIR$/public/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/index.html" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/index.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/initvalue.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/initvalue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/initvalue.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/initvalue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/initvalue.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/initvalue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/inline.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/inline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/inlinewindow.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/inlinewindow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/interactive.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/interactive.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/internal.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/internal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/js/iscroll.js" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/js/iscroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/itemicon.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/itemicon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/jquery-1.10.2.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/jquery-1.10.2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/jquery-1.10.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/public/js/libs/jquery-3.2.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.accordion.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.accordion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.accordion.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.accordion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.calendar.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.calendar.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combo.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combobox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combobox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.combobox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.combobox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combogrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combogrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combotree.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combotree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combotreegrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.combotreegrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/jquery.cookie.js" afterPath="$PROJECT_DIR$/public/js/libs/jquery.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datagrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datagrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datalist.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datalist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datebox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.datebox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.datebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datetimebox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datetimebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datetimespinner.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.datetimespinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.dialog.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.draggable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.draggable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.draggable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.draggable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.droppable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.droppable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.droppable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.droppable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.easyui.min.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.easyui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.easyui.mobile.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.easyui.mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.filebox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.filebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.form.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.form.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.layout.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.layout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.linkbutton.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.linkbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.linkbutton.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.linkbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.menu.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.menu.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.menubutton.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.menubutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.messager.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.messager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/js/jquery.min.js" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.min.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/js/jquery.min.js" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.mobile.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.numberbox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.numberbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.numberspinner.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.numberspinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.pagination.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.pagination.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.panel.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.parser.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.parser.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.passwordbox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.passwordbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.progressbar.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.progressbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.progressbar.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.progressbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.propertygrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.propertygrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.propertygrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.propertygrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.resizable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.resizable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.resizable.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.resizable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.searchbox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.slider.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.slider.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.spinner.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.spinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.splitbutton.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.splitbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.switchbutton.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.switchbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tabs.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.tabs.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.textbox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.textbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.timespinner.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.timespinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tooltip.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tree.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.tree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.treegrid.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.treegrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.validatebox.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.validatebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.window.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/plugins/jquery.window.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.window.js" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/src/jquery.window.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/jquery插件库.url" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/jquery插件库.url" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/layout.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/layout.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/lazyload.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/lazyload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/lines.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/lines.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/lines.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/lines.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/link/link.html" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/dialogs/link/link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/linkbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/links.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/load-bottom.html" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/load-bottom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/load-top-bottom.html" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/load-top-bottom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/load.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/load.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/loadcontent.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/loadcontent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/location.html" afterPath="$PROJECT_DIR$/public/location.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/locations.css" afterPath="$PROJECT_DIR$/public/css/locations.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/login.html" afterPath="$PROJECT_DIR$/public/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main.html" afterPath="$PROJECT_DIR$/public/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/mask.css" afterPath="$PROJECT_DIR$/public/css/mask.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/menu.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/menu.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/toolbar/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/menu/menubar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/menu/menubar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/menubutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/mergecells.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/mergecells.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/dialog/message.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/dialog/message.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/messager.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/microAid.css" afterPath="$PROJECT_DIR$/public/css/microAid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/microAid.html" afterPath="$PROJECT_DIR$/public/microAid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/microNet.css" afterPath="$PROJECT_DIR$/public/css/microNet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/microNet.html" afterPath="$PROJECT_DIR$/public/microNet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/mobile.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/modalwindow.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/modalwindow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/json/more.json" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/json/more.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/multiline.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/multiline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/multiline.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/multiline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/multiple-load.html" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/multiple-load.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/multiple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/multiple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/multiple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/multiple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/multiple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/multiple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/multiselect.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/multiselect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/multisorting.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/multisorting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/panel/nav.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/panel/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/nav.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menu/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/nav.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/menubutton/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/navigation.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/navigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/navigation.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/navigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/nestedlayout.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/nestedlayout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/nestedpanel.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/nestedpanel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/nestedtabs.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/nestedtabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/nocollapsible.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/nocollapsible.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/nonlinear.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/nonlinear.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/notice.html" afterPath="$PROJECT_DIR$/public/notice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/othersCall.html" afterPath="$PROJECT_DIR$/public/othersCall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/package.json" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/pagination.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/panel.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/paneltools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/panel/paneltools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/passwordbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/personalCenter.css" afterPath="$PROJECT_DIR$/public/css/personalCenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/personalCenter.html" afterPath="$PROJECT_DIR$/public/personalCenter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/plain.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/plain.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/position.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/messager/position.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/position.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/position.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/product-list.html" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/product-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/products.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/products.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/progressbar.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/propertygrid.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/propertygrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/propertygrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/propertygrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/propertygrid/propertygrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/pxToRem.js" afterPath="$PROJECT_DIR$/public/js/libs/pxToRem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/range.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberbox/range.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/range.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/numberspinner/range.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/range.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/range.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/range.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/timespinner/range.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/regimenDiet.css" afterPath="$PROJECT_DIR$/public/css/regimenDiet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/regimenDiet.html" afterPath="$PROJECT_DIR$/public/regimenDiet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/regimenDiet.js" afterPath="$PROJECT_DIR$/public/js/regimenDiet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/registration.html" afterPath="$PROJECT_DIR$/public/registration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/relativesBaseInfo.css" afterPath="$PROJECT_DIR$/public/css/relativesBaseInfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/relativesBaseInfo.html" afterPath="$PROJECT_DIR$/public/relativesBaseInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/relativesCall.css" afterPath="$PROJECT_DIR$/public/css/relativesCall.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/relativesCall.html" afterPath="$PROJECT_DIR$/public/relativesCall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/relativesInfo.css" afterPath="$PROJECT_DIR$/public/css/relativesInfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/relativesInfo.html" afterPath="$PROJECT_DIR$/public/relativesInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/remotedata.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/remotedata.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/remotedata.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datalist/remotedata.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/remotejsonp.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combobox/remotejsonp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/reports.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/reports.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/restrict.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/restrict.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/router.js" afterPath="$PROJECT_DIR$/utils/router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowborder.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowborder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/datagrid/rowediting.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo-mobile/datagrid/rowediting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowediting.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowediting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowstyle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/rowstyle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/rule.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/rule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/searchbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/selection.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/selection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/selfCall.html" afterPath="$PROJECT_DIR$/public/selfCall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/selfInfo.css" afterPath="$PROJECT_DIR$/public/css/selfInfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/selfInfo.html" afterPath="$PROJECT_DIR$/public/selfInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/service.js" afterPath="$PROJECT_DIR$/utils/service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/serviceRecord.html" afterPath="$PROJECT_DIR$/public/serviceRecord.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/setvalue.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combogrid/setvalue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/sharedcalendar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/sharedcalendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/showRegimenDietItem.html" afterPath="$PROJECT_DIR$/public/showRegimenDietItem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/showseconds.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datetimebox/showseconds.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/simple.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/pagination/simple.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/simpletoolbar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/simpletoolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/size.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/size.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/size.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/textbox/size.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/slider.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/sms.js" afterPath="$PROJECT_DIR$/utils/sms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/snap.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/draggable/snap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/sort.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/droppable/sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/spinner.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/splitbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/striptools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/striptools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/css/style.css" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/style.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/style.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/Swiper-3.4.2/swiper-3.4.2.jquery.min.js" afterPath="$PROJECT_DIR$/public/js/libs/Swiper-3.4.2/swiper-3.4.2.jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/Swiper-3.4.2/swiper-3.4.2.min.css" afterPath="$PROJECT_DIR$/public/js/libs/Swiper-3.4.2/swiper-3.4.2.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/switchbutton.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/tab.html" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabimage.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabimage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabposition.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabposition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tabs.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabstools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tabstools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/template.js" afterPath="$PROJECT_DIR$/public/js/libs/template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test.html" afterPath="$PROJECT_DIR$/public/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/textbox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/toggle.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/linkbutton/toggle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/toggleNav.css" afterPath="$PROJECT_DIR$/public/css/toggleNav.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/toolbar.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/toolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/toolbarbuttons.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/dialog/toolbarbuttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/tools.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/accordion/tools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/tools.js" afterPath="$PROJECT_DIR$/utils/tools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tooltip.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/tooltipdialog.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tooltip/tooltipdialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/transform.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datagrid/transform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/treatment.html" afterPath="$PROJECT_DIR$/public/treatment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tree.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/tree_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotree/tree_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/tree_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/layout/tree_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tree_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tabs/tree_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/tree_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/tree_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/tree_data2.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/tree/tree_data2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/treegrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/combotreegrid/treegrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data1.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data2.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data3.json" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/treegrid/treegrid_data3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.all.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.all.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.config.json" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/css/ueditor.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/css/ueditor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/css/ueditor.min.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/themes/default/css/ueditor.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.parse.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/ueditor.parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/json/update.json" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/json/update.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/validate.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/datebox/validate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/validatebox.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/validateonblur.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/validatebox/validateonblur.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/validateonsubmit.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/form/validateonsubmit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/validatepassword.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/passwordbox/validatepassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/vehicleScreening.css" afterPath="$PROJECT_DIR$/public/css/vehicleScreening.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vehicleScreening.html" afterPath="$PROJECT_DIR$/public/vehicleScreening.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vehicleScreening.js" afterPath="$PROJECT_DIR$/public/js/vehicleScreening.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/vertical.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/slider/vertical.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/videoCall.html" afterPath="$PROJECT_DIR$/public/videoCall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/vue/vue.js" afterPath="$PROJECT_DIR$/public/js/libs/vue/vue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/webServer.js" afterPath="$PROJECT_DIR$/utils/webServer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.css" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.custom.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.custom.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.flashonly.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.flashonly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.flashonly.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.flashonly.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.html5only.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.html5only.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.html5only.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.html5only.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.withoutimage.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.withoutimage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/weeknumber.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/calendar/weeknumber.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/welcome.html" afterPath="$PROJECT_DIR$/public/welcome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/black/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/bootstrap/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/default/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/gray/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/material/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/window.css" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/themes/metro/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/windowlayout.html" afterPath="$PROJECT_DIR$/public/js/libs/easyui-1.5/demo/window/windowlayout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/www.jq22.com.txt" afterPath="$PROJECT_DIR$/public/js/libs/iscroll_V4.2.5/www.jq22.com.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/js/zepto.min.js" afterPath="$PROJECT_DIR$/public/js/libs/dropload-gh-pages/examples/js/zepto.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/libs/ueditor/lang/zh-cn/zh-cn.js" afterPath="$PROJECT_DIR$/public/js/libs/ueditor/lang/zh-cn/zh-cn.js" />
+      <change type="MOVED" beforePath="F:\xhs120\weixin\config.json" afterPath="$PROJECT_DIR$/config/config.json" />
     </list>
     <list id="311cfb00-c353-4f49-abf4-d2dd70bfac52" name="New changelist" comment="New changelist" />
     <list id="1b761ed2-6d08-432f-afbf-4d2d9dd15f98" name="Failed commit: New changelist" comment="New changelist" />
@@ -11017,100 +11773,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1818181">
-              <caret line="1345" column="56" selection-start-line="1345" selection-start-column="56" selection-end-line="1345" selection-end-column="56" />
-              <folding>
-                <element signature="n#!!block;n#getToken#0" expanded="false" />
-                <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-                <element signature="e#1892#2976#0" expanded="false" />
-                <element signature="e#3015#3952#0" expanded="false" />
-                <element signature="e#3989#4760#0" expanded="false" />
-                <element signature="e#6592#7716#0" expanded="false" />
-                <element signature="e#7771#8398#0" expanded="false" />
-                <element signature="e#8438#9783#0" expanded="false" />
-                <element signature="e#10551#11364#0" expanded="false" />
-                <element signature="e#11415#12084#0" expanded="false" />
-                <element signature="e#12135#12648#0" expanded="false" />
-                <element signature="e#12693#13420#0" expanded="false" />
-                <element signature="e#13465#14073#0" expanded="false" />
-                <element signature="e#14119#14636#0" expanded="false" />
-                <element signature="e#14680#15401#0" expanded="false" />
-                <element signature="e#15445#16053#0" expanded="false" />
-                <element signature="e#16102#16674#0" expanded="false" />
-                <element signature="e#16744#17446#0" expanded="false" />
-                <element signature="e#17511#18424#0" expanded="false" />
-                <element signature="e#18485#18966#0" expanded="false" />
-                <element signature="e#19028#19605#0" expanded="false" />
-                <element signature="e#19667#20130#0" expanded="false" />
-                <element signature="e#20205#20969#0" expanded="false" />
-                <element signature="e#21039#22043#0" expanded="false" />
-                <element signature="e#22109#22599#0" expanded="false" />
-                <element signature="e#22666#23232#0" expanded="false" />
-                <element signature="e#23299#23770#0" expanded="false" />
-                <element signature="e#23820#24739#0" expanded="false" />
-                <element signature="e#24783#25331#0" expanded="false" />
-                <element signature="e#25374#25831#0" expanded="false" />
-                <element signature="e#25879#26399#0" expanded="false" />
-                <element signature="e#27513#28558#0" expanded="false" />
-                <element signature="e#28622#29755#0" expanded="false" />
-                <element signature="e#29815#30751#0" expanded="false" />
-                <element signature="e#30807#31760#0" expanded="false" />
-                <element signature="e#31817#32449#0" expanded="false" />
-                <element signature="e#32506#32969#0" expanded="false" />
-                <element signature="e#33035#33586#0" expanded="false" />
-                <element signature="e#33646#34334#0" expanded="false" />
-                <element signature="e#34390#35276#0" expanded="false" />
-                <element signature="e#35328#35823#0" expanded="false" />
-                <element signature="e#35876#36512#0" expanded="false" />
-                <element signature="e#36565#37024#0" expanded="false" />
-                <element signature="e#40048#41470#0" expanded="false" />
-                <element signature="e#46284#46415#0" expanded="false" />
-                <element signature="e#46467#47036#0" expanded="false" />
-                <element signature="e#47088#47661#0" expanded="false" />
-                <element signature="e#47716#48418#0" expanded="false" />
-                <element signature="e#48474#51231#0" expanded="false" />
-                <element signature="e#51284#51956#0" expanded="false" />
-                <element signature="e#52005#52586#0" expanded="false" />
-                <element signature="e#52631#53232#0" expanded="false" />
-                <element signature="e#53276#54155#0" expanded="false" />
-                <element signature="e#54204#54867#0" expanded="false" />
-                <element signature="e#54925#59614#0" expanded="false" />
-                <element signature="e#65270#65826#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tools.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/tools.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="301" column="16" selection-start-line="301" selection-start-column="16" selection-end-line="301" selection-end-column="16" />
-              <folding>
-                <element signature="e#7530#7986#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.705882">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="21" />
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2581121">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.705882">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -11120,8 +11797,55 @@
         <entry file="file://$PROJECT_DIR$/utils/router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="26" selection-start-line="144" selection-start-column="14" selection-end-line="144" selection-end-column="26" />
+              <caret line="148" column="6" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webServer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/webServer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="12.5">
+              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="microNet.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/microNet.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.882353">
+              <caret line="311" column="19" selection-start-line="311" selection-start-column="19" selection-end-line="311" selection-end-column="19" />
+              <folding>
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7636#8751#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="centerImgUrl.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/centerImgUrl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.48746517">
+              <caret line="58" column="34" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -11130,7 +11854,27 @@
         <entry file="file://$PROJECT_DIR$/utils/access_token.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <caret line="3" column="40" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createMeau.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/createMeau.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -11153,7 +11897,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/css/base.css" />
         <option value="$PROJECT_DIR$/public/css/microNet.less" />
         <option value="$PROJECT_DIR$/public/css/vehicleScreening.less" />
         <option value="$PROJECT_DIR$/public/css/header.less" />
@@ -11198,12 +11941,13 @@
         <option value="$PROJECT_DIR$/public/selfInfo.html" />
         <option value="$PROJECT_DIR$/public/selfCall.html" />
         <option value="$PROJECT_DIR$/utils/access_token.js" />
-        <option value="$PROJECT_DIR$/public/microNet.html" />
         <option value="$PROJECT_DIR$/public/aidState.html" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/utils/service.js" />
-        <option value="$PROJECT_DIR$/utils/router.js" />
         <option value="$PROJECT_DIR$/utils/tools.js" />
+        <option value="$PROJECT_DIR$/utils/router.js" />
+        <option value="$PROJECT_DIR$/utils/service.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/public/microNet.html" />
       </list>
     </option>
   </component>
@@ -11281,7 +12025,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weixin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weixin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -11308,13 +12066,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\xhs120\weixin\config" />
       <recent name="F:\xhs120\weixin\utils" />
       <recent name="F:\xhs120\weixin\public\images" />
       <recent name="F:\demo\weixin" />
       <recent name="F:\demo\weixin\public\js\libs\ueditor" />
-      <recent name="F:\demo\weixin\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\xhs120\weixin\config" />
       <recent name="F:\demo\weixin\public" />
     </key>
   </component>
@@ -11621,7 +12380,19 @@
       <option name="project" value="LOCAL" />
       <updated>1524133577574</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="添加忽略文件&#10;">
+      <created>1524143247635</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1524143247635</updated>
+    </task>
+    <task id="LOCAL-00043" summary="修改bug">
+      <created>1524205857681</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1524205857681</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -11634,16 +12405,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="867" extended-state="0" />
+    <frame x="-7" y="0" width="1294" height="867" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913166" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913166" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32492998" sideWeight="0.50920737" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32492998" sideWeight="0.49079263" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.49522597" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.510008" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32492998" sideWeight="0.49079263" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39915967" sideWeight="0.489992" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25460368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913166" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -11705,7 +12476,8 @@
     <MESSAGE value="添加忽略文件" />
     <MESSAGE value="调用WX接口" />
     <MESSAGE value="添加忽略文件&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加忽略文件&#10;" />
+    <MESSAGE value="修改bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -11726,13 +12498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/showRegimenDietItem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.382353">
-          <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/treatment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.382353">
@@ -11744,13 +12509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.0588236">
           <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -11890,20 +12648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4117646">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/webServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -11939,13 +12684,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/microAid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.882353">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -11966,6 +12705,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.1176472">
           <caret line="9" column="113" selection-start-line="9" selection-start-column="113" selection-end-line="9" selection-end-column="113" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -11990,14 +12730,6 @@
             <element signature="e#8686#9111#0" expanded="false" />
             <element signature="e#9138#9607#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/createMeau.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2168142">
-          <caret line="54" column="89" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -12067,18 +12799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/microNet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7636#8751#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/addHospital.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -12087,7 +12807,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
+    <entry file="file://$PROJECT_DIR$/utils/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4605598">
+          <caret line="301" column="16" selection-start-line="301" selection-start-column="16" selection-end-line="301" selection-end-column="16" />
+          <folding>
+            <element signature="e#7537#7993#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/microAid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.088235">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="28.212122">
+          <caret line="1317" column="6" selection-start-line="1317" selection-start-column="6" selection-end-line="1317" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!block;n#getToken#0" expanded="false" />
+            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+            <element signature="e#1910#2994#0" expanded="false" />
+            <element signature="e#3033#3970#0" expanded="false" />
+            <element signature="e#4007#4778#0" expanded="false" />
+            <element signature="e#6610#7734#0" expanded="false" />
+            <element signature="e#7789#8416#0" expanded="false" />
+            <element signature="e#10569#11382#0" expanded="false" />
+            <element signature="e#11433#12102#0" expanded="false" />
+            <element signature="e#12153#12666#0" expanded="false" />
+            <element signature="e#12711#13438#0" expanded="false" />
+            <element signature="e#13483#14091#0" expanded="false" />
+            <element signature="e#14137#14654#0" expanded="false" />
+            <element signature="e#14698#15419#0" expanded="false" />
+            <element signature="e#15463#16071#0" expanded="false" />
+            <element signature="e#16120#16692#0" expanded="false" />
+            <element signature="e#16762#17464#0" expanded="false" />
+            <element signature="e#17529#18442#0" expanded="false" />
+            <element signature="e#18503#18984#0" expanded="false" />
+            <element signature="e#19046#19623#0" expanded="false" />
+            <element signature="e#19685#20148#0" expanded="false" />
+            <element signature="e#20223#20987#0" expanded="false" />
+            <element signature="e#21057#22061#0" expanded="false" />
+            <element signature="e#22127#22617#0" expanded="false" />
+            <element signature="e#22684#23250#0" expanded="false" />
+            <element signature="e#23317#23788#0" expanded="false" />
+            <element signature="e#23838#24757#0" expanded="false" />
+            <element signature="e#24801#25349#0" expanded="false" />
+            <element signature="e#25392#25849#0" expanded="false" />
+            <element signature="e#25897#26417#0" expanded="false" />
+            <element signature="e#27531#28576#0" expanded="false" />
+            <element signature="e#28640#29773#0" expanded="false" />
+            <element signature="e#29833#30769#0" expanded="false" />
+            <element signature="e#30825#31778#0" expanded="false" />
+            <element signature="e#31835#32467#0" expanded="false" />
+            <element signature="e#32524#32987#0" expanded="false" />
+            <element signature="e#33053#33604#0" expanded="false" />
+            <element signature="e#33664#34352#0" expanded="false" />
+            <element signature="e#34408#35294#0" expanded="false" />
+            <element signature="e#35346#35841#0" expanded="false" />
+            <element signature="e#35894#36530#0" expanded="false" />
+            <element signature="e#36583#37042#0" expanded="false" />
+            <element signature="e#43976#45347#0" expanded="false" />
+            <element signature="e#46325#46456#0" expanded="false" />
+            <element signature="e#46508#47077#0" expanded="false" />
+            <element signature="e#47129#47702#0" expanded="false" />
+            <element signature="e#47757#48459#0" expanded="false" />
+            <element signature="e#48515#51272#0" expanded="false" />
+            <element signature="e#51325#51997#0" expanded="false" />
+            <element signature="e#52046#52627#0" expanded="false" />
+            <element signature="e#52672#53273#0" expanded="false" />
+            <element signature="e#53317#54196#0" expanded="false" />
+            <element signature="e#54245#54908#0" expanded="false" />
+            <element signature="e#54966#59655#0" expanded="false" />
+            <element signature="e#59700#63964#0" expanded="false" />
+            <element signature="e#64011#65265#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/access_token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/createMeau.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="148" column="6" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.705882">
           <caret line="20" column="21" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="21" />
@@ -12095,102 +12930,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/access_token.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/tools.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="301" column="16" selection-start-line="301" selection-start-column="16" selection-end-line="301" selection-end-column="16" />
-          <folding>
-            <element signature="e#7530#7986#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1818181">
-          <caret line="1345" column="56" selection-start-line="1345" selection-start-column="56" selection-end-line="1345" selection-end-column="56" />
-          <folding>
-            <element signature="n#!!block;n#getToken#0" expanded="false" />
-            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-            <element signature="e#1892#2976#0" expanded="false" />
-            <element signature="e#3015#3952#0" expanded="false" />
-            <element signature="e#3989#4760#0" expanded="false" />
-            <element signature="e#6592#7716#0" expanded="false" />
-            <element signature="e#7771#8398#0" expanded="false" />
-            <element signature="e#8438#9783#0" expanded="false" />
-            <element signature="e#10551#11364#0" expanded="false" />
-            <element signature="e#11415#12084#0" expanded="false" />
-            <element signature="e#12135#12648#0" expanded="false" />
-            <element signature="e#12693#13420#0" expanded="false" />
-            <element signature="e#13465#14073#0" expanded="false" />
-            <element signature="e#14119#14636#0" expanded="false" />
-            <element signature="e#14680#15401#0" expanded="false" />
-            <element signature="e#15445#16053#0" expanded="false" />
-            <element signature="e#16102#16674#0" expanded="false" />
-            <element signature="e#16744#17446#0" expanded="false" />
-            <element signature="e#17511#18424#0" expanded="false" />
-            <element signature="e#18485#18966#0" expanded="false" />
-            <element signature="e#19028#19605#0" expanded="false" />
-            <element signature="e#19667#20130#0" expanded="false" />
-            <element signature="e#20205#20969#0" expanded="false" />
-            <element signature="e#21039#22043#0" expanded="false" />
-            <element signature="e#22109#22599#0" expanded="false" />
-            <element signature="e#22666#23232#0" expanded="false" />
-            <element signature="e#23299#23770#0" expanded="false" />
-            <element signature="e#23820#24739#0" expanded="false" />
-            <element signature="e#24783#25331#0" expanded="false" />
-            <element signature="e#25374#25831#0" expanded="false" />
-            <element signature="e#25879#26399#0" expanded="false" />
-            <element signature="e#27513#28558#0" expanded="false" />
-            <element signature="e#28622#29755#0" expanded="false" />
-            <element signature="e#29815#30751#0" expanded="false" />
-            <element signature="e#30807#31760#0" expanded="false" />
-            <element signature="e#31817#32449#0" expanded="false" />
-            <element signature="e#32506#32969#0" expanded="false" />
-            <element signature="e#33035#33586#0" expanded="false" />
-            <element signature="e#33646#34334#0" expanded="false" />
-            <element signature="e#34390#35276#0" expanded="false" />
-            <element signature="e#35328#35823#0" expanded="false" />
-            <element signature="e#35876#36512#0" expanded="false" />
-            <element signature="e#36565#37024#0" expanded="false" />
-            <element signature="e#40048#41470#0" expanded="false" />
-            <element signature="e#46284#46415#0" expanded="false" />
-            <element signature="e#46467#47036#0" expanded="false" />
-            <element signature="e#47088#47661#0" expanded="false" />
-            <element signature="e#47716#48418#0" expanded="false" />
-            <element signature="e#48474#51231#0" expanded="false" />
-            <element signature="e#51284#51956#0" expanded="false" />
-            <element signature="e#52005#52586#0" expanded="false" />
-            <element signature="e#52631#53232#0" expanded="false" />
-            <element signature="e#53276#54155#0" expanded="false" />
-            <element signature="e#54204#54867#0" expanded="false" />
-            <element signature="e#54925#59614#0" expanded="false" />
-            <element signature="e#65270#65826#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="26" selection-start-line="144" selection-start-column="14" selection-end-line="144" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2581121">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/microNet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.882353">
+          <caret line="311" column="19" selection-start-line="311" selection-start-column="19" selection-end-line="311" selection-end-column="19" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7636#8751#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/webServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.5">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/centerImgUrl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48746517">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#script#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

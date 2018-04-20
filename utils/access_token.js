@@ -1,7 +1,7 @@
 /**
  * Created by dell on 2017/10/6.
  */
-const config = require('../config.json').config;
+const config = require('../config/config.json').config;
 const fs = require('fs');
 const path = require('path');
 const qs = require('querystring');
