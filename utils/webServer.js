@@ -18,7 +18,7 @@ app.use(express.static('own'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 app.use("/ueditor/ue", ueditor(path.join(__dirname, '../public'), function(req, res, next) {
-    var imgDir = '/public/images/ueditor';
+    var imgDir = '/images/ueditor/';
     var ActionType = req.query.action;
     if (ActionType === 'uploadimage' || ActionType === 'uploadfile' || ActionType === 'uploadvideo') {
         var file_url = imgDir;//默认图片上传地址
