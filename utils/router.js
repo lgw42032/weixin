@@ -142,7 +142,8 @@ router.post('/editHealthInfo',service.editHealthInfo);
 router.get('/getUserInfo',service.getUserInfo);
 
 //调度系统返回时间节点
-router.post('/setEventNode',service.setEventNode);
+
+router.route('/setEventNode').post(jsonParser,service.setEventNode);
 
 //用户获取事件节点
 router.get('/getEventNode',service.getEventNode);

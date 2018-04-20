@@ -1355,7 +1355,7 @@ exports.aidCall = (req,res)=>{
             };
             let queryRes2 = yield db.executeSqlItem(sqlItem2);
             postData.selfInfo = queryRes2[0];
-            console.log('postData',postData)
+            //console.log('postData',postData)
             //let postDataStr = JSON.stringify(postData);
             //postData = JSON.parse(postDataStr)
             //let requestRes = yield tools.sendCenter({
