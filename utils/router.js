@@ -1,7 +1,7 @@
 ﻿const express = require('express');
 const service = require('./service.js');
 const router = express.Router();
-const config = require('../config.json');
+const config = require('../config/config.json');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
@@ -13,11 +13,19 @@ var jsonParser = bodyParser.json();
 //发送验证码
 router.post('/sendMessage',service.sendMessage);
 
+//获取图文列表
+router.post('/getNews',service.getNews);
 
 //获取配置文件
 router.get('/getConfig', function(req, res) {
     res.json(config);
 });
+
+router.get('/getToken',service.getToken);
+
+//获取账户信息
+router.post('/getJssdk',service.getJssdk);
+
 //增加中心
 router.post('/addCenter',service.addCenter);
 //中心登陆
@@ -134,7 +142,8 @@ router.post('/editHealthInfo',service.editHealthInfo);
 router.get('/getUserInfo',service.getUserInfo);
 
 //调度系统返回时间节点
-router.post('/setEventNode',service.setEventNode);
+
+router.route('/setEventNode').post(jsonParser,service.setEventNode);
 
 //用户获取事件节点
 router.get('/getEventNode',service.getEventNode);

@@ -1,7 +1,7 @@
 ﻿const qs = require('querystring');
 const path = require('path');
 const fs = require('fs');
-//const config = require('./config.json').config;
+//const config = require('./config.tpl.json').config;
 const request = require('request');
 const crypto = require('crypto');
 const co = require('co');
@@ -9,10 +9,12 @@ const tools = require('./tools');
 const db = require('./db');
 const sms = require('./sms');
 const moment = require('moment');
+const config = require('../config/config.json').config;
+// const sha1 = require('sha1');
 var i=0;
 //xml解析模块
 const XMLJS = require('xml2js');
-const token = require('../config.json').token;
+const token = require('../config/config.json').token;
 //解析，将xml解析为json
 var parser = new XMLJS.Parser();
 //重组，将json重组为xml
@@ -107,12 +109,22 @@ var EventFunction = {
         res.send(xml);
     }
 };
+//js 安全域名校验
 exports.join =(req,res)=>{
     var signature = req.query.signature;
     var timestamp = req.query.timestamp;
     var nonce = req.query.nonce;
     var echostr = req.query.echostr;
-    console.log('hahalgw',req.query);
+    //var info={
+    //    signature:signature,
+    //    timestamp:timestamp,
+    //    nonce:nonce
+    //}
+    //console.log('info',info);
+    //fs.writeFile(path.join('./accountInfo.json'),  JSON.stringify(info), function (err) {
+    //    console.log('writeAccout',err);
+    //});
+
     /*  加密/校验流程如下： */
     //1. 将token、timestamp、nonce三个参数进行字典序排序
     var array = new Array(token,timestamp,nonce);
@@ -152,6 +164,68 @@ exports.interaction = (req,res) => {
                     }
                 });
         });
+};
+
+//获取token
+exports.getToken = (req,res)=>{
+    let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
+    tools.echoSuccess(res,"success",token);
+}
+exports.getNews =(req,res) => {
+    let type = req.body.type;
+    let offset = req.body.offset;
+    let count = req.body.count;
+    let  requestData= {
+        "type":type,
+        "offset":offset,
+        "count":count
+}
+    console.log(requestData);
+    let token = fs.readFileSync(path.join(__dirname + '/../tokens/411400/token.txt').toString());
+    let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token='+ token;
+    let options = {
+        url: wxGetAccessTokenBaseUrl,
+        method: "POST",
+        json: true,
+        headers: {
+            "content-type": "application/json",
+        },
+        body: requestData
+    };
+    function postWX(option){
+        return new Promise((resolve, reject) => {
+            request(option, function (err, res, body) {
+                if (res) {
+                    console.log('postWX',body);
+                    resolve(body);
+                } else {
+                    console.log('err',err);
+                    reject(err);
+                }
+            });
+        })
+
+    }
+    postWX(options).then(function(data){
+        tools.echoSuccess(res,"success",data);
+    },function(err){
+        tools.echoError(res,"error", '获取图文列表失败');
+    })
+
+
+
+
+};
+//获取jssdk
+exports.getJssdk = (req,res) => {
+    let clientUrl = req.body.url
+    if(tools.isEmpty(clientUrl)){
+        return tools.echoError(res, req.url + "no url");
+    }
+    let jsTicket = fs.readFileSync(path.join(__dirname + '/../tokens/411400/JsTicket.txt').toString());
+    let ret =tools.sign(jsTicket,clientUrl);
+
+    res.json(ret);
 };
 /*短信验证码：*/
 exports.sendMessage =(req,res)=>{
@@ -1106,7 +1180,7 @@ exports.microAid = (req,res) => {
     let params = req.query;
 	console.log(params,'params');
     let token='';
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config;
     configs.forEach(function(v,i,arr){
         if(v.city == params.city ){
@@ -1149,7 +1223,7 @@ exports.microAid = (req,res) => {
 //微网站
 exports.microNet = (req,res) => {
     let params = req.query;
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config='';
     let token='';
     configs.forEach(function(v,i,arr){
@@ -1196,7 +1270,7 @@ exports.personalCenter = (req,res) => {
  console.log(params,'params');
 
     let token='';
-    const configs = require('../config.json').config;
+    const configs = require('../config/config.json').config;
     var config;
     configs.forEach(function(v,i,arr){
         if(v.city == params.city ){
@@ -1281,7 +1355,7 @@ exports.aidCall = (req,res)=>{
             };
             let queryRes2 = yield db.executeSqlItem(sqlItem2);
             postData.selfInfo = queryRes2[0];
-            console.log('postData',postData)
+            //console.log('postData',postData)
             //let postDataStr = JSON.stringify(postData);
             //postData = JSON.parse(postDataStr)
             //let requestRes = yield tools.sendCenter({
@@ -1338,7 +1412,7 @@ exports.aidCall = (req,res)=>{
         //}catch(err){
         //    console.log('notifyWXData',err);
         //}
-
+        console.log(postData);
         let requestRes = yield tools.sendCenter({
                 method:"post",
                 url:"/api/wx/notifyWXData",

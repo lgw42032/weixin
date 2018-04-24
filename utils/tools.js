@@ -1,5 +1,5 @@
 //var async = require('async');
-var config = require('../config.json');
+var config = require('../config/config.json');
 var shortid =  require('shortid');
 var moment = require('moment');
 var request = require('request');
@@ -297,62 +297,9 @@ exports.getCurrentTime = function () {
 exports.calculateRate = function (ratio) {
     return (Math.round(ratio * 10000) / 100.00 + "%");// 小数点后两位百分比
 };
-//exports.sendCenter = function(postData){
-//
-//    console.log('120 postData',postData);
-//    var chunks = [];
-//    var size = 0;
-//    var bodyString = JSON.stringify(postData);
-//    var headers = {
-//        'Content-Type': 'application/json'
-//    };
-//    var options = {
-//        hostname: config.centerHost,
-//        port: config.centerPort,
-//        path: '/noticeWXData',
-//        method: 'POST',
-//        body: bodyString,
-//        headers: headers
-//    };
-//    var req = http.request(options, function (res) {
-//        res.setEncoding('utf8');
-//        res.on('data', function (chunk) {
-//            chunks.push(chunk);
-//            size += chunk.length;
-//        });
-//        res.on('end', function () {
-//            var feedbackMsg = "";
-//            if(chunks.length > 1){
-//                for (var i in chunks) {
-//                    feedbackMsg += chunks[i];
-//                }
-//            }else{
-//                feedbackMsg = chunks[0];
-//            }
-//            appLog.logInfo("wechatAid"+ feedbackMsg);
-//            try{
-//                console.log('before parse ',feedbackMsg);
-//                feedbackMsg = JSON.parse(feedbackMsg);
-//                if(this.isEmpty(feedbackMsg)){
-//
-//                }
-//            }catch (e){
-//                console.log('parse err ',feedbackMsg);
-//            }
-//
-//            console.log('get json data ',feedbackMsg);
-//        });
-//    });
-//    req.on('error', function (e) {
-//        console.log('err req',e);
-//    });
-//    req.write(bodyString);
-//    req.end();
-//
-//};
 exports.getApiUrl = function(){
 
-    return "https://"+config.centerHost+':'+config.centerPort;
+    return "http://"+config.centerHost+':'+config.centerPort;
 };
 exports.sendCenter = function(data){
     console.log('sendCenterData',data.data);
@@ -398,4 +345,75 @@ exports.sendCenter = function(data){
 exports.isJson = function(obj){
     var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
     return isjson;
+};
+exports.sha1=function(str) {
+    const crypto = require('crypto');
+    let shasum = crypto.createHash("sha1")
+    shasum.update(str)
+    str = shasum.digest("hex")
+    return str
 }
+
+/**
+ * 生成签名的时间戳
+ * @return {字符串}
+ */
+exports.createTimestamp = function () {
+    return parseInt(new Date().getTime() / 1000) + ''
+}
+
+/**
+ * 生成签名的随机串
+ * @return {字符串}
+ */
+exports.createNonceStr =function  () {
+    return Math.random().toString(36).substr(2, 15)
+}
+
+/**
+ * 对参数对象进行字典排序
+ * @param  {对象} args 签名所需参数对象
+ * @return {字符串}    排序后生成字符串
+ */
+exports.raw = function (args) {
+    var keys = Object.keys(args)
+    keys = keys.sort()
+    var newArgs = {}
+    keys.forEach(function (key) {
+        newArgs[key.toLowerCase()] = args[key]
+    })
+
+    var string = ''
+    for (var k in newArgs) {
+        string += '&' + k + '=' + newArgs[k]
+    }
+    string = string.substr(1)
+    return string
+}
+
+/**
+ * @synopsis 签名算法
+ *
+ * @param jsapi_ticket 用于签名的 jsapi_ticket
+ * @param url 用于签名的 url ，注意必须动态获取，不能 hardcode
+ *
+ * @returns {对象} 返回微信jssdk所需参数对象
+ */
+exports.sign = function(jsapi_ticket, url) {
+    var ret = {
+        jsapi_ticket: jsapi_ticket,
+        nonceStr: this.createNonceStr(),
+        timestamp:this.createTimestamp(),
+        url: url
+    }
+    var string = this.raw(ret)
+    ret.signature = this.sha1(string)
+    ret.appId =  config.config[0].appid
+    return ret
+}
+
+/**
+ * 返回微信jssdk 所需参数对象
+ * @param  {字符串} url 当前访问URL
+ * @return {promise}     返回promise类 val为对象
+ */

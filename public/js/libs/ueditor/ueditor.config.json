@@ -7,7 +7,7 @@
     "imageCompressEnable": true,
     "imageCompressBorder": 1600,
     "imageInsertAlign": "none",
-    "imageUrlPrefix": "",
+    "imageUrlPrefix": "/public",
     "imagePathFormat": "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
 
     "scrawlActionName": "uploadscrawl",
@@ -58,7 +58,7 @@
 
 
     "imageManagerActionName": "listimage",
-    "imageManagerListPath": "/ueditor/php/upload/image/",
+    "imageManagerListPath": "/public/image/ueditor/",
     "imageManagerListSize": 20,
     "imageManagerUrlPrefix": "",
     "imageManagerInsertAlign": "none",

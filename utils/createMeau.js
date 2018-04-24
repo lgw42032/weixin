@@ -4,8 +4,8 @@
 const fs = require('fs');
 const path = require('path');
 const request = require('request');
-const config = require('../config.json').config;
-const host = require('../config.json').host;
+const config = require('../config/config.json').config;
+const host = require('../config/config.json').host;
 function delMeau(token){
     return new Promise(function(resolve,reject){
         var url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=' + token;
@@ -61,6 +61,7 @@ exports.createMenu = function() {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             };
+
             request.post(options, function (err, res, body) {
                 if (err) {
                     console.log(err)

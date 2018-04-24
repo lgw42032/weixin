@@ -1,7 +1,7 @@
 /**
  * Created by dell on 2017/10/6.
  */
-const config = require('../config.json').config;
+const config = require('../config/config.json').config;
 const fs = require('fs');
 const path = require('path');
 const qs = require('querystring');
@@ -29,11 +29,40 @@ const getAccessToken = function (config) {
         });
     })
 };
+const getJsTicket = function(config){
+    return new Promise((resolve, reject) => {
+        getAccessToken(config).then(res => {
+            let token = res['access_token'];
+            fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
+                //console.log(err);
+            });
+            let reqUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ token +'&type=jsapi'
+            let options = {
+                method: 'get',
+                url: reqUrl
+            }
+
+            request(options, function (err, res, body) {
+                if (res) {
+                    let bodys = JSON.parse(body) ;    // 解析微信服务器返回的
+                    let ticket = bodys.ticket   ;     // 获取 ticket
+                    let expires = bodys.expires_in  ; // 获取过期时间
+                    resolve(ticket)
+                } else {
+                    reject(err)
+                }
+            })
+
+        })
+
+    })
+
+}
 const saveToken = function (config) {
-    getAccessToken(config).then(res => {
-        let token = res['access_token'];
-        fs.writeFile(path.join('./tokens',config.city,'token.txt'), token, function (err) {
-            //console.log(err);
+    getJsTicket(config).then(data => {
+        let ticket = data;
+        fs.writeFile(path.join('./tokens',config.city,'JsTicket.txt'), ticket, function (err) {
+            console.log(err);
         });
     })
 };

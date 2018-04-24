@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/locations.css"/>
     <script src="js/libs/pxToRem.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=l0iZxA2yrCz1hvrZwNa0lGyd"></script>
-
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <title>自动定位</title>
     <style>
         #allmap{
@@ -36,81 +36,243 @@
 </body>
 </html>
 <script src="js/libs/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">-->
+    <!--var map = new BMap.Map("allmap");-->
+    <!--var newPoint;-->
+    <!--map.centerAndZoom('北京',12);-->
+    <!--var selfLocation = {lng:'',lat:''};-->
+    <!--var chineseAddress='';-->
+    <!--var geolocation = new BMap.Geolocation();-->
+    <!--geolocation.getCurrentPosition(function(r){-->
+        <!--if(this.getStatus() == BMAP_STATUS_SUCCESS){-->
+            <!--var mk = new BMap.Marker(r.point);-->
+            <!--map.addOverlay(mk);-->
+            <!--map.panTo(r.point);-->
+            <!--newPoint = new BMap.Point(r.point.lng,r.point.lat);-->
+            <!--var mOption = {-->
+                <!--poiRadius : 200,           //半径为1000米内的POI,默认100米-->
+                <!--numPois : 20                //列举出50个POI,默认10个-->
+            <!--}-->
+
+            <!--var myGeo = new BMap.Geocoder();        //创建地址解析实例-->
+            <!--function displayPOI(){-->
+                <!--myGeo.getLocation(newPoint,-->
+                        <!--function mCallback(rs){-->
+                            <!--var site = rs.addressComponents;-->
+                            <!--var realSite='';-->
+                            <!--for(var k in site){-->
+                                <!--realSite =  site[k] + realSite;-->
+                            <!--}-->
+                            <!--var li = document.createElement('li');-->
+                            <!--li.style.listStyle = 'none';-->
+                            <!--li.innerHTML =    "1、"  + realSite;-->
+                            <!--selfLocation.lng= rs.point.lng;-->
+                            <!--selfLocation.lat= rs.point.lat;-->
+                            <!--chineseAddress = realSite;-->
+                            <!--$(li).addClass('choosed');-->
+<!--//                            $('.selfCall').html('一键呼救');-->
+<!--//                            $('.selfCall').unbind('click').click(function(){call()});-->
+                            <!--li.onclick = function(){-->
+                                <!--map.clearOverlays();-->
+                                <!--map.addOverlay(new BMap.Marker(rs.point));-->
+                                <!--console.log(rs.point);-->
+                                <!--selfLocation.lng= rs.point.lng;-->
+                                <!--selfLocation.lat= rs.point.lat;-->
+                                <!--chineseAddress = realSite;-->
+                                <!--$(this).siblings('li').removeClass('choosed');-->
+                                <!--$(this).addClass('choosed');-->
+                            <!--};-->
+                            <!--var container = document.getElementById("results");-->
+                            <!--container.appendChild(li);-->
+                            <!--var allPois = rs.surroundingPois;       //获取全部POI（该点半径为100米内有6个POI点）-->
+                            <!--allPois.forEach(function(value,index,arr){-->
+                                <!--var li = document.createElement('li');-->
+                                <!--li.style.listStyle = 'none';-->
+                                <!--li.innerHTML =  (index+2) + "、" + value.title + ",地址:" + value.address;-->
+                                <!--li.onclick = function(){-->
+                                    <!--map.clearOverlays();-->
+                                    <!--map.addOverlay(new BMap.Marker(value.point));-->
+                                    <!--console.log(value.point);-->
+                                    <!--selfLocation.lng= value.point.lng;-->
+                                    <!--selfLocation.lat= value.point.lat;-->
+                                    <!--chineseAddress =  value.title;-->
+                                    <!--$(this).siblings('li').removeClass('choosed');-->
+                                    <!--$(this).addClass('choosed');-->
+                                <!--};-->
+                                <!--var container = document.getElementById("results");-->
+                                <!--container.appendChild(li);-->
+                            <!--})-->
+                        <!--},mOption-->
+                <!--);-->
+            <!--}-->
+            <!--displayPOI();-->
+        <!--}-->
+        <!--else {-->
+            <!--alert('failed'+this.getStatus());-->
+        <!--}-->
+    <!--},{enableHighAccuracy: true});-->
+<!--</script>-->
+<script>
+    function getConfig(){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getConfig',
+                type:'get',
+                data: {},
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    console.log('getConfig',err)
+                    reject(err)
+                }
+            })
+        })
+    }
+    function getJssdk(url){
+        return new Promise(function(resolve,reject){
+            $.ajax({
+                url:'/getJssdk',
+                type:'post',
+                data: {
+                    url:url
+                },
+                success:function(data){
+                    resolve(data);
+                },
+                error:function(err){
+                    console.log('getJssdk',err)
+                    reject(err)
+                }
+            })
+        })
+    }
+    var appId;
     var map = new BMap.Map("allmap");
     var newPoint;
     map.centerAndZoom('北京',12);
     var selfLocation = {lng:'',lat:''};
     var chineseAddress='';
-    var geolocation = new BMap.Geolocation();
-    geolocation.getCurrentPosition(function(r){
-        if(this.getStatus() == BMAP_STATUS_SUCCESS){
-            var mk = new BMap.Marker(r.point);
-            map.addOverlay(mk);
-            map.panTo(r.point);
-            newPoint = new BMap.Point(r.point.lng,r.point.lat);
-            var mOption = {
-                poiRadius : 200,           //半径为1000米内的POI,默认100米
-                numPois : 20                //列举出50个POI,默认10个
-            }
+    getConfig().then(function(data){
+        appId = data.config[0].appId;
+        return getJssdk(location.href);
+    }).then(function(data){
+        let accountInfo = data;
+        console.log('getJssdk',data);
+        wx.config({
+            debug: false,
+            appId: appId,
+            timestamp: accountInfo.timestamp,
+            nonceStr: accountInfo.nonceStr,
+            signature: accountInfo.signature,
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                'checkJsApi',
+                'openLocation',
+                'getLocation'
+            ]
+        });
+        wx.ready(function(){
+            wx.getLocation({
+                success: function (res) {
+                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                    var speed = res.speed; // 速度，以米/每秒计
+                    var accuracy = res.accuracy; // 位置精度
+                    console.log({
+                        latitude:latitude,
+                        longitude:longitude,
+                        speed:speed,
+                        accuracy:accuracy
+                    })
+                    var y =  latitude;
+                    var x =  longitude;
+                    var ggPoint = new BMap.Point(x,y);
 
-            var myGeo = new BMap.Geocoder();        //创建地址解析实例
-            function displayPOI(){
-                myGeo.getLocation(newPoint,
-                        function mCallback(rs){
-                            var site = rs.addressComponents;
-                            var realSite='';
-                            for(var k in site){
-                                realSite =  site[k] + realSite;
-                            }
-                            var li = document.createElement('li');
-                            li.style.listStyle = 'none';
-                            li.innerHTML =    "1、"  + realSite;
-                            selfLocation.lng= rs.point.lng;
-                            selfLocation.lat= rs.point.lat;
-                            chineseAddress = realSite;
-                            $(li).addClass('choosed');
+                    //地图初始化
+
+                    //坐标转换完之后的回调函数
+                    translateCallback = function (locationArr){
+                        let location = locationArr.points[0];
+                        let r ={
+                            point: new BMap.Point(location.lng,location.lat)
+                        }
+                        var mk = new BMap.Marker(r.point);
+                        map.addOverlay(mk);
+                        map.panTo(r.point);
+                        newPoint = new BMap.Point(r.point.lng,r.point.lat);
+                        var mOption = {
+                            poiRadius : 200,           //半径为1000米内的POI,默认100米
+                            numPois : 20                //列举出50个POI,默认10个
+                        }
+
+                        var myGeo = new BMap.Geocoder();        //创建地址解析实例
+                        function displayPOI(){
+                            myGeo.getLocation(newPoint,
+                                    function mCallback(rs){
+                                        var site = rs.addressComponents;
+                                        var realSite='';
+                                        for(var k in site){
+                                            realSite =  site[k] + realSite;
+                                        }
+                                        var li = document.createElement('li');
+                                        li.style.listStyle = 'none';
+                                        li.innerHTML =    "1、"  + realSite;
+                                        selfLocation.lng= rs.point.lng;
+                                        selfLocation.lat= rs.point.lat;
+                                        chineseAddress = realSite;
+                                        $(li).addClass('choosed');
 //                            $('.selfCall').html('一键呼救');
 //                            $('.selfCall').unbind('click').click(function(){call()});
-                            li.onclick = function(){
-                                map.clearOverlays();
-                                map.addOverlay(new BMap.Marker(rs.point));
-                                console.log(rs.point);
-                                selfLocation.lng= rs.point.lng;
-                                selfLocation.lat= rs.point.lat;
-                                chineseAddress = realSite;
-                                $(this).siblings('li').removeClass('choosed');
-                                $(this).addClass('choosed');
-                            };
-                            var container = document.getElementById("results");
-                            container.appendChild(li);
-                            var allPois = rs.surroundingPois;       //获取全部POI（该点半径为100米内有6个POI点）
-                            allPois.forEach(function(value,index,arr){
-                                var li = document.createElement('li');
-                                li.style.listStyle = 'none';
-                                li.innerHTML =  (index+2) + "、" + value.title + ",地址:" + value.address;
-                                li.onclick = function(){
-                                    map.clearOverlays();
-                                    map.addOverlay(new BMap.Marker(value.point));
-                                    console.log(value.point);
-                                    selfLocation.lng= value.point.lng;
-                                    selfLocation.lat= value.point.lat;
-                                    chineseAddress =  value.title;
-                                    $(this).siblings('li').removeClass('choosed');
-                                    $(this).addClass('choosed');
-                                };
-                                var container = document.getElementById("results");
-                                container.appendChild(li);
-                            })
-                        },mOption
-                );
-            }
-            displayPOI();
-        }
-        else {
-            alert('failed'+this.getStatus());
-        }
-    },{enableHighAccuracy: true});
+                                        li.onclick = function(){
+                                            map.clearOverlays();
+                                            map.addOverlay(new BMap.Marker(rs.point));
+                                            console.log(rs.point);
+                                            selfLocation.lng= rs.point.lng;
+                                            selfLocation.lat= rs.point.lat;
+                                            chineseAddress = realSite;
+                                            $(this).siblings('li').removeClass('choosed');
+                                            $(this).addClass('choosed');
+                                        };
+                                        var container = document.getElementById("results");
+                                        container.appendChild(li);
+                                        var allPois = rs.surroundingPois;       //获取全部POI（该点半径为100米内有6个POI点）
+                                        allPois.forEach(function(value,index,arr){
+                                            var li = document.createElement('li');
+                                            li.style.listStyle = 'none';
+                                            li.innerHTML =  (index+2) + "、" + value.title + ",地址:" + value.address;
+                                            li.onclick = function(){
+                                                map.clearOverlays();
+                                                map.addOverlay(new BMap.Marker(value.point));
+                                                console.log(value.point);
+                                                selfLocation.lng= value.point.lng;
+                                                selfLocation.lat= value.point.lat;
+                                                chineseAddress =  value.title;
+                                                $(this).siblings('li').removeClass('choosed');
+                                                $(this).addClass('choosed');
+                                            };
+                                            var container = document.getElementById("results");
+                                            container.appendChild(li);
+                                        })
+                                    },mOption
+                            );
+                        }
+                        displayPOI();
+                    }
+
+                    setTimeout(function(){
+                        var convertor = new BMap.Convertor();
+                        var pointArr = [];
+                        pointArr.push(ggPoint);
+                        convertor.translate(pointArr, 1, 5, translateCallback)
+                    },100);
+                },
+                cancel: function (res) {
+                    alert('用户拒绝授权获取地理位置');
+                }
+            });
+        });
+    })
 </script>
 <script>
 
