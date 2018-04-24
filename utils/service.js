@@ -84,10 +84,10 @@ var EventFunction = {
 //        res.redirect('wx_login');
     },
     //注销
-    unsubscribe: function(openid, req, res) {
+    unsubscribe: function(result, req, res) {
         co(function* () {
             var sql = 'delete from user where openid = ?';
-            var params = [openid];
+            var params = [result.FromUserName];
             var sqlItem = {
                 sql : sql,
                 params:params
