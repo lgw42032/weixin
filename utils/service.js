@@ -85,6 +85,20 @@ var EventFunction = {
     },
     //注销
     unsubscribe: function(openid, req, res) {
+        co(function* () {
+            var sql = 'delete from user where openid = ?';
+            var params = [openid];
+            var sqlItem = {
+                sql : sql,
+                params:params
+            };
+            console.log(sqlItem);
+            var queryRes = yield db.executeSqlItem(sqlItem);
+            tools.echoSuccess(res,"success",queryRes);
+        }).catch(function(err){
+            console.log(err);
+            tools.echoError(res,"db error", err);
+        });
 //删除对应id
     },
     //打开某个网页
