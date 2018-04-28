@@ -92,6 +92,7 @@
             })
         });
         $('#btn').click(function(){
+            let mobilePhone  =  $("input[name='mobilePhone']").val();
             if(!$("input[name='mobilePhone']").val()||!$("input[name='verificationCode']").val()){
                 alert('请输入电话号码或验证码');
                 return;
@@ -105,6 +106,9 @@
                     success:function(data){
                         if(data.success){
                             $('.recommend-mask').css('display','none');
+                            userInfo.mobilePhone = mobilePhone;
+                            let userInfoStr = JSON.stringify(userInfo);
+                            localStorage.setItem('userInfoStr',userInfoStr);
                         }else{
                             if(data.msg=="verificationCodeFalse"){
                                 alert('验证码错误');
