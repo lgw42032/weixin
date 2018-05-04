@@ -244,6 +244,7 @@
         return getJssdk(location.href);
     }).then(function(data){
         let accountInfo = data;
+        console.log('getJssdk',data);
         wx.config({
             debug: false,
             appId: appId,
@@ -282,12 +283,10 @@
                         let r ={
                             point: new BMap.Point(location.lng,location.lat)
                         }
-
                         var mk = new BMap.Marker(r.point);
                         map.addOverlay(mk);
                         map.panTo(r.point);
                         newPoint = new BMap.Point(r.point.lng,r.point.lat);
-
                         var mOption = {
                             poiRadius : 200,           //半径为1000米内的POI,默认100米
                             numPois : 20                //列举出50个POI,默认10个
@@ -309,7 +308,9 @@
                                         selfLocation.lat= rs.point.lat;
                                         chineseAddress = realSite;
                                         $(li).addClass('choosed');
-                                        $('.otherCall').html('一键呼救').unbind('click').click(function(){call()});
+
+                                        $('#selfCall').html('一键呼救');
+                                        $('#selfCall').unbind('click').click(function(){call()});
                                         li.onclick = function(){
                                             map.clearOverlays();
                                             map.addOverlay(new BMap.Marker(rs.point));
@@ -344,7 +345,6 @@
                             );
                         }
                         displayPOI();
-
                     }
 
                     setTimeout(function(){
