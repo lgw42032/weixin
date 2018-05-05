@@ -276,11 +276,12 @@
                 });
                 $('.aid-knowledge-category>ul').append(li);
                 ulWidth+=li.outerWidth();
-                $('.aid-knowledge-category>ul>li').addClass('fz');
+                alert(li.outerWidth());
             });
             ulWidth = ulWidth + $('.first').outerWidth();
+            alert(ulWidth)
             $('.aid-knowledge-category>ul').width(ulWidth+10);
-            console
+            $('.aid-knowledge-category>ul>li').addClass('fz');
         });
 
         $('.aid-knowledge').click(function(){
