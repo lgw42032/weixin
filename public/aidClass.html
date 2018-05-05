@@ -222,7 +222,7 @@
                 index[i]=1;
                 let li = $('<li></li>');
                 li.text(v.categoryname);
-                li.addClass('fl fz');
+                li.addClass('fl');
                 li.click(function(){
                     $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
                     getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function(aidKnowledge){
@@ -276,7 +276,7 @@
                 });
                 $('.aid-knowledge-category>ul').append(li);
                 ulWidth+=li.outerWidth();
-                console.log(ulWidth)
+                $('.aid-knowledge-category>ul>li').addClass('fz');
             });
             ulWidth = ulWidth + $('.first').outerWidth();
             $('.aid-knowledge-category>ul').width(ulWidth+10);
