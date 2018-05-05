@@ -36,7 +36,6 @@ body {
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > li {
   padding: 0 .4rem;
-  font-size: 15px;
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > .border-bottom-1px {
   border-bottom: 1px solid #168171;
@@ -77,4 +76,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.fz{
+  font-size:0.30468726rem ;
 }
