@@ -221,9 +221,8 @@
             category.forEach(function(v,i,arr){
                 index[i]=1;
                 let li = $('<li></li>');
-                li.html(v.categoryname);
-                li.addClass('fl');
-                li.css('font-size','15px');
+                li.text(v.categoryname);
+                li.addClass('fl fz');
                 li.click(function(){
                     $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
                     getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function(aidKnowledge){
