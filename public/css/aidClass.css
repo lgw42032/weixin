@@ -35,7 +35,7 @@ body {
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > li {
   padding: 0 .4rem;
-  font-size:0.30468726rem
+
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > .border-bottom-1px {
   border-bottom: 1px solid #168171;
@@ -61,7 +61,7 @@ body {
 .aid-class-content > .content > .aid-video-area > ul > li {
   padding: .2rem ;
   border-bottom: 1px solid #ccc;
-  font-size:0.30468726rem
+
 }
 .aid-class-content > .content > .aid-video-area > ul > li img {
   width: 1.6rem;
