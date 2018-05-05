@@ -32,6 +32,7 @@ body {
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul {
   border-bottom: 1px solid #ccc;
+  font-size: 0.30468726rem !important;
 }
 .aid-class-content > .content > .aid-knowledge-area > .aid-knowledge-category > ul > li {
   padding: 0 .4rem;
