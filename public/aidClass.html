@@ -223,7 +223,8 @@
                 let li = $('<li></li>');
                 li.html(v.categoryname);
                 li.addClass('fl');
-//                li.css('font-size','13px');
+               li.css('font-size','0.30468726rem');
+                alert(li.css('font-size'));
                 li.click(function(){
                     $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
                     getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function(aidKnowledge){
