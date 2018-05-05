@@ -223,8 +223,7 @@
                 let li = $('<li></li>');
                 li.html(v.categoryname);
                 li.addClass('fl');
-               li.css('font-size','0.30468726rem');
-                alert(li.css('font-size'));
+                li.css('font-size','0.30468726rem');
                 li.click(function(){
                     $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
                     getAidKnowledgeByCategory(cityCode, v.id,index[i]).then(function(aidKnowledge){
@@ -282,6 +281,7 @@
             });
             ulWidth = ulWidth + $('.first').outerWidth();
             $('.aid-knowledge-category>ul').width(ulWidth+10);
+            console
         });
 
         $('.aid-knowledge').click(function(){
