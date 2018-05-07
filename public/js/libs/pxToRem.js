@@ -8,7 +8,7 @@ window.onresize = function(){
 };
 function getSize(){
     var screenWidth = oHtml.clientWidth;
-    if (screenWidth < 320) {
+    if (screenWidth <=320) {
         oHtml.style.fontSize = '42.6667px';
     } else if(screenWidth > 750){
         oHtml.style.fontSize = '100px';
