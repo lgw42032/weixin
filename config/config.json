@@ -1,7 +1,7 @@
 {
   "config":[
-    { "appId": "wx8729066bd51c5649",
-      "appsecret": "a2a200fca543c5c4d42eafa5bc24fc10",
+    { "appId": "wx9a9957d312102e72",
+      "appsecret": "6b90e9b8139ba7aa6da62608df06183a",
       "city":"411400"
     }
   ],
@@ -16,7 +16,7 @@
     "dateStrings" : true,
     "wait_timeout":5
   },
-  "host":"http://www.brothergo.xin",
+  "host":"http://xiayi.brothergo.xin",
   "token":"liguowei",
   "centerHost":"127.0.0.1",
   "centerPort":"5112"
