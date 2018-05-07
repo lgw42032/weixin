@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>课程列表</title>
+    <script src="/public/js/libs/pxToRem.js"></script>
     <link rel="stylesheet" href="/public/css/base.css"/>
     <link rel="stylesheet" href="/public/js/libs/Swiper-3.4.2/swiper-3.4.2.min.css"/>
     <link rel="stylesheet" href="css/aidClass.css"/>
@@ -116,15 +117,11 @@
         </div>
         <div class="aid-video-area">
             <ul>
-                <li class="clearfix">
-                    <img src="images/heart.png" alt="" class="fl"/>
-                    <h4 class="fl">怎样呼叫120</h4>
-                </li>
             </ul>
         </div>
     </div>
 </section>
-<script src="/public/js/libs/pxToRem.js"></script>
+
 <script src="js/libs/template.js"></script>
 <script type="text/html" id="aidKnowledge">
     {{each data  value i}}
@@ -223,8 +220,8 @@
             var index=[];
             category.forEach(function(v,i,arr){
                 index[i]=1;
-                var li = $('<li></li>');
-                li.html(v.categoryname);
+                let li = $('<li></li>');
+                li.text(v.categoryname);
                 li.addClass('fl');
                 li.click(function(){
                     $(this).addClass('border-bottom-1px').siblings('li').removeClass(' border-bottom-1px');
@@ -282,6 +279,7 @@
             });
             ulWidth = ulWidth + $('.first').outerWidth();
             $('.aid-knowledge-category>ul').width(ulWidth+10);
+
         });
 
         $('.aid-knowledge').click(function(){
