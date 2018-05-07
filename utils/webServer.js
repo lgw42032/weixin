@@ -46,7 +46,7 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname, '../public'), function(req, 
     }
 }));
 exports.startWebServer = function(){
-    app.listen(80,()=>{
+    app.listen(6677,()=>{
         console.log('running...');
     });
 }
