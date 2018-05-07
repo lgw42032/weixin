@@ -1209,6 +1209,7 @@ exports.microAid = (req,res) => {
 	}
     }).then(function(userInfo){
         userInfo = JSON.parse(userInfo);
+        console.log('userInfo',userInfo)
         if(!!userInfo.openid){
             co(function* () {
                 var sql1 = "insert ignore into user(cityCode,openid,nickname,headimgurl)values(?,?,?,?)";
@@ -1253,6 +1254,7 @@ getToken(params.code,config).then(function(data){
 	}
     }).then(function(userInfo){
         userInfo = JSON.parse(userInfo);
+    console.log('userInfo',userInfo)
         if(!!userInfo.openid){
             co(function* () {
                 var sql1 = "insert ignore into user(cityCode,openid,nickname,headimgurl)values(?,?,?,?)";
