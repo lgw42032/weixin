@@ -1432,7 +1432,7 @@ exports.aidCall = (req,res)=>{
         console.log(postData);
         let requestRes = yield tools.sendCenter({
                 method:"post",
-                url:"/api/wx/notifyWXData",
+                url:"/api/wx/sendHelp",
                 data:postData
         });
 
