@@ -160,20 +160,23 @@
             host = config.host;
             var centerInfoStr = localStorage.getItem('centerInfoStr');
             var centerInfo=JSON.parse(centerInfoStr);
-            var imgUrl = centerInfo.centerImgUrl.split(';');
-            console.log(imgUrl);
-            var imgObj={};
-            imgObj.list =  imgUrl.map(function(v,i,arr){
-                return  host + v;
-            });
-            console.log(imgObj);
-            var html = template('centerImgUrl', imgObj);
-            $('.swiper-wrapper').html(html);
-            var mySwiper = new Swiper ('.swiper-container', {
-                loop: true,
-                autoplay: 3000,
-                pagination: '.swiper-pagination'
-            });
+            if(!!centerInfo.centerImgUrl){
+                var imgUrl = centerInfo.centerImgUrl.split(';');
+                console.log(imgUrl);
+                var imgObj={};
+                imgObj.list =  imgUrl.map(function(v,i,arr){
+                    return  host + v;
+                });
+                console.log(imgObj);
+                var html = template('centerImgUrl', imgObj);
+                $('.swiper-wrapper').html(html);
+                var mySwiper = new Swiper ('.swiper-container', {
+                    loop: true,
+                    autoplay: 3000,
+                    pagination: '.swiper-pagination'
+                });
+            }
+
         });
         $('#btn').click(function(){
             var plateNumber = $('.plateNumber').val();
