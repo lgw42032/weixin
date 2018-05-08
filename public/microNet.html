@@ -299,25 +299,38 @@
                 var centerInfo = centerInfo.data[0];
                 var centerInfoStr = JSON.stringify(centerInfo);
                 localStorage.setItem('centerInfoStr',centerInfoStr);
-                $('.contactUs').html('联系我们：'+ centerInfo.linkTele);
-                $('.tel').attr('href','tel:'+centerInfo.linkTele);
-                $('.centerAddress').html('中心地址：'+ centerInfo.centerAddress);
+                if(!!centerInfo.linkTele){
+                    $('.contactUs').html('联系我们：'+ centerInfo.linkTele);
+                    $('.tel').attr('href','tel:'+centerInfo.linkTele);
+                }else{
+                    $('.contactUs').html('联系我们：');
+                }
+                if(!!centerInfo.centerAddress){
+                    $('.centerAddress').html('中心地址：'+ centerInfo.centerAddress);
+                }else{
+                    $('.centerAddress').html('中心地址：');
+                }
+
                 $('.location').attr('href',"location.html?lng="+centerInfo.lng +"&lat="+ centerInfo.lat);
-                $('#introduceContent').html(centerInfo.centerDesc);
-                var imgUrl = centerInfo.centerImgUrl.split(';');
-                console.log(imgUrl);
-                var imgObj={};
-                imgObj.list =  imgUrl.map(function(v,i,arr){
-                    return  host + v;
-                });
-                console.log(imgObj);
-                var html = template('centerImgUrl', imgObj);
-                $('.swiper-wrapper').html(html);
-                var mySwiper = new Swiper ('.swiper-container', {
-                    loop: true,
-                    autoplay: 3000,
-                    pagination: '.swiper-pagination'
-                });
+                if(!!centerInfo.centerDesc){
+                    $('#introduceContent').html(centerInfo.centerDesc);
+                }
+                if(!!centerInfo.centerImgUrl){
+                    var imgUrl = centerInfo.centerImgUrl.split(';');
+                    console.log(imgUrl);
+                    var imgObj={};
+                    imgObj.list =  imgUrl.map(function(v,i,arr){
+                        return  host + v;
+                    });
+                    console.log(imgObj);
+                    var html = template('centerImgUrl', imgObj);
+                    $('.swiper-wrapper').html(html);
+                    var mySwiper = new Swiper ('.swiper-container', {
+                        loop: true,
+                        autoplay: 3000,
+                        pagination: '.swiper-pagination'
+                    });
+                }
                 init();
             })
         })
