@@ -438,7 +438,7 @@ exports.addHospital = (req,res) => {
         console.log(uid);
     }
     co(function* () {
-        var sql = 'replace into station(cityCode,stationCode,stationName,lng,lat) values(?,?,?,?,?)';
+        var sql = 'insert into station(cityCode,stationCode,stationName,lng,lat) values(?,?,?,?,?)';
         var params = [queryParams.cityCode,uid,queryParams.stationName,queryParams.lng,queryParams.lat];
         var sqlItem = {
             sql : sql,
@@ -501,7 +501,7 @@ exports.addVehicle = (req,res) => {
         console.log(uid);
     }
     co(function* () {
-        var sql = 'replace into vehicle(cityCode,vehicleCode,plateNumber,stationName) values(?,?,?,?)';
+        var sql = 'insert into vehicle(cityCode,vehicleCode,plateNumber,stationName) values(?,?,?,?)';
         var params = [queryParams.cityCode,uid,queryParams.plateNumber,queryParams.stationName];
         var sqlItem = {
             sql : sql,
