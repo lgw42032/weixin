@@ -278,7 +278,7 @@
                     //地图初始化
 
                     //坐标转换完之后的回调函数
-                    translateCallback = function (locationArr){
+                    let translateCallback = function (locationArr){
                         let location = locationArr.points[0];
                         let r ={
                             point: new BMap.Point(location.lng,location.lat)
