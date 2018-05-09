@@ -1944,7 +1944,7 @@ exports.getServiceRecord = (req,res) =>{
         var sql = ' select lsh,callTime,eventAddress,helpTypeName,relation,realName'+
             ' from event e left join  define_helpType dh on e.helpType=dh.helpTypeCode'+
             ' left join relatives r on  e.helperuid = r.uid '+
-            ' where callerName=? and eventProperty =1'+
+            ' where callerName=?'+
             ' order by  callTime  desc';
         var params = [queryParams.callerName];
         var sqlItem = {
