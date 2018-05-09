@@ -1898,7 +1898,7 @@ exports.setEventNode = (req,res) =>{
                   ' ,ambulanceTelCode,taskDriveToTime,taskArriveTime,taskLeaveTime,taskBackHospitalTime,taskStopTime,taskEndTime)'+
                   ' values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
         var params = [queryParams.lsh,queryParams.taskCode,queryParams.handleTime||null,queryParams.dispatchTime||null,queryParams.vehicleCode,queryParams.doctorName
-                      ,queryParams.driverName,queryParams.nurseName,queryParams.plateNumber,queryParams.ambulanceTelCode,queryParams.taskDriveToTime||null
+                      ,queryParams.driverName,queryParams.nurseName,queryParams.platenumber,queryParams.ambulanceTelCode,queryParams.taskDriveToTime||null
                       ,queryParams.taskArriveTime||null,queryParams.taskLeaveTime||null,queryParams.taskBackHospitalTime||null,queryParams.taskStopTime||null
                       ,queryParams.taskEndTime||null];
         var sqlItem = {
