@@ -330,7 +330,7 @@ exports.login = (req,res) =>  {
             lng:centerItem.lng,
             lat:centerItem.lat
         };
-
+        console.log('centerInfo',centerInfo);
         res.cookie('centerInfo', JSON.stringify(centerInfo));//登录信息存入session
         tools.echoSuccess(res, "success", centerItem);
     }).catch(function(err){
