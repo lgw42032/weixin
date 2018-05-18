@@ -323,7 +323,7 @@ exports.login = (req,res) =>  {
         var centerInfo = {
             cityCode: centerItem.cityCode,
             centerName:centerItem.centerName,
-            centerDesc:centerItem.centerDesc,
+            //centerDesc:centerItem.centerDesc,
             centerAddress:centerItem.centerAddress,
             linkTele:centerItem.linkTele,
             centerImgUrl:centerItem.centerImgUrl,
