@@ -97,8 +97,8 @@
                                 break;
                             case "success":
                                     console.log('feedback.data',feedback.data);
-                                    alert(1);
-                                    localStorage.setItem('centerInfo',feedback.data);
+                                    var centerInfo = JSON.stringify(feedback.data)
+                                    localStorage.setItem('centerInfo',centerInfo);
                                 window.location.href = "/public/main.html";
                                 break;
                             default:
