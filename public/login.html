@@ -96,8 +96,8 @@
                                 $('.user-filter>.input-html').html("分站调度员只允许同时登录一个!");
                                 break;
                             case "success":
-                                    console.log('feedback.data',feedback.data)
-                                    localstorage.setItem('centerInfo',feedback.data)
+                                    console.log('feedback.data',feedback.data);
+                                    localStorage.setItem('centerInfo',feedback.data);
                                 window.location.href = "/public/main.html";
                                 break;
                             default:
