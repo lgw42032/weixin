@@ -9,6 +9,7 @@ var https = require('https');
 var qs = require('querystring');
 //var appLog = require('./appLog');
 exports.sendMsg = function(data,cb){
+    return new Promise(function (resolve, reject){
     data.messageContent =  "【急救中心】" + data.messageContent;
     console.log('send msg before');
     var postData = {
@@ -21,55 +22,27 @@ exports.sendMsg = function(data,cb){
         action:"send",
         extno:null
     };
-    var content = qs.stringify(postData);
-    var chunks = [];
-    var size = 0;
     var options = {
-        host: "dx.ipyy.net",
-        port:443,
-        path: '/smsJson.aspx',
+
+        url:'http://dx.ipyy.net/smsJson.aspx',
         method: 'POST',
+        json:true,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
+        },
+        body:qs.stringify(postData)
+
     };
-    var req = https.request(options, function (res) {
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('BODY: ' + chunk);
-            chunks.push(chunk);
-            size += chunk.length;
-        });
-        res.on('end', function () {
-            var feedbackMsg = "";
-            if(chunks.length > 1){
-                for (var i in chunks) {
-                    feedbackMsg += chunks[i];
-                    //feedback = feedback + chunk[i];
-                }
-            }else{
-                feedbackMsg = chunks[0];
+    request(options, function optionalCallback(err, httpResponse, body) {
+        if (err) {
+            console.log('error',err)
+            return reject(err)
+        }else{
+            if(httpResponse.statusCode !=200){
+                return reject('短信服务出错')
             }
-            //appLog.logInfo(feedbackMsg);
-            try{
-                feedbackMsg = JSON.parse(feedbackMsg);
-                cb(null,feedbackMsg)
-
-            }catch (e){
-                console.log('parse err ',feedbackMsg);
-                cb(e)
-            }
-
-
-        });
-
+            resolve(body)
+        }
     });
-    req.on('error', function (e) {
-        console.log('errr req',e)
-        cb(e)
-
     });
-    req.write(content);
-    req.end();
-
 };
