@@ -7,6 +7,7 @@ var password = "AE0003830";
 var http = require('http');
 var https = require('https');
 var qs = require('querystring');
+var request = require('request');
 //var appLog = require('./appLog');
 exports.sendMsg = function(data,cb){
     return new Promise(function (resolve, reject){
